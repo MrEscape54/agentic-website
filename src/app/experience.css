@@ -238,3 +238,43 @@
   .orchestration-caption { font-size: 11px; line-height: 1.6; }
   .panel-footer > div { flex-wrap: wrap; }
 }
+
+/* The header is in normal flow: 96/80/76px plus its 1px border. */
+.hero-grid { min-height: calc(100svh - 97px); padding-block: clamp(40px, 6svh, 78px); }
+@media (max-width: 960px) { .hero-grid { min-height: calc(100svh - 81px); padding-top: 60px; padding-bottom: 45px; } }
+@media (max-width: 540px) { .hero-grid { min-height: calc(100svh - 77px); padding-top: 48px; } }
+
+/* Capabilities is progressively enhanced from a fully readable static layout. */
+#capabilities { padding: 0; }
+.capability-stage { padding-block: 64px; }
+.capability-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; width: 100%; }
+#capabilities .section-heading { opacity: 1; translate: none; transition: none; max-width: 760px; }
+#capabilities .section-index { margin: 0 0 8px; white-space: nowrap; }
+.capability-window { margin-top: 32px; }
+.capability-track { display: grid; gap: 24px; max-width: 1440px; padding-inline: 64px; margin-inline: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.capability-card { min-width: 0; padding: 28px; border: 1px solid #ffffff25; border-top: 2px solid #ffffff35; border-radius: 8px; background: #101e30; }
+.capability-number { color: var(--olive); font-family: monospace; font-size: 14px; }
+.capability-card h3 { font-family: var(--font-headline); font-size: 21px; font-weight: 550; line-height: 1.35; margin: 18px 0 12px; }
+.capability-card p { color: #a8b3c3; font-size: 13px; line-height: 1.7; margin: 0 0 20px; }
+.capability-card ul { list-style: none; padding: 0; margin: 0; }
+.capability-card li { font-size: 13px; line-height: 1.5; padding-block: 7px; border-top: 1px solid #ffffff12; color: #cbd1db; }
+.capability-progress { display: none; }
+@media (min-width: 961px) and (prefers-reduced-motion: no-preference) {
+  #capabilities[data-horizontal="true"] .capability-stage { position: sticky; top: 0; min-height: 100svh; padding-block: 32px; display: flex; flex-direction: column; justify-content: center; }
+  #capabilities[data-horizontal="true"] .capability-window { overflow: clip; }
+  #capabilities[data-horizontal="true"] .capability-track { --card-width: clamp(340px, 32vw, 440px); position: relative; display: flex; max-width: none; margin: 0; padding-inline: calc((100% - var(--card-width)) / 2); width: 100%; will-change: transform; }
+  #capabilities[data-horizontal="true"] .capability-card { flex: 0 0 var(--card-width); transition: border-color .25s, background .25s; }
+  #capabilities[data-horizontal="true"] .capability-card h3 { color: #b9c3d0; transition: color .25s; }
+  #capabilities[data-horizontal="true"] .capability-number { color: #a8b3c3; }
+  #capabilities[data-horizontal="true"] .capability-card[data-active="true"] { border-top-color: var(--olive); background: #132438; }
+  #capabilities[data-horizontal="true"] .capability-card[data-active="true"] h3 { color: var(--off-white); }
+  #capabilities[data-horizontal="true"] .capability-card[data-active="true"] .capability-number { color: var(--olive); }
+  #capabilities[data-horizontal="true"] .capability-progress { display: flex; position: relative; justify-content: space-between; width: 280px; margin: 28px auto 0; }
+  .capability-progress span { z-index: 1; padding: 0 7px; background: var(--navy); color: #a8b3c3; font: 11px monospace; }
+  .capability-progress span[data-active="true"] { color: var(--olive); }
+  .capability-rail { position: absolute; left: 14px; right: 14px; top: 50%; height: 1px; background: #ffffff25; }
+  .capability-rail i { display: block; width: 100%; height: 100%; background: var(--olive); transform-origin: left; transform: scaleX(var(--capability-progress, 0)); }
+}
+@media (max-width: 1190px) { .capability-track { padding-inline: 36px; } .capability-heading { align-items: start; } #capabilities .section-index { display: none; } }
+@media (max-width: 540px) { .capability-stage { padding-block: 65px; } .capability-track { grid-template-columns: 1fr; padding-inline: 22px; } .capability-card { padding: 24px; } }
+@media print { #capabilities { height: auto !important; } #capabilities .capability-stage { position: static !important; } #capabilities .capability-track { transform: none !important; display: grid !important; padding-inline: 22px !important; } .capability-progress { display: none !important; } }

@@ -13,14 +13,15 @@ test("architecture tabs support keyboard navigation and accurate trace labels", 
   await expect(page.getByRole("tabpanel")).toContainText("Action Engine");
 });
 
-test("industry examples and capability disclosures reveal their own content", async ({ page }) => {
+test("industry examples and capability groups expose their own content", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("group", { name: "Choose an industry" }).getByRole("button", { name: "Financial Services" }).click();
   await expect(page.locator("#industry-example")).toContainText("Card reissued");
   await expect(page.locator("#industry-example")).not.toContainText("Update billing");
   await page.getByRole("group", { name: "Choose an industry" }).getByRole("button", { name: "Retail", exact: false }).click();
   await expect(page.locator("#industry-example")).toContainText("Delivery rescheduled");
-  await page.locator("summary").filter({ hasText: "Enterprise Platform" }).click();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.locator(".capability-card").last().scrollIntoViewIfNeeded();
   await expect(page.getByText("LLM Gateway", { exact: true })).toBeVisible();
 });
 
