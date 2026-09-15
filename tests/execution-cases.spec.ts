@@ -11,10 +11,10 @@ test("Hero cycles through all cases, holds outcomes, pauses and loops back", asy
     await page.clock.fastForward(3000);
     await expect(hero.getByRole("heading", { name: outcome })).toBeVisible();
     if (label === "Telecom") {
-      await hero.getByRole("button", { name: "Pause execution" }).click();
+      await hero.getByRole("button", { name: "Pause demo" }).click();
       await page.clock.fastForward(20000);
       await expect(hero.getByRole("heading", { name: outcome })).toBeVisible();
-      await hero.getByRole("button", { name: "Resume execution" }).click();
+      await hero.getByRole("button", { name: "Resume demo" }).click();
       await page.clock.fastForward(4500);
     } else await page.clock.fastForward(1500);
   }
@@ -33,14 +33,14 @@ test("manual Hero selection pauses and reduced motion never starts automatic cyc
   for (let i = 0; i < 6; i++) await hero.getByRole("button", { name: "Next step" }).click();
   await page.clock.fastForward(60000);
   await expect(hero.getByRole("heading", { name: "Delivery rescheduled" })).toBeVisible();
-  await expect(hero.getByRole("button", { name: "Pause execution" })).toHaveCount(0);
+  await expect(hero.getByRole("button", { name: "Pause demo" })).toHaveCount(0);
 });
 
-test("architecture defaults to finance and all views follow the selected case", async ({ page }) => {
+test("architecture defaults to telecom and all views follow the selected case", async ({ page }) => {
   await page.goto("/");
   const work = page.locator("#platform-at-work");
-  await expect(work.getByRole("button", { name: "Financial Services", exact: true })).toHaveAttribute("aria-pressed", "true");
-  await expect(work.getByRole("tabpanel")).toContainText("card.reissue");
+  await expect(work.getByRole("button", { name: "Telecom", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await expect(work.getByRole("tabpanel")).toContainText("plan.change");
   await work.getByRole("button", { name: "Retail", exact: true }).click();
   await expect(work.getByRole("tabpanel")).toContainText("delivery.reschedule");
   await work.getByRole("tab", { name: "Details", exact: true }).click();
@@ -54,7 +54,7 @@ test("architecture defaults to finance and all views follow the selected case", 
 test("new narrative is in order and every section has navy background", async ({ page }) => {
   await page.goto("/");
   const sections = page.locator("main > section");
-  await expect(sections.nth(1)).toContainText("Turn requests into");
+  await expect(sections.nth(1)).toContainText("Intelligence, put to work.");
   await expect(sections.nth(2)).toHaveAttribute("id", "platform-at-work");
   await expect(page.getByRole("heading", { name: /Chatbots answer/ })).toHaveCount(0);
   await expect(page.locator("#platform")).toHaveCount(0);

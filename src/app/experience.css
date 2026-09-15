@@ -9,35 +9,15 @@
 .reveal-target:focus-within { opacity: 1; translate: none; }
 .motion-ready .home-section::before { transform: translateY(var(--scene-shift, 0px)); }
 
-/* A centered opening statement with three staggered visual studies. */
-#business-value { padding-top: 150px; }
-#business-value .section-heading { text-align: center; max-width: 800px; margin-inline: auto; }
-#business-value .section-description { margin-inline: auto; max-width: 540px; }
-.benefit-grid { gap: 24px; align-items: start; margin-top: 75px; padding-bottom: 90px; }
-.benefit-grid article { background: linear-gradient(160deg, #142539, #0b192c); border: 1px solid #ffffff17; border-radius: 12px; padding: 27px; position: relative; overflow: hidden; }
-.benefit-grid article:nth-child(2) { margin-top: 45px; }
-.benefit-grid article:nth-child(3) { margin-top: 90px; }
-.benefit-top { margin-top: 25px; }
-.benefit-grid h3 { margin-top: 17px; }
-.benefit-visual { height: 150px; display: grid; place-items: center; position: relative; perspective: 600px; }
-.benefit-visual > span { position: absolute; display: block; width: 120px; height: 75px; border: 1px solid #829bb44d; border-radius: 7px; background: #172b3e; transition: transform .7s cubic-bezier(.2,.65,.25,1); }
-.benefit-visual > svg { position: relative; color: var(--olive); }
-.benefit-visual-0 > span:nth-child(1) { transform: translate(-20px, -20px) rotate(-12deg); }
-.benefit-visual-0 > span:nth-child(2) { transform: translate(0, 0) rotate(-5deg); }
-.benefit-visual-0 > span:nth-child(3) { transform: translate(20px, 20px) rotate(3deg); }
-.benefit-visual-1 > span { width: 73px; height: 73px; transform: rotate(45deg); }
-.benefit-visual-1 > span:nth-child(1) { transform: translateX(-65px) rotate(45deg); }
-.benefit-visual-1 > span:nth-child(3) { transform: translateX(65px) rotate(45deg); }
-.benefit-visual-2 > span { border-radius: 50%; background: transparent; width: 115px; height: 115px; }
-.benefit-visual-2 > span:nth-child(1) { width: 155px; height: 155px; border-style: dashed; }
-.benefit-visual-2 > span:nth-child(3) { width: 73px; height: 73px; background: #172b3e; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .benefit-grid article:hover .benefit-visual-0 > span:nth-child(1) { transform: translate(-32px, -30px) rotate(-16deg); }
-  .benefit-grid article:hover .benefit-visual-0 > span:nth-child(3) { transform: translate(32px, 30px) rotate(7deg); }
-  .benefit-grid article:hover .benefit-visual-1 > span:nth-child(1) { transform: translateX(-80px) rotate(45deg); }
-  .benefit-grid article:hover .benefit-visual-1 > span:nth-child(3) { transform: translateX(80px) rotate(45deg); }
-  .benefit-grid article:hover .benefit-visual-2 > span:first-child { transform: rotate(45deg) scale(1.08); }
-}
+/* A compact bridge from the outcome to its architecture. */
+#business-value { padding-block: 48px; }
+#business-value .section-heading h2 { font-size: 14px; letter-spacing: 1.4px; text-transform: uppercase; color: #cbd1db; }
+#business-value .benefit-grid { margin-top: 28px; padding: 0; gap: 32px; align-items: start; }
+#business-value .benefit-grid article { margin: 0; padding: 0 24px 0 0; border: 0; border-right: 1px solid #ffffff18; background: none; border-radius: 0; }
+#business-value .benefit-grid article:last-child { border: 0; }
+#business-value .benefit-top { justify-content: flex-start; gap: 12px; margin: 0 0 10px; }
+#business-value .benefit-grid h3 { margin: 0; font-size: 16px; }
+#business-value .benefit-grid p { font-size: 13px; line-height: 1.7; }
 
 /* A wide product stage, rather than another text / card split. */
 #platform-at-work { overflow: clip; padding-top: 115px; }
@@ -149,7 +129,6 @@
 .cta-trust { justify-content: center; margin-top: 42px; }
 
 @media (max-width: 1190px) {
-  .benefit-grid article { padding: 22px; }
   .control-grid article { padding: 30px; }
   .control-grid li { font-size: 11px; }
   .handoff-layout, .capability-layout { gap: 50px; }
@@ -157,14 +136,6 @@
 }
 @media (max-width: 960px) {
   .home-section { padding-block: 85px; }
-  #business-value { padding-top: 95px; }
-  .benefit-grid { gap: 15px; padding-bottom: 50px; }
-  .benefit-grid article { padding: 20px; }
-  .benefit-grid article:nth-child(2) { margin-top: 25px; }
-  .benefit-grid article:nth-child(3) { margin-top: 50px; }
-  .benefit-visual { height: 125px; transform: scale(.8); }
-  .benefit-grid h3 { font-size: 17px; }
-  .benefit-grid p { font-size: 12px; }
   .work-console { max-width: 100%; }
   .work-panel { padding: 30px; }
   .agent-nodes { gap: 15px; }
@@ -184,12 +155,6 @@
   .home-section { padding-block: 65px; }
   .section-heading h2, .handoff-layout .section-heading h2, .integration-layout .section-heading h2 { font-size: 34px; letter-spacing: -1.3px; }
   .section-description { font-size: 13px; }
-  #business-value { padding-top: 80px; }
-  .benefit-grid { grid-template-columns: 1fr; gap: 22px; padding-bottom: 0; margin-top: 40px; }
-  .benefit-grid article:nth-child(n) { margin-top: 0; padding: 25px; }
-  .benefit-visual { height: 135px; transform: none; }
-  .benefit-grid h3 { font-size: 21px; }
-  .benefit-grid p { font-size: 13px; }
   #platform-at-work { padding-top: 75px; }
   .work-layout { gap: 30px; }
   .work-tabs { padding: 9px; }
@@ -235,4 +200,41 @@
 @media print {
   .reveal-pending { opacity: 1; translate: none; }
   .reading-progress { display: none; }
+}
+
+/* Trace states use olive for activity and a separate green for completion. */
+.step-node, .step-list li::after { transition: background .3s ease, border-color .3s ease, color .3s ease; }
+.step-list li.step-done::after { background: #3d6e5d; }
+.step-detail { transition: border-color .35s ease, background .35s ease; }
+.step-detail.detail-complete { border-color: #69d4ab50; background: #11282b; }
+.system-active { background: #182b30; box-shadow: 0 0 0 3px #a8d94a08; }
+.panel-footer { flex-wrap: wrap; gap: 4px 12px; padding-block: 5px; }
+.panel-footer button { min-height: 36px; }
+.case-selector button, .work-case-selector button, .work-tabs button { transition: background .2s, border-color .2s, color .2s; }
+.case-selector button:hover, .work-case-selector button:hover { border-color: #a8b3c370; }
+.button-text:hover { background: #ffffff08; }
+.work-console { margin-inline: auto; border-radius: var(--radius-panel); }
+.orchestration-caption { text-align: center; color: #a8b3c3; font-size: 12px; margin: -2px 0 22px; }
+.architecture-knowledge { display: flex; align-items: center; gap: 13px; border: 1px solid #ffffff20; border-radius: 7px; padding: 14px 18px; background: #132438; color: #a8b3c3; }
+.architecture-knowledge strong { font-size: 12px; font-weight: 500; color: #e0e6ec; }
+.architecture-knowledge p { margin: 5px 0 0; font-size: 11px; line-height: 1.7; }
+.booking-placeholder summary { cursor: pointer; list-style: none; }
+.booking-placeholder summary::-webkit-details-marker { display: none; }
+.booking-placeholder summary:focus-visible { outline: 2px solid var(--olive); outline-offset: 5px; }
+.network-core { text-align: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .execution-demo[data-playing="true"] .step-active .step-node { animation: trace-active 2.6s ease-in-out infinite; }
+  @keyframes trace-active { 50% { box-shadow: 0 0 0 6px #a8d94a16; } }
+}
+@media (max-width: 540px) {
+  #business-value { padding-block: 34px; }
+  #business-value .benefit-grid { gap: 20px; margin-top: 24px; }
+  #business-value .benefit-grid article { padding: 0; border: 0; }
+  .architecture-knowledge { padding: 12px; gap: 10px; }
+  .agent-nodes > div { font-size: 11px; }
+  .architecture-skills span { font-size: 10px; overflow-wrap: anywhere; }
+  .architecture-systems { flex-wrap: wrap; }
+  .architecture-systems span { font-size: 10px; }
+  .orchestration-caption { font-size: 11px; line-height: 1.6; }
+  .panel-footer > div { flex-wrap: wrap; }
 }

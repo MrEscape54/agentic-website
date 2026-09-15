@@ -38,7 +38,7 @@ export function ExecutionFlow({ runId }: { runId: number }) {
 
   function replay() { setStep(0); setPlaying(!reduced); }
 
-  return <div className="execution-demo" id="execution-demo" tabIndex={-1}>
+  return <div data-playing={playing && !reduced} className="execution-demo" id="execution-demo" tabIndex={-1}>
     <div className="demo-caption"><span><span className="small-dot" /> FROM INTENT TO OUTCOME</span><span>INTERACTIVE DEMO</span></div>
     <div className="execution-panel">
       <div className="panel-heading"><span><Icon name="layers" size={17} /> Execution flow</span><span className="demo-badge">{example.label}</span></div>
@@ -53,13 +53,13 @@ export function ExecutionFlow({ runId }: { runId: number }) {
             </button>
           </li>)}
         </ol>
-        <div className="step-detail" aria-live="polite" aria-atomic="true">
-          <div className="detail-heading"><span className={complete ? "detail-icon is-success" : "detail-icon"}><Icon name={complete ? "check" : current.icon} size={20} /></span><div><span className="micro-label">{complete ? "OUTCOME" : current.label.toUpperCase()}</span><h2>{complete ? example.outcome : current.title}</h2></div><span className={complete ? "status resolved" : "status"}>{complete ? "RESOLVED ✓" : playing ? "IN PROGRESS" : "PAUSED"}</span></div>
+        <div className={`step-detail ${complete ? "detail-complete" : ""}`} aria-live="polite" aria-atomic="true">
+          <div className="detail-heading"><span className={complete ? "detail-icon is-success" : "detail-icon"}><Icon name={complete ? "check" : current.icon} size={20} /></span><div><span className="micro-label">{complete ? "OUTCOME" : current.label.toUpperCase()}</span><h2>{complete ? example.outcome : current.title}</h2></div><span className={complete ? "status resolved" : "status"}>{complete ? "RESOLVED ✓" : playing ? "IN PROGRESS" : "DEMO PAUSED"}</span></div>
           <p className="detail-description">{complete ? "The request became a completed action." : current.description}</p>
           <div className="detail-payload">{complete ? <><Icon name="check" size={15} /><span>{example.result} · Execution traced ✓</span></> : step === 2 ? <><s>{example.sensitive}</s><Icon name="arrow" size={16} /><code>{example.token}</code></> : step === 3 ? <div className="skill-tags">{example.skills.map(skill => <code key={skill}>{skill}</code>)}</div> : <><span className="payload-dot" /><span>{current.detail}</span></>}</div>
         </div>
       </div>
-      <div className="panel-footer"><span><Icon name="shield" size={14} /> Controlled execution</span><div>{reduced && !complete && <button onClick={() => setStep(step + 1)}>Next step <Icon name="arrow" size={13} /></button>}{!reduced && <button onClick={() => setPlaying(!playing)} aria-label={playing ? "Pause execution" : "Resume execution"}><Icon name={playing ? "pause" : "play"} size={13} />{playing ? "Pause" : "Resume"}</button>}<button onClick={replay} aria-label="Replay execution"><Icon name="replay" size={13} /> Replay</button></div></div>
+      <div className="panel-footer"><span><Icon name="shield" size={14} /> Controlled execution</span><div>{reduced && !complete && <button onClick={() => setStep(step + 1)}>Next step <Icon name="arrow" size={13} /></button>}{!reduced && <button onClick={() => setPlaying(!playing)} aria-label={playing ? "Pause demo" : "Resume demo"}><Icon name={playing ? "pause" : "play"} size={13} />{playing ? "Pause demo" : "Resume demo"}</button>}<button onClick={replay} aria-label="Replay demo"><Icon name="replay" size={13} /> Replay demo</button></div></div>
     </div>
     <EnterpriseSystems systems={example.systems} active={complete ? undefined : current.system} />
     <p className="systems-caption">YOUR SYSTEMS. CONNECTED TO ACTION.</p>

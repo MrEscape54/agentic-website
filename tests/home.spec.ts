@@ -24,7 +24,7 @@ test("industry examples and capability disclosures reveal their own content", as
   await expect(page.getByText("LLM Gateway", { exact: true })).toBeVisible();
 });
 
-test("navigation targets exist, mobile menu closes, and booking uses the provisional email", async ({ page }) => {
+test("navigation targets exist, mobile menu closes, and booking shows an honest temporary message", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.getByRole("button", { name: "Open navigation" }).click();
@@ -34,7 +34,9 @@ test("navigation targets exist, mobile menu closes, and booking uses the provisi
   for (const href of await page.locator('a[href^="#"]').evaluateAll(links => links.map(link => link.getAttribute("href")))) {
     expect(await page.locator(href!).count()).toBe(1);
   }
-  await expect(page.locator("#book-demo").getByRole("link", { name: "Book a Demo" })).toHaveAttribute("href", "mailto:info@example.com?subject=Platform%20demo");
+  await page.locator(".booking-placeholder summary").click();
+  await expect(page.getByText("Demo booking will be available soon.")).toBeVisible();
+  await expect(page.locator('a[href*="example.com"]')).toHaveCount(0);
 });
 
 test("home has no client errors and uses the locally served headline font", async ({ page }) => {
