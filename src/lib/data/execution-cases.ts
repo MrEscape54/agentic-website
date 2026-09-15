@@ -11,7 +11,7 @@ export type ExecutionCase = {
 
 // Illustrative workflows, not live integrations or customer evidence.
 export const executionCases: ExecutionCase[] = [
-  { ...telecom, id: "telecom", label: "Telecom", result: "Billing updated", sensitive: "DNI 34.123.456", token: "{DNI}",
+  { ...telecom, id: "telecom", label: "Telecom", result: "Billing updated", sensitive: "Customer ID 847291", token: "{CUSTOMER_ID}",
     skills: ["customer.identify", "plan.eligibility", "plan.change"], agents: ["Customer Agent", "Plan Agent", "Knowledge Agent"], systems,
     knowledge: "Customer profile, current contract and available plans ground the request.", action: "The plan change is executed in Billing." },
   { id: "finance", label: "Financial Services", request: "I need to replace my credit card.", outcome: "Card replacement initiated", result: "Previous card blocked · Reissue requested",

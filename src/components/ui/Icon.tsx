@@ -1,7 +1,11 @@
 import type { CSSProperties } from "react";
 
-export type IconName = "arrow" | "check" | "shield" | "layers" | "signal" | "database" | "book" | "key" | "code" | "play" | "pause" | "replay" | "menu" | "close";
+export type IconName = "customers" | "operations" | "people" | "receipt" | "arrow" | "check" | "shield" | "layers" | "signal" | "database" | "book" | "key" | "code" | "play" | "pause" | "replay" | "menu" | "close";
 const paths: Record<IconName, React.ReactNode> = {
+  customers: <><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M5 17c0-4 8-4 8 0m3-8h2m-2 4h2" /></>,
+  operations: <><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></>,
+  people: <><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3" /></>,
+  receipt: <><path d="M5 3h14v18l-3-2-4 2-4-2-3 2V3Zm4 5h6m-6 4h6m-6 4h3" /></>,
   arrow: <path d="M5 12h14m-6-6 6 6-6 6" />,
   check: <path d="m5 12 4 4L19 6" />,
   shield: <><path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6l8-3Z" /><path d="m8 12 3 3 5-6" /></>,

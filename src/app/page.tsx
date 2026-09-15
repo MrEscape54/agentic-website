@@ -5,13 +5,11 @@ import { PlatformAtWork } from "@/components/home/PlatformAtWork";
 import { EnterpriseControl } from "@/components/home/EnterpriseControl";
 import { IntelligentHandoff } from "@/components/home/IntelligentHandoff";
 import { Capabilities } from "@/components/home/Capabilities";
-import { Solutions } from "@/components/home/Solutions";
-import { Industries } from "@/components/home/Industries";
 import { Integrations } from "@/components/home/Integrations";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Footer } from "@/components/navigation/Footer";
 import { ScrollEffects } from "@/components/ui/ScrollEffects";
 
 export default function Home() {
-  return <><ScrollEffects /><Navbar /><main id="main"><Hero /><BusinessValue /><PlatformAtWork /><EnterpriseControl /><IntelligentHandoff /><Capabilities /><Solutions /><Industries /><Integrations /><FinalCTA /></main><Footer /></>;
+  return <><ScrollEffects /><Navbar /><main id="main"><Hero /><BusinessValue /><EnterpriseControl /><IntelligentHandoff /><PlatformAtWork /><Capabilities /><Integrations /><FinalCTA /></main><Footer /></>;
 }

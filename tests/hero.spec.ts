@@ -8,7 +8,7 @@ test("execution progresses, pauses, can be inspected and replayed", async ({ pag
   await page.clock.fastForward(20000);
   await expect(page.getByRole("heading", { name: "Intent detected" })).toBeVisible();
   await page.getByRole("button", { name: "Inspect step 3: Protect" }).click();
-  await expect(page.getByText("{DNI}", { exact: true })).toBeVisible();
+  await expect(page.getByText("{CUSTOMER_ID}", { exact: true })).toBeVisible();
   await expect(page.locator(".system-active")).toContainText("Identity");
   await page.getByRole("button", { name: "Resume demo" }).click();
   for (let i = 0; i < 4; i++) await page.clock.fastForward(2700);

@@ -13,13 +13,8 @@ test("architecture tabs support keyboard navigation and accurate trace labels", 
   await expect(page.getByRole("tabpanel")).toContainText("Action Engine");
 });
 
-test("industry examples and capability groups expose their own content", async ({ page }) => {
+test("capability groups expose their content and removed industries stays absent", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("group", { name: "Choose an industry" }).getByRole("button", { name: "Financial Services" }).click();
-  await expect(page.locator("#industry-example")).toContainText("Card reissued");
-  await expect(page.locator("#industry-example")).not.toContainText("Update billing");
-  await page.getByRole("group", { name: "Choose an industry" }).getByRole("button", { name: "Retail", exact: false }).click();
-  await expect(page.locator("#industry-example")).toContainText("Delivery rescheduled");
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.locator(".capability-card").last().scrollIntoViewIfNeeded();
   await expect(page.getByText("LLM Gateway", { exact: true })).toBeVisible();
@@ -29,8 +24,8 @@ test("navigation targets exist, mobile menu closes, and booking shows an honest 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.getByRole("button", { name: "Open navigation" }).click();
-  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Solutions" }).click();
-  await expect(page).toHaveURL(/#solutions$/);
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Enterprise" }).click();
+  await expect(page).toHaveURL(/#enterprise$/);
   await expect(page.getByRole("navigation", { name: "Main navigation" })).toBeHidden();
   for (const href of await page.locator('a[href^="#"]').evaluateAll(links => links.map(link => link.getAttribute("href")))) {
     expect(await page.locator(href!).count()).toBe(1);
@@ -49,7 +44,7 @@ test("home has no client errors and uses the locally served headline font", asyn
   expect(await page.locator("h1").evaluate(el => getComputedStyle(el).fontFamily)).toContain("Plus Jakarta Sans Variable");
   expect(errors).toEqual([]);
   await page.setViewportSize({ width: 1440, height: 1000 });
-  for (const id of ["business-value", "platform-at-work", "enterprise", "industries", "integrations"]) {
+  for (const id of ["business-value", "platform-at-work", "enterprise", "integrations"]) {
     await page.locator(`#${id}`).screenshot({ path: `test-results/section-${id}.png` });
   }
   await page.setViewportSize({ width: 390, height: 844 });

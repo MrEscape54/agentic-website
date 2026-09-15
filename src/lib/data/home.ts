@@ -25,7 +25,7 @@ export const solutions = [
 ];
 
 export const industryCases = [
-  { id: "telecom", label: "Telecommunications", request: "I need to change my mobile plan.", goal: "Change mobile plan", flow: ["Identify customer", "Check eligibility", "Update billing"], outcome: "Plan updated", agents: ["Customer Agent", "Plan Agent", "Knowledge Agent"], skills: ["Identify customer", "Check eligibility", "Change plan"], systems: ["CRM", "Billing", "Identity", "APIs", "Knowledge"] },
-  { id: "financial-services", label: "Financial Services", request: "I need to replace my credit card.", goal: "Replace credit card", flow: ["Authenticate", "Validate", "Block", "Reissue"], outcome: "Card reissued", agents: [], skills: [], systems: [] },
-  { id: "retail", label: "Retail", request: "I need to change my delivery date.", goal: "Change delivery date", flow: ["Retrieve order", "Diagnose", "Reschedule"], outcome: "Delivery rescheduled", agents: [], skills: [], systems: [] },
+  { id: "telecom", label: "Telecommunications", request: "I need to change my mobile plan.", goal: "Change mobile plan", flow: ["Identify customer", "Check contract", "Check eligibility", "Update billing", "Confirm"], outcome: "Plan updated", agents: ["Customer Agent", "Plan Agent", "Knowledge Agent"], skills: ["Identify customer", "Check eligibility", "Change plan"], systems: ["CRM", "Billing", "Identity", "APIs", "Knowledge"] },
+  { id: "financial-services", label: "Financial Services", request: "I need to replace my credit card.", goal: "Replace credit card", flow: ["Authenticate customer", "Check card", "Block card", "Issue replacement", "Confirm"], outcome: "Card replacement initiated", agents: [], skills: [], systems: [] },
+  { id: "retail", label: "Retail", request: "I need to change my delivery date.", goal: "Change delivery date", flow: ["Identify order", "Check shipment", "Validate available options", "Reschedule", "Confirm"], outcome: "Delivery rescheduled", agents: [], skills: [], systems: [] },
 ];

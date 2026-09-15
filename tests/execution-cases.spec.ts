@@ -51,11 +51,11 @@ test("architecture defaults to telecom and all views follow the selected case", 
   await expect(work).toContainText("CONTROL · INTEGRATE · OBSERVE");
 });
 
-test("new narrative is in order and every section has navy background", async ({ page }) => {
+test("new narrative retains its order and navy backgrounds", async ({ page }) => {
   await page.goto("/");
   const sections = page.locator("main > section");
   await expect(sections.nth(1)).toContainText("Intelligence, put to work.");
-  await expect(sections.nth(2)).toHaveAttribute("id", "platform-at-work");
+  await expect(sections.nth(4)).toHaveAttribute("id", "platform-at-work");
   await expect(page.getByRole("heading", { name: /Chatbots answer/ })).toHaveCount(0);
   await expect(page.locator("#platform")).toHaveCount(0);
   for (const section of await sections.all()) {
