@@ -16,7 +16,7 @@ export function FlowExplorer({ example }: { example: ExecutionCase }) {
       origin.current = event.currentTarget;
       setDetail({ title, role, context });
       requestAnimationFrame(() => { panel.current?.focus({ preventScroll: true }); panel.current?.scrollIntoView({ block: "nearest", behavior: "instant" }); });
-    }}>{title}<span className="node-explore-mark" aria-hidden="true">+</span></button>;
+    }}>{title}<span className="node-explore-mark" aria-hidden="true"><Icon name="arrow" size={14} /></span></button>;
   }
   return <div className={`flow-explorer ${detail ? "has-detail" : ""}`} onKeyDown={event => { if (event.key === "Escape" && detail) { event.preventDefault(); close(); } }}>
     <div className="architecture-flow">

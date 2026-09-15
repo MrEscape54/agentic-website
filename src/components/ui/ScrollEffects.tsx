@@ -12,7 +12,7 @@ export function ScrollEffects() {
       if (preference.matches) return;
       const root = document.documentElement;
       const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section"));
-      const revealTargets = Array.from(document.querySelectorAll<HTMLElement>(".home-section .section-heading, .benefit-grid article, .work-console, .control-grid article, .handoff-diagram, .capability-list details, .solution-grid article, .industry-layout, .integration-network, .platform-foundation"));
+      const revealTargets = Array.from(document.querySelectorAll<HTMLElement>(".home-section .section-heading, .benefit-grid article, .work-console, .control-grid article, .handoff-diagram, .platform-foundation"));
       const active = new Set<HTMLElement>();
       let frame = 0;
       const reveal = new IntersectionObserver(entries => {

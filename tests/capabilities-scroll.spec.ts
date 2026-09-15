@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-for (const [width, height] of [[1920,1080],[1440,900],[1366,768],[1024,900],[390,844]]) {
+for (const [width, height] of [[1920,1080],[1440,900],[1366,768],[1280,720],[1024,768],[768,1024],[390,844]]) {
   test(`viewport and capability journey ${width}x${height}`, async ({ page }) => {
     await page.setViewportSize({ width, height });
     await page.goto("/");
@@ -11,7 +11,7 @@ for (const [width, height] of [[1920,1080],[1440,900],[1366,768],[1024,900],[390
     expect(demo!.y + demo!.height).toBeLessThan(hero!.y + hero!.height);
     await page.screenshot({ path: `test-results/viewport-${width}.png` });
     const section = page.locator("#capabilities");
-    if (width > 960) {
+    if (width >= 1024) {
       await expect(section).toHaveAttribute("data-horizontal", "true");
       const geometry = await section.evaluate(el => {
         const cards = el.querySelectorAll<HTMLElement>("article");
@@ -23,6 +23,10 @@ for (const [width, height] of [[1920,1080],[1440,900],[1366,768],[1024,900],[390
         const card = await section.locator("article").nth(index).boundingBox();
         expect(Math.abs(card!.x + card!.width / 2 - width / 2)).toBeLessThan(2);
       }
+      const stage = await section.locator(".capability-stage").boundingBox();
+      expect(stage!.height).toBeLessThanOrEqual(height + 1);
+      const progress = await section.locator(".capability-progress").boundingBox();
+      expect(progress!.y + progress!.height).toBeLessThanOrEqual(height);
       await page.screenshot({path: `test-results/capabilities-${width}.png`});
       await page.evaluate(({top,travel,height}) => scrollTo({top: top + height * .12 + travel + height * .3, behavior: "instant"}), {...geometry,height});
       await expect(section.locator("article").last()).toHaveAttribute("data-active", "true");

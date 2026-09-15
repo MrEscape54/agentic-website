@@ -13,17 +13,18 @@ export function Capabilities() {
     const track = section.querySelector<HTMLElement>(".capability-track")!;
     const cards = Array.from(track.querySelectorAll<HTMLElement>("article"));
     const markers = Array.from(section.querySelectorAll<HTMLElement>(".capability-progress span"));
-    const media = window.matchMedia("(min-width: 961px) and (prefers-reduced-motion: no-preference)");
+    const media = window.matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)");
     let frame = 0;
     let travel = 0;
     let lead = 0;
+    let stickyTop = 0;
     let enabled = false;
     let active = -1;
 
     function update() {
       frame = 0;
       if (!enabled) return;
-      const progress = Math.max(0, Math.min(1, (-section.getBoundingClientRect().top - lead) / travel));
+      const progress = Math.max(0, Math.min(1, (-section.getBoundingClientRect().top + stickyTop - lead) / travel));
       track.style.transform = `translate3d(${-progress * travel}px, 0, 0)`;
       section.style.setProperty("--capability-progress", String(progress));
       const next = Math.round(progress * (cards.length - 1));
@@ -41,19 +42,18 @@ export function Capabilities() {
       section.dataset.horizontal = String(enabled);
       section.style.removeProperty("height");
       track.style.removeProperty("transform");
-      // If enlarged text or a short viewport cannot contain the stage, keep natural flow.
-      if (enabled && stage.scrollHeight > window.innerHeight + 1) {
-        enabled = false;
-        section.dataset.horizontal = "false";
-      }
       active = -1;
       if (enabled) {
+        // Oversized/zoomed content can scroll fully into view before pinning.
+        stickyTop = Math.min(0, window.innerHeight - stage.offsetHeight);
+        stage.style.top = `${stickyTop}px`;
         travel = cards[cards.length - 1].offsetLeft - cards[0].offsetLeft;
         lead = window.innerHeight * .12;
         const tail = window.innerHeight * .45;
         section.style.height = `${stage.offsetHeight + lead + travel + tail}px`;
         update();
       } else {
+        stage.style.removeProperty("top");
         cards.forEach(card => delete card.dataset.active);
         markers.forEach(marker => delete marker.dataset.active);
         section.style.removeProperty("--capability-progress");
@@ -75,6 +75,7 @@ export function Capabilities() {
       delete section.dataset.horizontal;
       section.style.removeProperty("height");
       track.style.removeProperty("transform");
+      stage.style.removeProperty("top");
     };
   }, []);
 
@@ -82,7 +83,6 @@ export function Capabilities() {
     <div className="capability-stage">
       <div className="page-shell capability-heading">
         <SectionHeading id="capabilities-title" eyebrow="PLATFORM CAPABILITIES" description="Explore the engines and studios that connect understanding, knowledge and controlled execution.">The technology behind<br /><em>every execution.</em></SectionHeading>
-        <span className="section-index">BUILT TO WORK TOGETHER</span>
       </div>
       <div className="capability-window">
         <div className="capability-track">

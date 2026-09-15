@@ -11,7 +11,7 @@ const categories: { label: string; icon: IconName }[] = [
 export function Integrations() {
   return <section id="integrations" className="home-section integration-reassurance" aria-labelledby="integrations-title">
     <div className="page-shell integration-reassurance-layout">
-      <SectionHeading id="integrations-title" eyebrow="INTEGRATIONS" description="Your systems remain your systems of record. The platform connects intelligence and controlled execution to the technology your business already runs on.">Keep your systems.<br /><em>Add intelligence.</em></SectionHeading>
+      <SectionHeading id="integrations-title" eyebrow="INTEGRATIONS">Keep your systems.<br /><em>Add intelligence.</em></SectionHeading>
       <ul className="integration-categories" aria-label="Enterprise technology categories">{categories.map(category => <li key={category.label}><Icon name={category.icon} size={32} /><span>{category.label}</span></li>)}</ul>
     </div>
   </section>;
