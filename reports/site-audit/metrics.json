@@ -1,0 +1,1233 @@
+{
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 983
+        },
+        {
+          "id": "business-value",
+          "height": 198
+        },
+        {
+          "id": "enterprise",
+          "height": 1273
+        },
+        {
+          "id": "handoff",
+          "height": 579
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1660
+        },
+        {
+          "id": "capabilities",
+          "height": 3552
+        },
+        {
+          "id": "integrations",
+          "height": 278
+        },
+        {
+          "id": "book-demo",
+          "height": 699
+        }
+      ],
+      "heroBottom": 1080,
+      "demoTop": 249,
+      "capabilities": "true",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 803
+        },
+        {
+          "id": "business-value",
+          "height": 198
+        },
+        {
+          "id": "enterprise",
+          "height": 1273
+        },
+        {
+          "id": "handoff",
+          "height": 579
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1660
+        },
+        {
+          "id": "capabilities",
+          "height": 3269
+        },
+        {
+          "id": "integrations",
+          "height": 260
+        },
+        {
+          "id": "book-demo",
+          "height": 699
+        }
+      ],
+      "heroBottom": 900,
+      "demoTop": 159,
+      "capabilities": "true",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 772
+        },
+        {
+          "id": "business-value",
+          "height": 198
+        },
+        {
+          "id": "enterprise",
+          "height": 1262
+        },
+        {
+          "id": "handoff",
+          "height": 579
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1653
+        },
+        {
+          "id": "capabilities",
+          "height": 3051
+        },
+        {
+          "id": "integrations",
+          "height": 250
+        },
+        {
+          "id": "book-demo",
+          "height": 691
+        }
+      ],
+      "heroBottom": 869,
+      "demoTop": 143,
+      "capabilities": "true",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 766
+        },
+        {
+          "id": "business-value",
+          "height": 198
+        },
+        {
+          "id": "enterprise",
+          "height": 1246
+        },
+        {
+          "id": "handoff",
+          "height": 579
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1645
+        },
+        {
+          "id": "capabilities",
+          "height": 2865
+        },
+        {
+          "id": "integrations",
+          "height": 250
+        },
+        {
+          "id": "book-demo",
+          "height": 679
+        }
+      ],
+      "heroBottom": 863,
+      "demoTop": 140,
+      "capabilities": "true",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 772
+        },
+        {
+          "id": "business-value",
+          "height": 220
+        },
+        {
+          "id": "enterprise",
+          "height": 1196
+        },
+        {
+          "id": "handoff",
+          "height": 594
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1619
+        },
+        {
+          "id": "capabilities",
+          "height": 2662
+        },
+        {
+          "id": "integrations",
+          "height": 250
+        },
+        {
+          "id": "book-demo",
+          "height": 642
+        }
+      ],
+      "heroBottom": 869,
+      "demoTop": 143,
+      "capabilities": "true",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 1236
+        },
+        {
+          "id": "business-value",
+          "height": 220
+        },
+        {
+          "id": "enterprise",
+          "height": 1081
+        },
+        {
+          "id": "handoff",
+          "height": 791
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1562
+        },
+        {
+          "id": "capabilities",
+          "height": 1521
+        },
+        {
+          "id": "integrations",
+          "height": 640
+        },
+        {
+          "id": "book-demo",
+          "height": 485
+        }
+      ],
+      "heroBottom": 1317,
+      "demoTop": 592,
+      "capabilities": "false",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "8px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "9px"
+        },
+        {
+          "text": "Retail",
+          "size": "9px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "8px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "8px"
+        },
+        {
+          "text": "Know",
+          "size": "8px"
+        },
+        {
+          "text": "Protect",
+          "size": "8px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "8px"
+        },
+        {
+          "text": "Act",
+          "size": "8px"
+        },
+        {
+          "text": "Observe",
+          "size": "8px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "8px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "7px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "9px"
+        },
+        {
+          "text": "CRM",
+          "size": "9px"
+        },
+        {
+          "text": "— active connection",
+          "size": "9px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "9px"
+        },
+        {
+          "text": "Identity",
+          "size": "9px"
+        },
+        {
+          "text": "APIs",
+          "size": "9px"
+        },
+        {
+          "text": "Billing",
+          "size": "9px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 1135
+        },
+        {
+          "id": "business-value",
+          "height": 318
+        },
+        {
+          "id": "enterprise",
+          "height": 1548
+        },
+        {
+          "id": "handoff",
+          "height": 752
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1640
+        },
+        {
+          "id": "capabilities",
+          "height": 2137
+        },
+        {
+          "id": "integrations",
+          "height": 587
+        },
+        {
+          "id": "book-demo",
+          "height": 527
+        }
+      ],
+      "heroBottom": 1212,
+      "demoTop": 511,
+      "capabilities": "false",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "6px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "8px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "8px"
+        },
+        {
+          "text": "Retail",
+          "size": "8px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "7px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "6.5px"
+        },
+        {
+          "text": "Know",
+          "size": "6.5px"
+        },
+        {
+          "text": "Protect",
+          "size": "6.5px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "6.5px"
+        },
+        {
+          "text": "Act",
+          "size": "6.5px"
+        },
+        {
+          "text": "Observe",
+          "size": "6.5px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "7px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "6px"
+        },
+        {
+          "text": "Change mobile plan",
+          "size": "9px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "8px"
+        },
+        {
+          "text": "CRM",
+          "size": "7px"
+        },
+        {
+          "text": "— active connection",
+          "size": "7px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "7px"
+        },
+        {
+          "text": "Identity",
+          "size": "7px"
+        },
+        {
+          "text": "APIs",
+          "size": "7px"
+        },
+        {
+          "text": "Billing",
+          "size": "7px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "overflow": false,
+      "sections": [
+        {
+          "id": "hero",
+          "height": 1220
+        },
+        {
+          "id": "business-value",
+          "height": 340
+        },
+        {
+          "id": "enterprise",
+          "height": 1589
+        },
+        {
+          "id": "handoff",
+          "height": 833
+        },
+        {
+          "id": "platform-at-work",
+          "height": 1844
+        },
+        {
+          "id": "capabilities",
+          "height": 2302
+        },
+        {
+          "id": "integrations",
+          "height": 621
+        },
+        {
+          "id": "book-demo",
+          "height": 603
+        }
+      ],
+      "heroBottom": 1297,
+      "demoTop": 577,
+      "capabilities": "false",
+      "smallText": [
+        {
+          "text": "INTERACTIVE DEMO",
+          "size": "6px"
+        },
+        {
+          "text": "Telecom",
+          "size": "9px"
+        },
+        {
+          "text": "Telecom",
+          "size": "8px"
+        },
+        {
+          "text": "Financial Services",
+          "size": "8px"
+        },
+        {
+          "text": "Retail",
+          "size": "8px"
+        },
+        {
+          "text": "CUSTOMER REQUEST",
+          "size": "7px"
+        },
+        {
+          "text": "AGENT EXECUTION",
+          "size": "8px"
+        },
+        {
+          "text": "01 / 06",
+          "size": "8px"
+        },
+        {
+          "text": "Understand",
+          "size": "6.5px"
+        },
+        {
+          "text": "Know",
+          "size": "6.5px"
+        },
+        {
+          "text": "Protect",
+          "size": "6.5px"
+        },
+        {
+          "text": "Orchestrate",
+          "size": "6.5px"
+        },
+        {
+          "text": "Act",
+          "size": "6.5px"
+        },
+        {
+          "text": "Observe",
+          "size": "6.5px"
+        },
+        {
+          "text": "UNDERSTAND",
+          "size": "7px"
+        },
+        {
+          "text": "IN PROGRESS",
+          "size": "6px"
+        },
+        {
+          "text": "Change mobile plan",
+          "size": "9px"
+        },
+        {
+          "text": "The request becomes a clear, actionable intent.",
+          "size": "8px"
+        },
+        {
+          "text": "CRM",
+          "size": "7px"
+        },
+        {
+          "text": "— active connection",
+          "size": "7px"
+        },
+        {
+          "text": "Knowledge",
+          "size": "7px"
+        },
+        {
+          "text": "Identity",
+          "size": "7px"
+        },
+        {
+          "text": "APIs",
+          "size": "7px"
+        },
+        {
+          "text": "Billing",
+          "size": "7px"
+        },
+        {
+          "text": "YOUR SYSTEMS. CONNECTED TO ACTION.",
+          "size": "7px"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "resourceBytes": [
+    {
+      "type": "script",
+      "items": [
+        {
+          "file": "0cegfsgm6lvdz.js",
+          "encoded": 48411,
+          "decoded": 183103
+        },
+        {
+          "file": "27t_qfc-3_lzs.js",
+          "encoded": 71628,
+          "decoded": 229156
+        },
+        {
+          "file": "turbopack-36t3xf3k-le2x.js",
+          "encoded": 3837,
+          "decoded": 9688
+        },
+        {
+          "file": "3fntmmi971322.js",
+          "encoded": 3661,
+          "decoded": 14377
+        },
+        {
+          "file": "2dwxup-dnaztu.js",
+          "encoded": 8652,
+          "decoded": 30639
+        }
+      ]
+    },
+    {
+      "type": "css",
+      "items": [
+        {
+          "file": "0cpp9fx1j3mz9.css",
+          "encoded": 12523,
+          "decoded": 59827
+        }
+      ]
+    },
+    {
+      "type": "woff",
+      "items": [
+        {
+          "file": "inter-latin-wght-normal.0gsaq8ukbf34m.woff2",
+          "encoded": 48256,
+          "decoded": 48256
+        },
+        {
+          "file": "plus-jakarta-sans-latin-wght-normal.1nsast9qgxif8.woff2",
+          "encoded": 27348,
+          "decoded": 27348
+        }
+      ]
+    }
+  ],
+  "closeFocus": {
+    "name": "Action Engine",
+    "top": 147.34375,
+    "bottom": 194.34375,
+    "viewport": 844,
+    "visible": true
+  },
+  "danglingControls": [
+    {
+      "text": "Details",
+      "id": "work-panel-1"
+    },
+    {
+      "text": "System Logs",
+      "id": "work-panel-2"
+    }
+  ],
+  "deadAnchors": [],
+  "largeText": {
+    "stageTop": -224,
+    "card": {
+      "x": 434.5406494140625,
+      "y": 29.9375,
+      "width": 409.59375,
+      "height": 637.4375,
+      "top": 29.9375,
+      "right": 844.1343994140625,
+      "bottom": 667.375,
+      "left": 434.5406494140625
+    },
+    "heading": {
+      "x": 64,
+      "y": -170,
+      "width": 465,
+      "height": 104.4375,
+      "top": -170,
+      "right": 529,
+      "bottom": -65.5625,
+      "left": 64
+    },
+    "viewport": 720,
+    "progress": "0.5001927233429395"
+  }
+}

@@ -9,16 +9,6 @@
 .benefit-grid h3 { font-family: var(--font-headline); font-weight: 550; font-size: 19px; letter-spacing: -.5px; margin: 24px 0 15px; }
 .benefit-grid p { font-size: 13px; line-height: 1.85; color: #a8b3c3; margin: 0; }
 .benefit-grid p.benefit-example { color: #d0dcc9; font-size: 11px; margin-top: 23px; padding-left: 12px; border-left: 2px solid #a8d94a55; }
-.case-selector, .work-case-selector { display: flex; gap: 6px; flex-wrap: wrap; }
-.case-selector { padding: 13px 22px 0; }
-.case-selector button, .work-case-selector button { color: #b5c3d1; border: 1px solid #ffffff20; border-radius: 5px; background: #101e30; padding: 8px 12px; font-size: 9px; }
-.case-selector button[aria-pressed="true"], .work-case-selector button[aria-pressed="true"] { color: var(--olive); border-color: #a8d94a77; background: #a8d94a0d; }
-.work-case-selector { margin-top: 32px; }
-.work-case-selector button { font-size: 10px; padding: 10px 12px; }
-#platform-at-work { border-block: 1px solid #ffffff14; }
-#platform-at-work .platform-foundation { margin-top: 48px; padding-top: 28px; }
-.detail-heading > div { min-width: 0; }
-.detail-heading h2 { overflow-wrap: anywhere; }
 .light-section { background: var(--navy); color: var(--off-white); }
 .section-rule { border-top: 1px solid #ffffff14; }
 .dark-section { background: var(--navy); color: var(--off-white); }
@@ -62,44 +52,6 @@
 .dark-section .section-eyebrow { color: #9caaba; }
 .dark-section .section-heading em { color: var(--olive); }
 .dark-section .section-description { color: #a8b3c3; }
-.work-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 80px; }
-.case-label { display: block; font-size: 9px; letter-spacing: 1px; color: #a8b3c3; margin-top: 42px; }
-.work-request { display: flex; gap: 13px; align-items: center; margin: 14px 0; padding: 17px; border-radius: 6px; border: 1px solid #a8d94a38; background: #a8d94a0a; font-size: 12px; }
-.work-request svg { color: var(--olive); }
-.work-context { color: #8d9eb2; font-size: 11px; line-height: 1.8; }
-.work-console { min-width: 0; background: #101f31; border: 1px solid #ffffff1b; border-radius: 12px; overflow: hidden; }
-.work-tabs { display: flex; padding: 12px; gap: 6px; border-bottom: 1px solid #ffffff12; }
-.work-tabs button { color: #b9c5d3; background: transparent; border: 0; padding: 11px 16px; border-radius: 5px; font-size: 11px; }
-.work-tabs button[aria-selected="true"] { background: var(--olive); color: var(--navy); font-weight: 600; }
-.work-panel { min-height: 456px; padding: 26px; }
-.architecture-label { text-align: center; font-size: 8px; letter-spacing: 1.6px; color: #a6b5c5; }
-.agent-nodes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 17px; }
-.agent-nodes > div { background: #152a39; border: 1px solid #ffffff12; padding: 18px 8px; display: flex; align-items: center; flex-direction: column; gap: 10px; font-size: 10px; text-align: center; border-radius: 6px; }
-.agent-nodes svg { color: #82bfa5; }
-.flow-stem { display: block; width: 1px; height: 20px; background: #a8d94a66; margin: 0 auto; }
-.architecture-skills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
-.architecture-skills span { font-size: 9px; border: 1px solid #ffffff19; background: #1c3041; padding: 7px 11px; border-radius: 20px; }
-.action-engine { border: 1px solid #a8d94a44; background: #a8d94a0b; border-radius: 6px; padding: 13px; display: flex; align-items: center; gap: 10px; color: #d9e4d1; font-size: 12px; }
-.action-engine svg { color: var(--olive); }
-.action-engine > span { margin-left: auto; font-size: 9px; color: #a8b3c3; }
-.architecture-systems { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; }
-.architecture-systems span { border: 1px solid #ffffff1a; border-radius: 4px; text-align: center; padding: 10px 3px; color: #b4c3d1; font-size: 9px; }
-.architecture-outcome { display: flex; align-items: center; gap: 10px; background: #69d4ab0c; border: 1px solid #69d4ab2b; border-radius: 5px; padding: 14px; margin-top: 20px; color: var(--success); font-size: 11px; }
-.architecture-outcome strong { font-weight: 500; }
-.architecture-outcome span { margin-left: auto; font-size: 9px; }
-.execution-details h3 { margin: 0 0 20px; font-size: 16px; font-weight: 500; line-height: 1.5; }
-.execution-details dl { margin: 0; }
-.execution-details dl > div { padding: 10px 0; border-bottom: 1px solid #ffffff12; }
-.execution-details dt { color: var(--olive); font-size: 11px; margin-bottom: 5px; }
-.execution-details dd { color: #a8b8ca; font-size: 11px; line-height: 1.65; margin: 0; }
-.log-notice { color: #a8b3c3; font-size: 8px; letter-spacing: 1.1px; margin: 0 0 15px; }
-.example-logs ol { list-style: none; padding: 0; margin: 0; }
-.example-logs li { display: flex; align-items: center; gap: 17px; padding: 12px 0; border-bottom: 1px solid #ffffff12; font-size: 10px; }
-.example-logs li > span { color: #7b8fa6; font-family: monospace; }
-.example-logs strong { font-size: 8px; letter-spacing: 1px; color: #c9d4e0; font-weight: 500; }
-.example-logs li p { margin: 4px 0 0; color: #a8b8ca; }
-.example-logs li svg { margin-left: auto; color: var(--success); }
-.log-footnote { color: #8fa2b8; font-size: 9px; line-height: 1.8; margin: 18px 0 0; }
 .control-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 42px; }
 .control-grid article { background: #101e30; border: 1px solid #ffffff12; border-radius: 8px; padding: 30px; }
 .control-grid article > svg { color: #a8b3c3; }
@@ -163,7 +115,7 @@
 .site-footer a:hover { color: var(--olive); }
 
 @media (max-width: 1190px) {
-  .comparison-layout, .work-layout, .handoff-layout, .capability-layout, .industry-layout, .integration-layout, .cta-layout { gap: 40px; }
+  .comparison-layout, .handoff-layout, .capability-layout, .industry-layout, .integration-layout, .cta-layout { gap: 40px; }
   .platform-stages { gap: 10px; }
   .platform-stages li { padding: 20px 12px; }
   .platform-stages h3 { font-size: 11px; }
@@ -177,7 +129,7 @@
 @media (max-width: 960px) {
   .benefit-grid { gap: 25px; }
   .home-section { padding-block: 70px; }
-  .comparison-layout, .work-layout, .handoff-layout, .capability-layout, .integration-layout { grid-template-columns: 1fr; gap: 35px; }
+  .comparison-layout, .handoff-layout, .capability-layout, .integration-layout { grid-template-columns: 1fr; gap: 35px; }
   .comparison-cards { max-width: 650px; }
   .platform-stages { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .platform-stages li { padding: 24px; }
@@ -186,10 +138,6 @@
   .platform-stages p { font-size: 12px; }
   .section-topline { align-items: start; }
   .section-aside { max-width: 280px; }
-  .work-console { max-width: 680px; width: 100%; }
-  .work-panel { min-height: 455px; }
-  .case-label { margin-top: 28px; }
-  .work-request { max-width: 500px; }
   .control-grid { gap: 14px; }
   .control-grid article { padding: 23px 17px; }
   .control-grid p { min-height: 38px; line-height: 1.6; }
@@ -207,9 +155,6 @@
 }
 @media (max-width: 540px) {
   .benefit-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 30px; }
-  .case-selector { padding-inline: 12px; gap: 5px; }
-  .case-selector button { font-size: 8px; padding: 8px 9px; }
-  .detail-heading .status { margin-left: 0; }
   .home-section { padding-block: 55px; }
   .section-heading h2, .handoff-layout .section-heading h2, .integration-layout .section-heading h2 { font-size: 29px; letter-spacing: -1px; }
   .section-eyebrow { font-size: 8px; margin-bottom: 17px; }
@@ -228,20 +173,6 @@
   .stage-connector { display: none; }
   .platform-foundation > span { font-size: 9px; }
   .platform-foundation i { padding-inline: 4px; }
-  .work-tabs { gap: 2px; padding: 8px; }
-  .work-tabs button { flex: 1; padding: 10px 6px; font-size: 9px; }
-  .work-panel { padding: 20px 14px; min-height: 445px; }
-  .agent-nodes { gap: 6px; }
-  .agent-nodes > div { font-size: 9px; padding: 14px 5px; }
-  .architecture-skills { gap: 5px; }
-  .architecture-skills span { font-size: 8px; padding: 6px 8px; }
-  .action-engine { font-size: 10px; padding: 12px 9px; gap: 7px; }
-  .action-engine > span { font-size: 8px; }
-  .architecture-systems { gap: 4px; }
-  .architecture-systems span { font-size: 8px; }
-  .architecture-outcome { padding: 12px 9px; gap: 7px; font-size: 10px; }
-  .architecture-outcome span { font-size: 8px; }
-  .execution-details h3 { font-size: 15px; }
   .control-grid { grid-template-columns: 1fr; margin-top: 28px; }
   .control-grid article { padding: 25px; }
   .control-grid p { min-height: 0; font-size: 12px; }

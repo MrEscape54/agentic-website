@@ -1,6 +1,6 @@
-# Enterprise Agentic AI Website
+﻿# Enterprise Agentic AI Website — Home v1
 
-Full homepage following `AGENTS.md` with the subsequently approved all-navy direction. Product name remains `BRAND LOGO` until approved.
+Next.js App Router, React, TypeScript and Tailwind CSS. The visible product name remains `BRAND LOGO`. This document records the approved implementation after the original brief in `AGENTS.md`; later user decisions determine the homepage order and omissions.
 
 ## Local development
 
@@ -9,44 +9,58 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:3000. On Windows PowerShell with script execution disabled, use `npm.cmd` in place of `npm`.
+Open http://127.0.0.1:3000. On Windows PowerShell with script execution disabled, use `npm.cmd` instead of `npm`.
+
+## Current homepage
+
+Hero → Business Value → Enterprise Control → Intelligent Handoff → Platform at Work → Capabilities → Integrations → Final CTA.
+
+- Hero defaults to Telecom and cycles through Telecom, Financial Services and Retail. Scenario selection pauses playback. Replay restarts the selected case. Reduced motion starts at the completed outcome and provides manual steps.
+- Platform at Work independently defaults to Telecom. Visitors can inspect architecture nodes, switch scenarios, and view Details or illustrative System Logs. These are demonstrations, not live enterprise connections.
+- Capabilities uses horizontal sticky scrolling from 1024px with motion enabled. Smaller screens and reduced motion use a static grid.
+- Integrations is a compact navy section with white conceptual system icons and the heading “Keep your systems. Add intelligence.”
+- Solutions, Industries, ChatbotsVsAgents and PlatformFlow are not mounted. Their retained source is reference material and requires review before reuse; it is not a set of launch-ready pages.
+- Navigation links Platform and Enterprise to the corresponding homepage sections. Solutions, Industries and Resources remain visibly pending.
+- Set `NEXT_PUBLIC_BOOKING_URL` before building to enable an approved booking destination. Without it, Book a Demo opens an explanatory disclosure. There is no provisional email address or submitted booking form. See `.env.example`.
+- Customer proof is omitted until validated evidence is supplied.
+
+## Code and styles
+
+- `src/app/page.tsx` owns section order.
+- `src/lib/data/execution-cases.ts` supplies the three execution examples. Steps have typed identifiers; protection, orchestration context and action logs do not depend on numeric positions. `src/lib/data/home.ts` supplies the commercial capability content.
+- `src/app/globals.css` contains tokens, shared typography, controls and navigation. `home.css` and `experience.css` still contain the other sections and their composition rules.
+- `src/components/hero/hero.css` owns Hero and execution-demo styles.
+- `src/components/hero/useExecutionPlayback.ts` owns playback transitions, timing and reduced-motion synchronization. `ExecutionFlow` renders its state and invokes named actions.
+- Architecture tabs use instance-specific IDs and a stable shared panel, labelled by the selected tab. Keyboard focus uses local refs.
+- `src/components/home/platform-at-work.css` owns scenario selection, architecture exploration, detail panels and logs.
+- `Capabilities.tsx` renders the capability content. `useCapabilityScroll.ts` owns DOM measurements, scroll scheduling and cleanup; `capability-scroll.ts` calculates travel, pinning, progress and active-card position without browser dependencies.
+- Styles are imported explicitly in `src/app/layout.tsx`. Keep their order: shared styles first, section styles last. The first extraction retains existing selectors and responsive precedence; further consolidation and local scoping should preserve the visual baseline.
+- Inter and Plus Jakarta Sans are served locally through Fontsource. The headline token is Roobert-ready; no unlicensed Roobert files are bundled. Font packages retain their licenses.
+- Motion uses CSS/SVG and React. `ScrollEffects` enhances native scrolling with reveals and progress; interactive components clean up their timers and observers. Static content remains available without JavaScript.
 
 ## Verification
 
 ```sh
 npm run lint
 npm run typecheck
-npm run build
 npm test
+npm run test:visual
 ```
 
-## Implementation
+Functional tests use locally installed Google Chrome and the development server on port 3000. They cover playback, keyboard navigation, reduced motion, responsive layout and horizontal capability scrolling.
 
-Browser tests use locally installed Google Chrome and cover flow playback, reduced motion, keyboard tabs, capability disclosures, industry examples, navigation, provisional booking links, and widths from 360 to 1440px.
+`test:visual` builds production and starts a dedicated server on port 3100. It compares 45 screenshots across 1440, 1280, 768, 390 and 320px: Hero outcome/protection, architecture overview/open panel/details/logs, and neighboring sections. Reduced motion stabilizes captures; functional tests separately exercise animation and sticky behavior.
 
-- Next.js App Router, TypeScript, Tailwind CSS, React/CSS/SVG flow.
-- Plus Jakarta Sans is served locally through Fontsource for headlines, with Inter for body/UI. `--font-headline` remains ready for licensed Roobert files. No Roobert files are bundled.
-- Plus Jakarta Sans uses SIL OFL 1.1: https://github.com/tokotype/PlusJakartaSans/blob/master/OFL.txt. Fontsource packages preserve their licenses.
-- Telecom base content lives in `src/lib/data/telecom.ts`; all three Hero and architecture cases are in `src/lib/data/execution-cases.ts`.
-- The illustrative Hero loops Telecom, Financial Services and Retail. Each result stays visible for 4.5 seconds before the next case. Pause works during execution and during the result hold. Manual selection pauses; Resume continues the cycle and Replay restarts the selected case. It does not connect to real customer systems.
-- Reduced motion shows the completed result by default, with manual step controls on replay.
-- Navigation and Explore the Platform lead to homepage sections. Resources remains pending until resources are supplied.
-- Booking opens the user-authorized provisional address `info@example.com`. Override it through `NEXT_PUBLIC_BOOKING_URL` with the approved scheduling URL or mailto address before publishing; see `.env.example`.
-- Platform at Work defaults to Financial Services, with independent selection of all three cases across architecture, details and illustrative traces. CONTROL · INTEGRATE · OBSERVE and the four supporting modules form its foundation.
-- Capabilities use native disclosures; Industries provides three selectable illustrative workflows. Content lives in `src/lib/data/home.ts`.
-- Static sections use Server Components; only interactive sections use Client Components.
-- All sections use Deep Navy, with slightly lighter surfaces and subtle borders. The opening narrative is Hero → Business Value → Platform at Work. The chatbot comparison and One Platform flow are no longer rendered.
-- `src/app/experience.css` adds varied compositions: centered staggered benefits, wide architecture stage, stepped control cards, reversed handoff, sticky capability index, radial integrations and a full-width CTA.
-- `ScrollEffects.tsx` progressively enhances content with one-time reveals, subtle background parallax, scroll-drawn connections and a reading progress line. Scroll remains native. Work is limited to visible scenes and scheduled with requestAnimationFrame; listeners and observers are cleaned up.
-- Reduced motion disables reveals/parallax and sticky behavior; content remains readable without JavaScript. No additional animation library, video or WebGL dependency.
-- No fabricated customer evidence, vendor logos or metrics. Proof is omitted until validated material is supplied.
+The checked-in baselines were captured on Windows with Chrome. Use the same environment and browser version for comparisons; a browser or font-rendering update requires review. A failed comparison writes actual/diff images to `test-results`. Inspect them before updating references:
 
-## Pending review
+```sh
+npm run test:visual:update
+```
 
-- Full homepage review.
-- Final product name / logo; Plus Jakarta Sans is available as the free headline font.
-- Real booking URL or commercial address (current email is provisional).
-- Validated proof and resource content, if desired.
-- GitHub repository and Vercel deployment configuration when needed.
+Only update snapshots for an intentional, reviewed visual change. Do not update them to make a refactoring failure pass. Baseline PNGs live in `tests/visual/home.visual.spec.ts-snapshots` and must be committed with the tests.
 
-Setup reference: https://nextjs.org/docs/app/getting-started/installation
+## Remaining work
+
+The audit and staged refactoring plan are in `reports/site-audit/README.md`. Playback and tab relationships have been refactored. Capability scroll calculations and lifecycle are now isolated and tested. The next candidate is organizing architecture detail content. Mobile text readability is a separate design change.
+
+Final name/logo, licensed Roobert assets if desired, real booking destination, proof material, and deployment configuration remain product inputs. Verification so far covers local Chrome, not Safari/iOS or a deployed domain.

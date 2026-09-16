@@ -55,7 +55,9 @@ test("new narrative retains its order and navy backgrounds", async ({ page }) =>
   await page.goto("/");
   const sections = page.locator("main > section");
   await expect(sections.nth(1)).toContainText("Intelligence, put to work.");
-  await expect(sections.nth(4)).toHaveAttribute("id", "platform-at-work");
+  await expect(sections.nth(3)).toHaveAttribute("id", "omnichannel");
+  await expect(sections.nth(4)).toHaveAttribute("id", "handoff");
+  await expect(sections.nth(5)).toHaveAttribute("id", "platform-at-work");
   await expect(page.getByRole("heading", { name: /Chatbots answer/ })).toHaveCount(0);
   await expect(page.locator("#platform")).toHaveCount(0);
   for (const section of await sections.all()) {

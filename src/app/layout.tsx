@@ -4,6 +4,8 @@ import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 import "./home.css";
 import "./experience.css";
+import "@/components/hero/hero.css";
+import "@/components/home/platform-at-work.css";
 
 export const metadata: Metadata = {
   title: "Enterprise Agentic AI Platform | From conversation to execution",

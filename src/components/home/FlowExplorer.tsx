@@ -2,11 +2,12 @@
 
 import { useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import type { ExecutionCase } from "@/lib/data/execution-cases";
+import { getExecutionStep, type ExecutionCase } from "@/lib/data/execution-cases";
 
 type Detail = { title: string; role: string; context: string };
 
 export function FlowExplorer({ example }: { example: ExecutionCase }) {
+  const orchestration = getExecutionStep(example, "orchestrate");
   const [detail, setDetail] = useState<Detail | null>(null);
   const origin = useRef<HTMLButtonElement | null>(null);
   const panel = useRef<HTMLElement | null>(null);
@@ -21,11 +22,11 @@ export function FlowExplorer({ example }: { example: ExecutionCase }) {
   return <div className={`flow-explorer ${detail ? "has-detail" : ""}`} onKeyDown={event => { if (event.key === "Escape" && detail) { event.preventDefault(); close(); } }}>
     <div className="architecture-flow">
       <p className="explore-cue">Explore the flow <span aria-hidden="true">↓</span></p>
-      <div className="orchestration-intro">{node("Orchestration Engine", "Coordinates specialized agents and reusable skills.", example.steps[3].detail, "orchestration-node")}
+      <div className="orchestration-intro">{node("Orchestration Engine", "Coordinates specialized agents and reusable skills.", orchestration.detail, "orchestration-node")}
       <p className="orchestration-caption">Coordinates specialized agents and reusable skills</p></div>
-      <div className="agent-nodes">{example.agents.map(agent => <div key={agent}><Icon name="layers" />{node(agent, "A specialized agent in this execution.", agent === "Knowledge Agent" ? example.knowledge : `${example.request} ${example.steps[3].detail}`)}</div>)}</div>
+      <div className="agent-nodes">{example.agents.map(agent => <div key={agent}><Icon name="layers" />{node(agent, "A specialized agent in this execution.", agent === "Knowledge Agent" ? example.knowledge : `${example.request} ${orchestration.detail}`)}</div>)}</div>
       <span className="flow-stem" aria-hidden="true" /><div className="architecture-label">REUSABLE SKILLS</div>
-      <div className="architecture-skills">{example.skills.map(skill => node(skill, "A reusable skill selected for this execution.", example.steps[3].description))}</div>
+      <div className="architecture-skills">{example.skills.map(skill => node(skill, "A reusable skill selected for this execution.", orchestration.description))}</div>
       <span className="flow-stem" aria-hidden="true" />
       <div className="architecture-knowledge"><Icon name="book" size={18} /><div>{node("Trusted enterprise knowledge", "Grounds agents in trusted enterprise knowledge.", example.knowledge)}<p>{example.knowledge}</p></div></div>
       <span className="flow-stem" aria-hidden="true" />
