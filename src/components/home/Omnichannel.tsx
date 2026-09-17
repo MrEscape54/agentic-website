@@ -19,6 +19,7 @@ function ChannelIcon({ channel }: { channel: Channel }) {
 
 export function Omnichannel() {
   const scene = useRef<HTMLDivElement>(null);
+  const continuedChat = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -42,6 +43,12 @@ export function Omnichannel() {
     const timer = setTimeout(() => setStep(current => (current + 1) % durations.length), durations[step]);
     return () => clearTimeout(timer);
   }, [step, visible, paused, reduced]);
+
+  useEffect(() => {
+    if (step === 5 && continuedChat.current) {
+      continuedChat.current.scrollTop = continuedChat.current.scrollHeight;
+    }
+  }, [step]);
 
   return <section id="omnichannel" className="omni-section section-rule" aria-labelledby="omnichannel-title">
     <div className="page-shell">
@@ -72,25 +79,24 @@ export function Omnichannel() {
                 <h4>Your new plan is ready.</h4>
                 <p className="omni-mail-intro">Following our WhatsApp conversation, please confirm your plan change below.</p>
                 <dl><div><dt>New plan</dt><dd>Mobile Plus · 20 GB</dd></div><div><dt>Monthly price</dt><dd>$30.00 / month</dd></div><div><dt>Effective</dt><dd>Next billing cycle</dd></div></dl>
-                <p className="omni-value-note">Illustrative plan and pricing.</p>
                 <div className="omni-confirm-wrap">
-                  <button className="omni-confirm" disabled={confirmed} onFocus={() => setPaused(true)} onClick={() => { setPaused(true); setStep(4); }}>{confirmed ? "Confirmed through Email" : "Confirm change"}<Icon name="check" size={16} /></button>
+                  <button className="omni-confirm" disabled={confirmed} onFocus={() => setPaused(true)} onClick={() => { setPaused(true); setStep(5); }}>{confirmed ? "Confirmed through Email" : "Confirm change"}<Icon name="check" size={16} /></button>
                   <span className="omni-cursor" aria-hidden="true"><svg width="27" height="32" viewBox="0 0 27 32"><path d="M3 2v23l6-6 5 10 5-3-5-9h9Z" fill="#081426" stroke="white" strokeWidth="2" /></svg><i /></span>
                 </div>
-                <p className="omni-result" role="status" aria-live={paused || reduced ? "polite" : "off"}>{confirmed && <>Plan updated <Icon name="check" size={17} /></>}</p>
               </div>
             </article>
             <article className="omni-whatsapp-final" aria-label="Plan change confirmed on WhatsApp">
               <h3><ChannelIcon channel="WhatsApp" />WhatsApp<span>Mobile support</span></h3>
-              <div className="omni-chat">
+              <div ref={continuedChat} className="omni-chat" tabIndex={0} aria-label="WhatsApp conversation history">
                 <p className="omni-message omni-customer">I&apos;d like to change my mobile plan.<span>You · 10:24</span></p>
+                <p className="omni-message omni-agent"><strong>Plan assistant</strong>Your plan change is ready. I&apos;ve sent the details to your email. Please confirm the change there.<span>10:24</span></p>
                 <p className="omni-message omni-agent omni-success-message"><strong>Plan assistant</strong>Your plan has been changed successfully. Thanks for confirming by email. Your new plan takes effect next billing cycle.<span>10:26</span></p>
-                <p className="omni-message omni-agent omni-whatsapp-result">Your plan was successfully updated.<span>10:26</span></p>
               </div>
               <div className="omni-composer" aria-hidden="true"><span>Message</span><Icon name="arrow" size={17} /></div>
             </article>
           </div>
           <div className="omni-playback"><span>WhatsApp → Email → WhatsApp</span><button onClick={() => { if (reduced) setStep(confirmed ? 0 : 5); else setPaused(value => !value); }} aria-label={reduced ? "Toggle demo confirmation" : paused ? "Play omnichannel demo" : "Pause omnichannel demo"}><Icon name={paused || reduced ? "play" : "pause"} size={14} />{reduced ? "Preview confirmation" : paused ? "Play" : "Pause"}</button></div>
+          <p className="omni-disclaimer">Simplified flow for illustration purposes.</p>
         </div>
       </div>
       <ul className="omni-channels" aria-label="Supported channels">{channels.map(item => <li key={item} data-active={item === channel}><ChannelIcon channel={item} /><span>{item}</span>{item === channel && <span className="omni-current">Current</span>}</li>)}</ul>

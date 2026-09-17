@@ -1,0 +1,11 @@
+/* Preserve the original header's occupied space, including its 1px border. */
+.navbar-space { height: 97px; }
+.navbar-space .site-header { position: fixed; inset: 0 0 auto; z-index: 90; background: var(--navy); opacity: 1; transform: translateY(0); transition: opacity 220ms ease, transform 220ms ease; }
+.navbar-space .site-header[data-scrolled="true"] { background: var(--navy); }
+.navbar-space .site-header[data-hidden="true"] { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+/* Keep tab stops available; focusing any link immediately reveals the header. */
+.navbar-space .site-header:focus-within, .navbar-space .site-header[data-menu-open="true"] { opacity: 1; transform: none; pointer-events: auto; }
+.navbar-space .site-header:focus-within { transition: none; }
+@media (max-width: 960px) { .navbar-space { height: 81px; } }
+@media (max-width: 540px) { .navbar-space { height: 77px; } }
+@media (prefers-reduced-motion: reduce) { .navbar-space .site-header { transition: none; } .navbar-space .site-header[data-hidden="true"] { transform: none; } }

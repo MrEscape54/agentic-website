@@ -10,7 +10,7 @@
 .omni-thread strong { font-size: 13px; font-weight: 550; display: block; }
 .omni-thread div > span { display: block; font-size: 11px; color: #a8b3c3; margin-top: 5px; }
 .omni-demo { margin-left: auto; color: #a8b3c3; font-size: 9px; letter-spacing: 1px; }
-.omni-surfaces { position: relative; margin-top: 18px; min-height: 470px; }
+.omni-surfaces { position: relative; margin-top: 18px; }
 .omni-surfaces article { border-radius: var(--radius-panel); overflow: hidden; }
 .omni-surfaces h3 { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 550; margin: 0; padding: 16px 22px; border-bottom: 1px solid #08142616; }
 .omni-surfaces h3 > span { margin-left: auto; color: var(--slate); font-size: 10px; }
@@ -19,7 +19,7 @@
 .omni-message > span { display: block; font-size: 10px; margin-top: 12px; color: var(--slate); text-align: right; }
 .omni-continue { display: flex; align-items: center; gap: 10px; margin: 0 22px 0 auto; color: var(--navy); border: 0; background: transparent; padding: 12px; font-size: 12px; }
 .omni-email { background: var(--off-white); color: var(--navy); margin-top: 16px; }
-.omni-mail-content { padding: 18px 22px 0; }
+.omni-mail-content { padding: 18px 22px; }
 .omni-subject { font-size: 11px; color: var(--slate); margin: 0 0 18px; }
 .omni-mail-content h4 { font-size: 19px; font-weight: 550; letter-spacing: -.4px; margin: 0 0 18px; }
 .omni-mail-content dl { margin: 0 0 18px; font-size: 12px; }
@@ -29,7 +29,6 @@
 .omni-mail-content dd span { color: var(--slate); font-size: 10px; }
 .omni-confirm { background: var(--navy); color: var(--off-white); border: 0; border-radius: 6px; display: inline-flex; align-items: center; gap: 16px; min-height: 42px; padding: 0 16px; font-size: 12px; }
 .omni-confirm:disabled { opacity: 1; background: #e1eee6; color: #226047; }
-.omni-result { height: 36px; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: #226047; }
 .omni-bridge { display: flex; align-items: center; gap: 9px; font-size: 11px; color: #c4cdd8; margin: 20px 0; }
 .omni-bridge > span { width: 6px; height: 6px; border-radius: 50%; background: var(--olive); }
 .omni-channels { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 30px; padding: 25px 0 0; margin: 32px 0 0; border-top: 1px solid #ffffff16; list-style: none; }
@@ -37,8 +36,10 @@
 .omni-channels li[data-active="true"] { color: var(--off-white); }
 .omni-current { color: var(--olive); font-size: 9px; }
 @media (prefers-reduced-motion: no-preference) {
-  .omni-email { position: absolute; inset: 0 0 auto; margin: 0; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity .45s, transform .55s, visibility .45s; }
-  .omni-bridge { position: absolute; bottom: 0; margin: 0; }
+  .omni-surfaces { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .omni-surfaces > article { grid-area: 1 / 1; }
+  .omni-email { position: relative; margin: 0; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity .45s, transform .55s, visibility .45s; }
+  .omni-bridge { grid-area: 2 / 1; margin: 10px 0 0; }
   .omni-scene[data-channel="Email"] .omni-whatsapp { opacity: 0; visibility: hidden; transform: translateY(-12px); }
   .omni-scene[data-channel="Email"] .omni-email { opacity: 1; visibility: visible; transform: none; }
   .omni-scene[data-step="0"] .omni-agent { opacity: 0; transform: translateY(8px); }
@@ -58,14 +59,14 @@
 .omni-whatsapp, .omni-whatsapp-final { min-height: 426px; background: #e8e6de; color: var(--navy); padding-bottom: 14px; }
 .omni-whatsapp h3, .omni-whatsapp-final h3 { background: #f5f6f2; }
 .omni-chat { padding: 24px 22px; min-height: 320px; }
-.omni-message { position: relative; width: fit-content; max-width: 86%; margin: 0; padding: 14px 16px 9px; font-size: 13px; box-shadow: 0 1px 2px #08142612; }
+.omni-message { position: relative; width: fit-content; max-width: 86%; margin: 0; padding: 8px 12px 6px; font-size: 13px; box-shadow: 0 1px 2px #08142612; }
 .omni-message::after { content: ""; position: absolute; top: 0; border: 7px solid transparent; }
 .omni-customer { margin-left: auto; background: #dceecf; border-radius: 8px 0 8px 8px; }
 .omni-customer::after { right: -10px; border-top-color: #dceecf; }
 .omni-agent { margin-top: 22px; background: white; border-radius: 0 8px 8px 8px; transition: opacity .35s, transform .35s; }
 .omni-agent::after { left: -10px; border-top-color: white; }
 .omni-agent strong { display: block; font-size: 11px; color: #306447; margin-bottom: 6px; }
-.omni-message > span { margin-top: 7px; font-size: 9px; }
+.omni-message > span { margin-top: 3px; font-size: 9px; }
 .omni-composer { display: flex; justify-content: space-between; align-items: center; margin: 0 16px; background: #fafbf8; border-radius: 24px; padding: 11px 16px; color: var(--slate); font-size: 12px; }
 .omni-mail-content { padding-top: 16px; }
 .omni-subject { color: var(--navy); font-size: 14px; font-weight: 550; margin-bottom: 14px; }
@@ -76,25 +77,25 @@
 .omni-mail-content h4 { margin-bottom: 10px; }
 .omni-mail-intro { font-size: 12px; line-height: 1.6; color: #4c5869; margin: 0 0 16px; }
 .omni-mail-content dl { border-block: 1px solid #08142616; padding-block: 3px 12px; margin-bottom: 8px; }
-.omni-value-note { color: var(--slate); font-size: 10px; margin: 0 0 14px; }
+.omni-disclaimer { color: #a8b3c3; font-size: 11px; line-height: 1.5; margin: 4px 0 0; }
 .omni-confirm-wrap { position: relative; width: fit-content; }
 .omni-cursor { position: absolute; top: 23px; left: 65%; pointer-events: none; opacity: 0; }
 .omni-cursor i { position: absolute; left: -9px; top: -9px; width: 24px; height: 24px; border: 2px solid #081426; border-radius: 50%; opacity: 0; }
 .omni-scene[data-step="3"] .omni-cursor { animation: omni-pointer 1.6s ease-in-out both; }
 .omni-scene[data-step="3"] .omni-cursor i { animation: omni-click 1.6s ease-out both; }
 .omni-scene[data-paused="true"] .omni-cursor, .omni-scene[data-paused="true"] .omni-cursor i { animation-play-state: paused; }
-.omni-playback { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; font-size: 10px; color: #a8b3c3; }
+.omni-playback { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; font-size: 10px; color: #a8b3c3; }
 .omni-playback button { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #ffffff25; background: transparent; color: var(--off-white); border-radius: 5px; padding: 9px; font-size: 10px; }
 @keyframes omni-pointer { 0% { opacity: 0; transform: translate(120px, -85px); } 15% { opacity: 1; } 65%, 80% { opacity: 1; transform: translate(0, 0); } 85% { opacity: 1; transform: scale(.88); } 100% { opacity: 1; transform: none; } }
 @keyframes omni-click { 0%, 78% { opacity: 0; transform: scale(.4); } 85% { opacity: .6; } 100% { opacity: 0; transform: scale(1.5); } }
-@media (max-width: 540px) { .omni-chat { padding-inline: 17px; } .omni-surfaces { min-height: 495px; } .omni-mail-content { padding-inline: 17px; } }
+@media (max-width: 540px) { .omni-chat { padding-inline: 17px; } .omni-mail-content { padding-inline: 17px; } }
 @media (prefers-reduced-motion: reduce) { .omni-cursor { display: none; } .omni-surfaces { min-height: 0; } }
 .omni-whatsapp-final { margin-top: 20px; }
 .omni-whatsapp-result { color: #226047; margin-top: 10px; }
-.omni-whatsapp-final .omni-chat { padding-block: 16px; }
+.omni-whatsapp-final .omni-chat { padding-block: 16px; max-height: 320px; overflow-y: auto; }
 .omni-whatsapp-final .omni-success-message { margin-top: 14px; }
 @media (prefers-reduced-motion: no-preference) {
-  .omni-whatsapp-final { position: absolute; inset: 0 0 auto; margin: 0; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity .45s, transform .55s, visibility .45s; }
+  .omni-whatsapp-final { position: relative; margin: 0; opacity: 0; visibility: hidden; transform: translateY(16px); transition: opacity .45s, transform .55s, visibility .45s; }
   .omni-scene[data-step="5"] .omni-whatsapp { opacity: 0; visibility: hidden; }
   .omni-scene[data-step="5"] .omni-whatsapp-final { opacity: 1; visibility: visible; transform: none; }
 }
