@@ -8,10 +8,11 @@ type JourneyGeometry = {
 /** Distances are CSS pixels; lead and tail preserve the pauses at either end. */
 export function measureCapabilityJourney(
   viewportHeight: number, stageHeight: number, firstCardOffset: number, lastCardOffset: number,
+  compact = false,
 ): JourneyGeometry {
   const travel = Math.max(0, lastCardOffset - firstCardOffset);
-  const lead = viewportHeight * .12;
-  const tail = viewportHeight * .45;
+  const lead = viewportHeight * (compact ? .06 : .12);
+  const tail = viewportHeight * (compact ? .16 : .45);
   return {
     travel, lead,
     // Content taller than the viewport scrolls into view before pinning.

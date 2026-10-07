@@ -1,0 +1,23 @@
+// Enterprise target-state content, grounded in the architecture roadmap.
+export const enterpriseControls = [
+  { id: "identity", icon: "key" as const, title: "Identity that follows the action.", copy: "Know who initiated the task, which agent is acting and which permissions apply.", points: ["User and agent identity", "Delegated authorization context", "Enterprise roles and scoped tool access"], detail: "Integrate with the enterprise identity provider and propagate user, workload and authorization context across model, tool and agent calls. Existing IAM, MFA and application-level authorization remain authoritative." },
+  { id: "policy", icon: "shield" as const, title: "Policy at the point of execution.", copy: "Define which models, tools and agents can be used—and under what conditions.", points: ["Approved assets and tool allowlists", "Cost, quota and delegation limits", "Controls at model, tool and agent boundaries"], detail: "The Enterprise AI Gateway applies governance decisions through LLM, MCP and A2A access controls. Registry status, identity, scopes and policy inform runtime allow/deny decisions. Risk controls include tool restrictions, prompt-injection defenses and explicit egress rules." },
+  { id: "data", icon: "database" as const, title: "Share meaning. Not sensitive data.", copy: "Give models the context needed to reason while minimizing unnecessary sensitive information.", points: ["Sensitive entity detection and tokenization", "Semantic reduction for free text", "Data classification and approved model routing"], detail: "Protect sensitive context before external model invocation through tokenization and semantic reduction. The Action Engine resolves real values internally when authorized execution requires them. Apply data policies to prompts, state, memory and telemetry; model routes must respect approved data boundaries." },
+  { id: "oversight", icon: "people" as const, title: "Human judgment where it matters.", copy: "Require an authorized person to decide before a privileged action or exception proceeds.", points: ["Policy-defined review checkpoints", "Approve, reject or request changes", "Recorded decisions and controlled continuation"], detail: "The agent prepares the proposal and pauses execution. Approval permits continuation, rejection stops the action, and requested changes return the revised proposal for review. Link the reviewer, decision and subsequent action in the audit trail." },
+];
+
+export const enterpriseBindings = [
+  { title: "Identity & secrets", owner: "Enterprise identity and key-management services", behavior: "Propagate authorization context and resolve secrets through approved services." },
+  { title: "Models & hosting", owner: "Approved model providers, runtimes and regions", behavior: "Route by data policy, capability, availability and cost; retain provider-specific controls." },
+  { title: "State & memory", owner: "Customer-approved persistence and data boundaries", behavior: "Apply isolation, retention, deletion, encryption and backup requirements to workflow state and memory." },
+  { title: "Networks & connectivity", owner: "Enterprise network boundaries and egress policy", behavior: "Integrate with private connectivity and customer-controlled routing." },
+  { title: "Telemetry & audit", owner: "Enterprise observability and security tools", behavior: "Export correlated traces, metrics and logs through OpenTelemetry, with redaction and retention policies." },
+  { title: "Business systems", owner: "Existing applications and systems of record", behavior: "Execute through approved tools and APIs, respecting application-level permissions." },
+];
+
+export const operationalTargets = [
+  { title: "Availability & recovery", copy: "Define deployment-specific availability, backup and recovery objectives. Validate high-availability and disaster-recovery patterns." },
+  { title: "Performance & capacity", copy: "Test representative workloads, failure paths and scale requirements. Set quotas and usage budgets before rollout." },
+  { title: "Security validation", copy: "Review threat models, tenant isolation, data exposure and privileged tool access against enterprise requirements." },
+  { title: "Repeatable operations", copy: "Establish infrastructure-as-code deployment patterns, operating responsibilities and evidence for enterprise review." },
+];

@@ -1,0 +1,41 @@
+.to-be-page .vision-human-heading { text-align: center; }
+.to-be-page .vision-human-heading .section-heading { max-width: 850px; margin-inline: auto; }
+.to-be-page .vision-human-heading .section-description { max-width: 570px; margin-inline: auto; }
+.to-be-page .vision-human-flow { margin: 48px auto 0; max-width: 1050px; }
+.to-be-page .vision-policy-entry { display: flex; flex-direction: column; align-items: center; }
+.to-be-page .vision-policy-entry > span:first-child { font-size: 12px; color: #bac5d3; }
+.to-be-page .vision-policy-line { height: 25px; width: 1px; background: #ffffff30; margin-top: 12px; }
+.to-be-page .vision-policy { display: flex; align-items: center; gap: 15px; padding: 19px 26px; border: 1px solid #ffffff30; border-radius: 8px; background: #142438; }
+.to-be-page .vision-policy > svg { color: #bdc9d8; }
+.to-be-page .vision-policy strong { display: block; font-size: 14px; font-weight: 500; }
+.to-be-page .vision-policy div > span { display: block; font-size: 10px; color: #a8b3c3; margin-top: 6px; }
+.to-be-page .vision-human-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px; padding-top: 56px; position: relative; }
+.to-be-page .vision-human-paths::before { content: ""; position: absolute; top: 0; left: 50%; width: 1px; height: 28px; background: #ffffff30; }
+.to-be-page .vision-human-paths::after { content: ""; position: absolute; top: 28px; left: calc(25% - 10.5px); right: calc(25% - 10.5px); height: 1px; background: #ffffff30; }
+.to-be-page .vision-human-path { position: relative; padding: 28px; border-top: 1px solid #ffffff30; }
+.to-be-page .vision-human-path::before { content: ""; position: absolute; top: -28px; left: 50%; width: 1px; height: 27px; background: #ffffff30; }
+.to-be-page .vision-path-label { font-size: 9px; letter-spacing: 1.5px; color: #bac5d3; margin: 0 0 16px; }
+.to-be-page .vision-human-path h3 { font-family: var(--font-headline); font-size: 24px; font-weight: 500; letter-spacing: -.6px; margin: 0; }
+.to-be-page .vision-path-description { color: #a8b3c3; font-size: 13px; line-height: 1.8; margin: 16px 0 28px; }
+.to-be-page .vision-path-steps { display: grid; gap: 24px; list-style: none; padding: 0; margin: 0; }
+.to-be-page .vision-path-steps li { display: flex; align-items: center; gap: 14px; position: relative; min-height: 66px; padding: 12px; border: 1px solid transparent; }
+.to-be-page .vision-path-steps li:not(:last-child)::after { content: ""; position: absolute; width: 1px; height: 24px; top: calc(100% + 1px); left: 21px; background: #ffffff25; }
+.to-be-page .vision-path-steps svg { color: #a8b3c3; }
+.to-be-page .vision-path-steps strong { display: block; font-size: 13px; font-weight: 500; line-height: 1.6; }
+.to-be-page .vision-path-steps span { display: block; color: #a8b3c3; font-size: 11px; line-height: 1.8; margin-top: 3px; }
+.to-be-page .vision-path-steps .vision-human-checkpoint { border-color: #a8d94a55; background: #a8d94a08; border-radius: 7px; }
+.to-be-page .vision-human-checkpoint strong, .to-be-page .vision-human-checkpoint svg { color: var(--olive); }
+.to-be-page .vision-path-result strong, .to-be-page .vision-path-result svg { color: var(--success); }
+.to-be-page .vision-decision-note { color: #a8b3c3; font-size: 11px; line-height: 1.8; padding-left: 46px; margin: 18px 0 0; }
+.to-be-page .vision-human-flow figcaption { text-align: center; border-top: 1px solid #ffffff15; margin-top: 30px; padding-top: 35px; font-family: var(--font-headline); font-size: clamp(22px, 2.5vw, 32px); line-height: 1.5; letter-spacing: -.5px; }
+.to-be-page .vision-human-flow figcaption em { font-style: normal; color: var(--olive); }
+@media (max-width: 700px) {
+  .to-be-page .vision-human-paths { grid-template-columns: 1fr; gap: 28px; padding: 32px 0 0 18px; }
+  .to-be-page .vision-human-paths::before { left: 0; height: 100%; top: 0; }
+  .to-be-page .vision-human-paths::after { left: 0; right: 50%; top: 0; }
+  .to-be-page .vision-human-path { padding: 22px 0 0 12px; }
+  .to-be-page .vision-human-path::before { top: -1px; left: -18px; width: 18px; height: 1px; }
+  .to-be-page .vision-human-path h3 { font-size: 21px; }
+  .to-be-page .vision-decision-note { padding-left: 12px; }
+  .to-be-page .vision-policy { padding-inline: 18px; }
+}

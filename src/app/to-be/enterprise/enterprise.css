@@ -1,0 +1,72 @@
+.enterprise-page .enterprise-intro { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; padding-block: 85px 70px; }
+.enterprise-page .enterprise-intro h1 { font-size: clamp(36px, 3.5vw, 54px); letter-spacing: -2px; }
+.enterprise-page .enterprise-intro .section-description { max-width: 590px; margin-bottom: 30px; }
+.enterprise-authority { margin: 0; display: grid; gap: 24px; }
+.enterprise-authority > div { position: relative; border: 1px solid #ffffff25; background: #101e30; border-radius: 8px; padding: 22px; display: grid; grid-template-columns: 27px 1fr; gap: 10px 14px; }
+.enterprise-authority > div + div::before { content: ""; height: 24px; width: 1px; background: #ffffff30; position: absolute; left: 50%; top: -25px; }
+.enterprise-authority svg { grid-row: span 2; color: #a8b3c3; }
+.enterprise-authority span { font-size: 9px; letter-spacing: 1.3px; color: #a8b3c3; }
+.enterprise-authority strong { font-size: 13px; font-weight: 500; line-height: 1.6; }
+.enterprise-authority figcaption { font-size: 11px; color: #a8b3c3; text-align: center; line-height: 1.8; }
+.enterprise-index { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-block: 22px; }
+.enterprise-index a { display: flex; gap: 16px; align-items: center; font-size: 12px; color: #bac5d3; padding-block: 10px; }
+.enterprise-index a:hover { color: var(--olive); }
+.enterprise-page :is(h3, p) { overflow-wrap: anywhere; }
+.enterprise-page article h3, .enterprise-registry h3 { font-family: var(--font-headline); font-size: 23px; line-height: 1.4; font-weight: 500; margin: 0; letter-spacing: -.5px; }
+.enterprise-page article p, .enterprise-registry p { color: #a8b3c3; font-size: 13px; line-height: 1.9; }
+.enterprise-registry { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: #101e30; border: 1px solid #ffffff20; border-radius: 12px; padding: 36px; margin-top: 44px; }
+.enterprise-registry dl { margin: 0; }
+.enterprise-registry dl > div { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding-block: 17px; border-bottom: 1px solid #ffffff15; font-size: 12px; line-height: 1.8; }
+.enterprise-registry dt { color: var(--off-white); }
+.enterprise-registry dd { color: #a8b3c3; margin: 0; }
+.enterprise-lifecycle { list-style: none; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); padding: 0; margin: 36px 0 0; gap: 18px; }
+.enterprise-lifecycle li { position: relative; border-top: 1px solid #ffffff35; padding-top: 18px; font-size: 12px; line-height: 1.8; }
+.enterprise-lifecycle li span { display: block; color: #a8b3c3; font-size: 10px; margin-bottom: 8px; }
+.enterprise-page .enterprise-caption { color: #a8b3c3; font-size: 11px; line-height: 1.9; margin: 28px 0 0; max-width: 900px; }
+.enterprise-controls-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin: 42px 0 16px; }
+.enterprise-controls-grid article { padding: 32px; background: #101e30; border: 1px solid #ffffff20; border-radius: 10px; scroll-margin-top: 110px; }
+.enterprise-controls-grid article > svg { color: #a8b3c3; margin-bottom: 22px; }
+.enterprise-controls-grid ul { padding: 0; margin: 24px 0; list-style: none; display: grid; gap: 13px; }
+.enterprise-controls-grid li { display: flex; gap: 10px; font-size: 12px; line-height: 1.7; color: #bac5d3; }
+.enterprise-controls-grid li svg { margin-top: 3px; color: #bac5d3; }
+.enterprise-controls-grid details { border-top: 1px solid #ffffff20; padding-top: 12px; }
+.enterprise-controls-grid summary { cursor: pointer; font-size: 12px; padding-block: 10px; }
+.enterprise-page summary:focus-visible { outline: 2px solid var(--olive); outline-offset: 4px; }
+.enterprise-trace { margin: 44px 0 40px; padding: 28px; background: #101e30; border: 1px solid #ffffff20; border-radius: 10px; }
+.enterprise-trace figcaption { font-size: 9px; letter-spacing: 1.2px; color: #a8b3c3; line-height: 1.8; }
+.enterprise-trace ol { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
+.enterprise-trace li { padding-top: 18px; border-top: 1px solid #ffffff30; }
+.enterprise-trace li > span { color: #a8b3c3; font-size: 9px; letter-spacing: 1px; }
+.enterprise-trace strong { display: block; font-size: 14px; font-weight: 500; line-height: 1.7; margin-top: 12px; }
+.enterprise-trace p { font-size: 12px; color: #a8b3c3; line-height: 1.8; }
+.enterprise-evidence { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
+.enterprise-evidence svg { color: #a8b3c3; margin-bottom: 20px; }
+.enterprise-bindings { margin-top: 44px; }
+.enterprise-bindings article { display: grid; grid-template-columns: .7fr 1fr 1.2fr; gap: 36px; border-top: 1px solid #ffffff25; padding-block: 28px; }
+.enterprise-bindings article h3 { font-size: 19px; }
+.enterprise-bindings span { font-size: 9px; color: #bac5d3; letter-spacing: 1px; }
+.enterprise-bindings p { margin: 10px 0 0; }
+.enterprise-readiness-label { margin: 38px 0 20px; color: #a8b3c3; font-size: 10px; letter-spacing: 1.4px; }
+.enterprise-readiness { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
+.enterprise-readiness article { border-top: 1px solid #ffffff25; padding-top: 24px; }
+@media(max-width:1000px) {
+  .enterprise-page .enterprise-intro { grid-template-columns: 1fr; gap: 40px; }
+  .enterprise-authority { max-width: 650px; width: 100%; }
+  .enterprise-registry { gap: 28px; padding: 26px; }
+  .enterprise-registry dl > div { grid-template-columns: 1fr; gap: 5px; }
+  .enterprise-trace ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:640px) {
+  .enterprise-page .enterprise-intro { padding-block: 50px; }
+  .enterprise-page .enterprise-intro h1 { font-size: 36px; letter-spacing: -1.7px; }
+  .enterprise-page .section-topline { flex-direction: column; align-items: start; gap: 24px; }
+  .enterprise-index { gap: 4px 18px; }
+  .enterprise-index a { font-size: 11px; }
+  .enterprise-registry, .enterprise-controls-grid, .enterprise-evidence, .enterprise-readiness, .enterprise-trace ol, .enterprise-bindings article { grid-template-columns: 1fr; }
+  .enterprise-lifecycle { grid-template-columns: 1fr; gap: 0; }
+  .enterprise-lifecycle li { display: flex; gap: 20px; align-items: center; padding-block: 14px; }
+  .enterprise-lifecycle li span { margin: 0; }
+  .enterprise-controls-grid article { padding: 24px; }
+  .enterprise-bindings article { gap: 18px; }
+  .enterprise-page article h3 { font-size: 21px; }
+}

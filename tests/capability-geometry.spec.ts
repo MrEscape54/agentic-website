@@ -1,6 +1,17 @@
 import { expect, test } from "@playwright/test";
 import { locateCapabilityJourney, measureCapabilityJourney } from "../src/components/home/capability-scroll";
 
+test("compact journey shortens pauses while preserving all card positions", () => {
+  const regular = measureCapabilityJourney(900, 900, 500, 1892);
+  const compact = measureCapabilityJourney(900, 900, 500, 1892, true);
+  expect(regular.sectionHeight - compact.sectionHeight).toBeCloseTo(315);
+  for (let index = 0; index < 4; index++) {
+    const position = locateCapabilityJourney(-compact.lead - index * 464, compact, 4);
+    expect(position.activeIndex).toBe(index);
+    expect(position.translation).toBeCloseTo(-index * 464);
+  }
+});
+
 test("capability journey clamps the lead and tail and centers each card", () => {
   const geometry = measureCapabilityJourney(900, 900, 500, 2100);
   expect(geometry.sectionHeight).toBe(3013);

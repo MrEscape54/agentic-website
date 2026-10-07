@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { locateCapabilityJourney, measureCapabilityJourney } from "./capability-scroll";
 
 /** Connects viewport measurements and native scroll to the capability presentation. */
-export function useCapabilityScroll() {
+export function useCapabilityScroll(compact = false) {
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -50,6 +50,7 @@ export function useCapabilityScroll() {
         geometry = measureCapabilityJourney(
           window.innerHeight, stage.offsetHeight,
           cards[0]?.offsetLeft ?? 0, cards.at(-1)?.offsetLeft ?? 0,
+          compact,
         );
         stage.style.top = `${geometry.stickyTop}px`;
         section.style.height = `${geometry.sectionHeight}px`;
@@ -82,7 +83,7 @@ export function useCapabilityScroll() {
       track.style.removeProperty("transform");
       stage.style.removeProperty("top");
     };
-  }, []);
+  }, [compact]);
 
   return { sectionRef, stageRef, trackRef, cardRefs, markerRefs };
 }

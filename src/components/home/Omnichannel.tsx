@@ -17,7 +17,7 @@ function ChannelIcon({ channel }: { channel: Channel }) {
   </svg>;
 }
 
-export function Omnichannel() {
+export function Omnichannel({ vision = false }: { vision?: boolean }) {
   const scene = useRef<HTMLDivElement>(null);
   const continuedChat = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
@@ -55,8 +55,8 @@ export function Omnichannel() {
       <div className="omni-layout">
         <div className="omni-heading">
           <p className="section-eyebrow">OMNICHANNEL</p>
-          <h2 id="omnichannel-title">The channel changes.<br />The <em>context</em> doesn&apos;t.</h2>
-          <p>Start on one channel. Continue on another.</p>
+          <h2 id="omnichannel-title" className="section-title">{vision ? <>Different channels.<br /><em>Connected execution.</em></> : <>The channel changes.<br />The <em>context</em> doesn&apos;t.</>}</h2>
+          <p>{vision ? "Bring enterprise knowledge and actions to the channels your customers and employees already use. Start on one channel. Continue on another, with context preserved." : "Start on one channel. Continue on another."}</p>
           <div className="omni-route" aria-label="Conversation continues from WhatsApp to Email and back to WhatsApp"><span>WhatsApp</span><Icon name="arrow" size={18} /><span>Email</span><Icon name="arrow" size={18} /><span>WhatsApp</span></div>
         </div>
 

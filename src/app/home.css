@@ -14,7 +14,7 @@
 .dark-section { background: var(--navy); color: var(--off-white); }
 .section-heading { max-width: 620px; }
 .section-eyebrow { display: block; margin: 0 0 19px; font-size: 10px; font-weight: 600; letter-spacing: 1.8px; color: #a8b3c3; }
-.section-heading h2 { font-family: var(--font-headline); font-size: clamp(29px, 3vw, 43px); font-weight: 550; line-height: 1.2; letter-spacing: -1.7px; margin: 0; text-wrap: balance; }
+.section-heading h2 { font-family: var(--font-headline); font-weight: 550; margin: 0; text-wrap: balance; }
 .section-heading em { font-style: normal; color: #a8d94a; }
 .section-description { color: #a8b3c3; font-size: 14px; line-height: 1.85; max-width: 465px; margin: 24px 0 0; }
 .section-topline { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
@@ -62,7 +62,6 @@
 .control-grid li svg { color: #8abf9a; }
 .section-close { text-align: center; margin: 25px 0 0; font-size: 12px; font-weight: 500; }
 .handoff-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
-.handoff-layout .section-heading h2 { font-size: 34px; }
 .handoff-diagram { min-width: 0; }
 .triage-path { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 11px; }
 .triage-path > span, .triage-path > strong { border: 1px solid #ffffff18; background: #101e30; padding: 16px; border-radius: 7px; display: flex; align-items: center; gap: 8px; }
@@ -103,7 +102,6 @@
 .industry-example li { font-size: 12px; }
 .industry-outcome { display: flex; align-items: center; gap: 10px; background: #112d2c; padding: 12px; color: #69d4ab; font-size: 11px; border-radius: 5px; margin-top: 20px; }
 .integration-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-.integration-layout .section-heading h2 { font-size: 34px; }
 .cta-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 90px; align-items: center; }
 .cta-layout .section-description { margin: 0 0 25px; }
 .booking-status { font-size: 10px; color: #a8b3c3; margin-top: 12px; }
@@ -156,7 +154,6 @@
 @media (max-width: 540px) {
   .benefit-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 30px; }
   .home-section { padding-block: 55px; }
-  .section-heading h2, .handoff-layout .section-heading h2, .integration-layout .section-heading h2 { font-size: 29px; letter-spacing: -1px; }
   .section-eyebrow { font-size: 8px; margin-bottom: 17px; }
   .section-description { font-size: 12px; margin-top: 20px; }
   .section-topline { flex-direction: column; gap: 19px; }

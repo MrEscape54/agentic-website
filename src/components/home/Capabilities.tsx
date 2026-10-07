@@ -1,16 +1,16 @@
 "use client";
 
 import { useCapabilityScroll } from "./useCapabilityScroll";
-import { capabilities } from "@/lib/data/home";
+import { capabilities as currentCapabilities } from "@/lib/data/home";
 import { SectionHeading } from "./SectionHeading";
 
-export function Capabilities() {
-  const { sectionRef, stageRef, trackRef, cardRefs, markerRefs } = useCapabilityScroll();
+export function Capabilities({ groups: capabilities = currentCapabilities, compact = false, description = "Explore the engines and studios that connect understanding, knowledge and controlled execution." }: { groups?: typeof currentCapabilities; compact?: boolean; description?: string }) {
+  const { sectionRef, stageRef, trackRef, cardRefs, markerRefs } = useCapabilityScroll(compact);
 
   return <section ref={sectionRef} id="capabilities" className="home-section capability-section" aria-labelledby="capabilities-title">
     <div ref={stageRef} className="capability-stage">
       <div className="page-shell capability-heading">
-        <SectionHeading id="capabilities-title" eyebrow="PLATFORM CAPABILITIES" description="Explore the engines and studios that connect understanding, knowledge and controlled execution.">The technology behind<br /><em>every execution.</em></SectionHeading>
+        <SectionHeading id="capabilities-title" eyebrow="PLATFORM CAPABILITIES" description={description}>The technology behind<br /><em>every execution.</em></SectionHeading>
       </div>
       <div className="capability-window">
         <div ref={trackRef} className="capability-track">
