@@ -10,7 +10,8 @@
   --font-body: "Inter Variable", Arial, sans-serif;
   --page-width: 1440px;
   --radius-panel: 14px;
-  --text-section-title: clamp(34px, 4.2vw, 60px);
+  --text-section-title: clamp(32px, calc(24.34px + 2.48vw), 60px);
+  --text-page-title: clamp(36px, calc(28.34px + 2.48vw), 64px);
   --leading-section-title: 1.2;
   --tracking-section-title: -.035em;
 }
@@ -50,7 +51,7 @@ svg { flex-shrink: 0; }
 .menu-toggle { display: none; background: none; color: var(--off-white); padding: 10px; border: 1px solid #ffffff30; border-radius: 5px; }
 .eyebrow { margin: 0 0 28px; display: flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 1.65px; font-weight: 550; color: #cbd1db; }
 .eyebrow > span { width: 6px; height: 6px; border-radius: 50%; background: var(--olive); }
-h1 { font-family: var(--font-headline); font-weight: 480; font-size: clamp(40px, 4.05vw, 59px); line-height: 1.1; letter-spacing: -2.8px; margin: 0; }
+h1 { font-family: var(--font-headline); font-weight: 480; font-size: var(--text-page-title); line-height: 1.1; letter-spacing: -.045em; margin: 0; }
 h1 em { font-style: normal; color: var(--olive); }
 .section-title { font-size: var(--text-section-title); line-height: var(--leading-section-title); letter-spacing: var(--tracking-section-title); }
 .button-primary { background: var(--olive); color: var(--navy); }
@@ -60,7 +61,6 @@ h1 em { font-style: normal; color: var(--olive); }
   .page-shell, .nav-shell { padding-inline: 36px; }
   .nav-shell { gap: 25px; }
   .navigation { gap: 19px; }
-  h1 { font-size: 45px; letter-spacing: -2.2px; }
   .button { padding-inline: 16px; }
 }
 @media (max-width: 960px) {
@@ -69,7 +69,6 @@ h1 em { font-style: normal; color: var(--olive); }
   .navigation.is-open { display: flex; }
   .nav-cta { margin-left: auto; }
   .menu-toggle { display: block; }
-  h1 { font-size: 62px; letter-spacing: -3px; }
 }
 @media (max-width: 540px) {
   .page-shell, .nav-shell { padding-inline: 22px; }
@@ -81,7 +80,6 @@ h1 em { font-style: normal; color: var(--olive); }
   .menu-toggle { padding: 7px; }
   .navigation { top: 75px; padding: 24px; gap: 24px; }
   .eyebrow { font-size: 8px; letter-spacing: 1.1px; margin-bottom: 22px; }
-  h1 { font-size: clamp(34px, 9.7vw, 51px); letter-spacing: -1.9px; line-height: 1.13; }
   .button { font-size: 10px; gap: 10px; padding-inline: 13px; }
   .button-text { padding-inline: 10px; }
 }
