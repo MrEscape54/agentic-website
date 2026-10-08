@@ -22,6 +22,12 @@
 .enterprise-lifecycle li { position: relative; border-top: 1px solid #ffffff35; padding-top: 18px; font-size: 12px; line-height: 1.8; }
 .enterprise-lifecycle li span { display: block; color: #a8b3c3; font-size: 10px; margin-bottom: 8px; }
 .enterprise-page .enterprise-caption { color: #a8b3c3; font-size: 11px; line-height: 1.9; margin: 28px 0 0; max-width: 900px; }
+.enterprise-responsibilities { margin-top: 28px; border-block: 1px solid #ffffff20; padding-block: 16px; }
+.enterprise-responsibilities summary { cursor: pointer; font-size: 13px; padding-block: 8px; }
+.enterprise-responsibilities dl { margin: 20px 0; }
+.enterprise-responsibilities dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 24px; padding-block: 16px; border-top: 1px solid #ffffff15; font-size: 13px; line-height: 1.9; }
+.enterprise-responsibilities dd { margin: 0; color: #a8b3c3; }
+.enterprise-responsibilities > p { color: #a8b3c3; font-size: 12px; line-height: 1.9; }
 .enterprise-controls-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin: 42px 0 16px; }
 .enterprise-controls-grid article { padding: 32px; background: #101e30; border: 1px solid #ffffff20; border-radius: 10px; scroll-margin-top: 110px; }
 .enterprise-controls-grid article > svg { color: #a8b3c3; margin-bottom: 22px; }
@@ -46,6 +52,10 @@
 .enterprise-bindings span { font-size: 9px; color: #bac5d3; letter-spacing: 1px; }
 .enterprise-bindings p { margin: 10px 0 0; }
 .enterprise-readiness-label { margin: 38px 0 20px; color: #a8b3c3; font-size: 10px; letter-spacing: 1.4px; }
+.enterprise-compliance { margin: 38px 0 0; }
+.enterprise-compliance > div { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 2fr); gap: 36px; border-top: 1px solid #ffffff25; padding-block: 24px; }
+.enterprise-compliance dt { font-family: var(--font-headline); font-size: 21px; line-height: 1.4; }
+.enterprise-compliance dd { margin: 0; color: #a8b3c3; font-size: 13px; line-height: 1.9; }
 .enterprise-readiness { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
 .enterprise-readiness article { border-top: 1px solid #ffffff25; padding-top: 24px; }
 @media(max-width:1000px) {
@@ -56,6 +66,8 @@
   .enterprise-trace ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:640px) {
+  .enterprise-compliance > div { grid-template-columns: 1fr; gap: 12px; }
+  .enterprise-responsibilities dl > div { grid-template-columns: 1fr; gap: 6px; }
   .enterprise-page .enterprise-intro { padding-block: 50px; }
   .enterprise-page .section-topline { flex-direction: column; align-items: start; gap: 24px; }
   .enterprise-index { gap: 4px 18px; }

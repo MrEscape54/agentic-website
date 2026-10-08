@@ -1,5 +1,27 @@
 # AGENTS.md — BIWARES Agentic AI Website
 
+## Current public architecture principles
+
+- Home copy `ENTERPRISE BY DESIGN` is locked: preserve its exact wording, position, visual hierarchy and section layout. Keep `Governed by your enterprise. Controlled by design.` and the link to `/enterprise`. Do not replace it with `Built for enterprise trust.` or add compliance badges to Home.
+- Communicate time-to-value through progressive adoption: start with a focused use case, demonstrate value and expand alongside existing enterprise systems. Do not promise implementation timelines, instant deployment or zero integration effort without verified evidence.
+- Keep detailed compliance messaging on `/enterprise`. SOC 2 readiness and GDPR alignment describe design goals and supporting controls, not completed audits, attestations, certifications or guaranteed legal compliance. Do not invent regulatory approvals or compliance seals.
+
+The website represents the intended product architecture and product vision, not an inventory of currently implemented features. These principles supersede the historical implementation-maturity restrictions below for public architecture messaging, including policy-defined human approvals and controlled continuation. Keep maturity details internal; do not add Coming Soon labels, roadmap badges or maturity disclaimers. Do not invent capabilities outside the approved architecture, certifications, partnerships, quantitative evidence or absolute security guarantees.
+
+- Pluggability is a first-class requirement. Model, tool and agent access must be abstracted through stable contracts and adapters from underlying implementations and vendor-specific APIs.
+- Enterprise AI Gateway is a logical umbrella for governed access, not a mandatory proprietary product. LLM Gateway governs model access, MCP Gateway governs tool discovery and invocation, and A2A Gateway governs agent collaboration. Implementations may be native, open source, third-party or customer-managed, subject to compatibility, required capabilities and policy enforcement requirements. Pluggability does not mean universal compatibility.
+- Enterprise Control owns the governance model, policy definitions and policy decision coordination. Access gateways enforce decisions at model, tool and agent interaction boundaries.
+- AI Asset Registry owns governed inventory, ownership, lifecycle, risk and approval status for agents, models, MCP servers/tools and A2A endpoints. Registry approval does not grant runtime authorization and does not replace IAM.
+- Customer IAM, application permissions and enterprise systems remain authoritative. The platform integrates with them rather than replacing them.
+- Orchestration Engine coordinates agents, delegation, workflows and execution context, independently of gateway vendors. Action Engine owns business action validation, trusted parameter resolution, execution and outcome handling. MCP Gateway does not replace Action Engine. Integration Hub owns enterprise connectivity.
+- Observability is technology-agnostic. Observability Hub collects, correlates and distributes operational telemetry through open interfaces and pluggable adapters to existing enterprise systems. Public copy must not mandate or name a telemetry framework, vendor or storage technology.
+- Stable correlation identifiers support end-to-end visibility across conversations/channels, orchestration/delegation, model interactions, tool discovery/invocation, agent-to-agent interactions, policy decisions, human approvals, business actions and outcomes.
+- Operational telemetry and durable audit are separate responsibilities. Audit & Accountability owns durable policy, approval, access, action and outcome evidence with enterprise-governed integrity and retention, independently of the observability backend. Export adapters can connect to monitoring, SIEM and audit systems without conflating records.
+- Sensitive prompts, credentials, customer identifiers and confidential tool arguments are excluded from telemetry by default. Enterprise policies govern redaction, sampling, access and export.
+- Differentiation lies in orchestration, execution, data protection, governance, omnichannel continuity and intelligent handoff. Preserve the approved human oversight narrative; do not claim automatic learning from human resolutions.
+
+Historical implementation references below are internal context, not instructions to expose feature maturity on public pages. Preserve commercial copy, the approved design and functioning demos when refining architecture.
+
 ## 1. Project purpose
 
 This repository is for the new BIWARES Agentic AI website.

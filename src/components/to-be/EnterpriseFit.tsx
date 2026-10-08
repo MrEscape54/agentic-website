@@ -12,7 +12,7 @@ const services: { label: string; description: string; icon: IconName }[] = [
 
 const benefits = [
   { title: "Build on existing investments.", description: "Connect to the systems and services your enterprise already trusts." },
-  { title: "Keep meaningful choices.", description: "Choose approved models and infrastructure to match your requirements." },
+  { title: "Start focused. Expand with evidence.", description: "Use a focused business case to demonstrate value, then extend across approved models and infrastructure." },
   { title: "Preserve enterprise control.", description: "Your systems remain the systems of record. Your enterprise defines the boundaries." },
 ];
 
@@ -21,7 +21,7 @@ export function EnterpriseFit() {
     <div className="page-shell">
       <div className="section-topline">
         <SectionHeading id="enterprise-fit-title" eyebrow="BUILT TO FIT YOUR ENTERPRISE">Keep your systems.<br /><em>Add intelligence.</em></SectionHeading>
-        <p className="section-aside">Connect agents to your business systems and approved enterprise services—from identity and models to data and observability.</p>
+        <p className="section-aside">Connect to the enterprise systems and infrastructure you already trust. Start with a focused use case, prove value early and expand without rebuilding your technology stack.</p>
       </div>
       <figure className="vision-fit-diagram" aria-labelledby="enterprise-fit-caption">
         <div className="vision-fit-platform"><Icon name="layers" size={26} /><div><span>THE PLATFORM</span><p>Intelligence & execution</p></div></div>

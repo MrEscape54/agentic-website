@@ -57,6 +57,8 @@
 .platform-connections details p { margin-top: 12px; }
 .platform-page #enterprise .section-heading { max-width: 850px; }
 .platform-page #enterprise .text-link { margin-top: 20px; }
+.platform-architecture-note { max-width: 900px; margin: 28px 0 0; color: #a8b3c3; font-size: 13px; line-height: 1.9; }
+.platform-architecture-note strong { display: block; margin-bottom: 10px; color: var(--off-white); font-weight: 500; }
 @media(max-width:760px) {
   .platform-page .platform-intro { padding-block: 55px; }
   .platform-example-label { display: none; }

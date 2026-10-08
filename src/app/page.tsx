@@ -30,7 +30,7 @@ export default function Home() {
     <main id="main">
       <ToBeHero />
       <section id="enterprise" className="home-section section-rule" aria-labelledby="enterprise-title"><div className="page-shell">
-        <div className="section-topline"><SectionHeading id="enterprise-title" eyebrow="ENTERPRISE BY DESIGN">Governed by your enterprise.<br /><em>Controlled by design.</em></SectionHeading><p className="section-aside">Define what agents can access, which actions they can take and when people must decide.</p></div>
+        <div className="section-topline"><SectionHeading id="enterprise-title" eyebrow="ENTERPRISE BY DESIGN">Governed by your enterprise.<br /><em>Controlled by design.</em></SectionHeading><p className="section-aside">Governed execution, protected data and accountable actions—guided by your enterprise’s security requirements and human oversight.</p></div>
         <div className="control-grid">{controls.map(control => <article key={control.title}><Icon name={control.icon} size={25} /><h3>{control.title}</h3><p>{control.headline}</p><p className="vision-control-description">{control.description}</p><ul>{control.items.map(item => <li key={item}><Icon name="check" size={13} />{item}</li>)}</ul></article>)}</div>
         <p className="enterprise-close">Autonomy without<br /><em>losing control.</em></p>
         <div style={{ textAlign: "center" }}><Link className="text-link" href="/enterprise">Explore enterprise controls <Icon name="arrow" size={16} /></Link></div>
