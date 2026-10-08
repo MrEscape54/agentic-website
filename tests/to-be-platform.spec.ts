@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("standard execution completes, exceptions cannot bypass human review", async ({ page }) => {
-  await page.goto("/to-be/platform");
+  await page.goto("/platform");
   const flow = page.locator(".platform-execution");
   for (let i = 0; i < 5; i++) await flow.getByRole("button", { name: "Next step" }).click();
   await expect(flow.getByRole("status")).toContainText("Plan updated.");
@@ -29,13 +29,13 @@ test("standard execution completes, exceptions cannot bypass human review", asyn
 
 for (const width of [390, 1440]) test(`platform page is readable and linked at ${width}px`, async ({ page }) => {
   await page.setViewportSize({ width, height: 1000 });
-  await page.goto("/to-be/platform");
+  await page.goto("/platform");
   const broken = await page.locator('a[href^="#"]').evaluateAll(links => links.map(link => link.getAttribute("href")!).filter(href => !document.getElementById(href.slice(1))));
   expect(broken).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.locator(".platform-building-blocks summary").first().click();
   await expect(page.locator(".platform-building-blocks details").first()).toHaveAttribute("open", "");
   await page.screenshot({ path: `test-results/platform-${width}.png`, fullPage: true });
-  await page.getByRole("link", { name: "Back to overview" }).click();
-  await expect(page).toHaveURL(/\/to-be$/);
+  await page.locator("footer .brand").click();
+  await expect(page).toHaveURL(/\/$/);
 });

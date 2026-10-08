@@ -5,13 +5,12 @@ import { Footer } from "@/components/navigation/Footer";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
 import { enterpriseControls, enterpriseBindings, operationalTargets } from "@/lib/data/enterprise";
-import "../to-be.css";
+import "../product.css";
 import "./enterprise.css";
 
 export const metadata: Metadata = {
-  title: "Enterprise vision | Governed by your enterprise. Controlled by design.",
-  description: "Explore the target enterprise controls for agent governance, identity, data protection, human oversight, audit, observability and operational readiness.",
-  robots: { index: false, follow: false },
+  title: "Enterprise | Governed by your enterprise. Controlled by design.",
+  description: "Explore enterprise controls for agent governance, identity, data protection, human oversight, audit, observability and operational readiness.",
 };
 
 const sections = [{ id: "governance", label: "Governance" }, { id: "controls", label: "Control & protection" }, { id: "observability", label: "Observability" }, { id: "enterprise-fit", label: "Enterprise fit" }, { id: "operations", label: "Operational readiness" }];
@@ -20,9 +19,8 @@ const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
 export default function EnterprisePage() {
   return <div className="to-be-page enterprise-page">
-    <Navbar platformHref="/to-be/platform" enterpriseHref="/to-be/enterprise" homeHref="/to-be" />
+    <Navbar platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
     <main id="main">
-      <div className="vision-banner page-shell"><span><strong>TO-BE</strong> Product vision · Enterprise</span><Link href="/to-be">Back to overview →</Link></div>
       <section className="enterprise-intro page-shell" aria-labelledby="enterprise-page-title">
         <div><p className="eyebrow"><span /> ENTERPRISE BY DESIGN</p><h1 id="enterprise-page-title">Governed by your enterprise.<br /><em>Controlled by design.</em></h1><p className="section-description">Put AI to work with accountable agents, controlled actions and visibility across execution. Your enterprise defines the rules. The platform applies them alongside your existing controls.</p><a href="#governance" className="button button-primary">Explore enterprise controls <Icon name="arrow" size={16} /></a></div>
         <figure className="enterprise-authority" aria-labelledby="authority-caption">
@@ -49,7 +47,7 @@ export default function EnterprisePage() {
         <div className="enterprise-controls-grid">{enterpriseControls.map(control => <article id={control.id} key={control.id}>
           <Icon name={control.icon} size={26} /><h3>{control.title}</h3><p>{control.copy}</p><ul>{control.points.map(point => <li key={point}><Icon name="check" size={14} />{point}</li>)}</ul><details><summary>Explore the control</summary><p>{control.detail}</p></details>
         </article>)}</div>
-        <Link className="text-link" href="/to-be/platform#execution">Follow an execution with human oversight <Icon name="arrow" size={16} /></Link>
+        <Link className="text-link" href="/platform#execution">Follow an execution with human oversight <Icon name="arrow" size={16} /></Link>
       </div></section>
 
       <section id="observability" className="home-section section-rule" aria-labelledby="observability-title"><div className="page-shell">
@@ -76,6 +74,6 @@ export default function EnterprisePage() {
       </div></section>
 
       <section id="book-demo" className="home-section dark-section final-cta section-rule" aria-labelledby="enterprise-cta-title"><div className="page-shell"><div className="cta-layout"><SectionHeading id="enterprise-cta-title" eyebrow="YOUR ENTERPRISE. YOUR RULES.">What would controlled<br /><em>execution look like for you?</em></SectionHeading><div><p className="section-description">Let’s map your business actions, enterprise controls and operating requirements to the platform.</p>{bookingUrl ? <a className="button button-primary" href={bookingUrl}>Book a Demo <Icon name="arrow" size={17} /></a> : <details className="booking-placeholder"><summary className="button button-primary">Book a Demo <Icon name="arrow" size={17} /></summary><p className="booking-status">Demo booking will be available soon.</p></details>}</div></div></div></section>
-    </main><Footer platformHref="/to-be/platform" enterpriseHref="/to-be/enterprise" homeHref="/to-be" />
+    </main><Footer platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
   </div>;
 }

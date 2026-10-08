@@ -7,7 +7,7 @@ import "./navbar.css";
 
 const items = ["Platform", "Solutions", "Industries", "Enterprise"];
 
-export function Navbar({ platformHref = "#platform-at-work", homeHref = "#main", enterpriseHref = "#enterprise" }: { platformHref?: string; homeHref?: string; enterpriseHref?: string }) {
+export function Navbar({ platformHref = "/platform", homeHref = "/", enterpriseHref = "/enterprise" }: { platformHref?: string; homeHref?: string; enterpriseHref?: string }) {
   const [open, setOpen] = useState(false);
   const headerRef = useScrollNavbar(open);
   return <div className="navbar-space"><header ref={headerRef} className="site-header" data-menu-open={open}>

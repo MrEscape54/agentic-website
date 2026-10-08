@@ -18,7 +18,7 @@ export function ToBeHero() {
         <p className="eyebrow"><span /> ENTERPRISE AGENTIC AI PLATFORM</p>
         <h1 id="hero-title">From conversation<br />to <em>execution.</em></h1>
         <p className="hero-description">AI agents that understand intent, access trusted knowledge and execute business actions—with the permissions, policies and oversight your enterprise defines.</p>
-        <div className="hero-actions"><button className="button button-primary" onClick={play}>See it in Action <Icon name="arrow" size={18} /></button><a className="button button-text" href="/to-be/platform">Explore the Platform <Icon name="arrow" size={17} /></a></div>
+        <div className="hero-actions"><button className="button button-primary" onClick={play}>See it in Action <Icon name="arrow" size={18} /></button><a className="button button-text" href="/platform">Explore the Platform <Icon name="arrow" size={17} /></a></div>
         <p className="trust-line"><Icon name="shield" size={18} /><span>Governed by your enterprise.<br />Controlled by design.</span></p>
       </div>
       <div className="vision-demo">

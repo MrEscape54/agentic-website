@@ -7,20 +7,18 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 import { PlatformExecution } from "@/components/to-be/PlatformExecution";
 import { Icon } from "@/components/ui/Icon";
 import { platformJourney, platformBuildingBlocks, platformConnections } from "@/lib/data/platform";
-import "../to-be.css";
+import "../product.css";
 import "./platform.css";
 
 export const metadata: Metadata = {
-  title: "Platform vision | From intent to outcome",
+  title: "Platform | From intent to outcome",
   description: "Explore how agents, trusted knowledge and enterprise tools turn intent into controlled execution, with human oversight where required.",
-  robots: { index: false, follow: false },
 };
 
 export default function PlatformPage() {
   return <div className="to-be-page platform-page">
-    <Navbar platformHref="/to-be/platform" enterpriseHref="/to-be/enterprise" homeHref="/to-be" />
+    <Navbar platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
     <main id="main">
-      <div className="vision-banner page-shell"><span><strong>TO-BE</strong> Product vision · Platform</span><Link href="/to-be">Back to overview →</Link></div>
       <section className="platform-intro page-shell" aria-labelledby="platform-title">
         <p className="eyebrow"><span /> THE PLATFORM</p>
         <h1 id="platform-title">One platform.<br />From intent to <em>outcome.</em></h1>
@@ -48,10 +46,10 @@ export default function PlatformPage() {
       </div></section>
       <section id="enterprise" className="home-section section-rule" aria-labelledby="platform-governance-title"><div className="page-shell">
         <SectionHeading id="platform-governance-title" eyebrow="ACCOUNTABLE EXECUTION" description="Agent identity, approved access, enterprise policies and human oversight guide execution. Traces connect each action to its outcome.">Built to act.<br /><em>Designed to stay accountable.</em></SectionHeading>
-        <Link className="text-link" href="/to-be/enterprise">Explore enterprise controls →</Link>
+        <Link className="text-link" href="/enterprise">Explore enterprise controls →</Link>
       </div></section>
       <FinalCTA description="Let’s explore the business tasks your agents could complete—and the capabilities needed to make them happen." />
     </main>
-    <Footer platformHref="/to-be/platform" enterpriseHref="/to-be/enterprise" homeHref="/to-be" />
+    <Footer platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
   </div>;
 }
