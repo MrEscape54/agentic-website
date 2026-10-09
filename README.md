@@ -1,4 +1,4 @@
-﻿# Enterprise Agentic AI Website — Home v1
+﻿# Enterprise Agentic AI Website
 
 Next.js App Router, React, TypeScript and Tailwind CSS. The visible product name remains `BRAND LOGO`. This document records the approved implementation after the original brief in `AGENTS.md`; later user decisions determine the homepage order and omissions.
 
@@ -13,21 +13,23 @@ Open http://127.0.0.1:3000. On Windows PowerShell with script execution disabled
 
 ## Current homepage
 
-Hero → Business Value → Enterprise Control → Intelligent Handoff → Platform at Work → Capabilities → Integrations → Final CTA.
+Hero → Enterprise Control → Omnichannel → Human-in-the-Loop → Capabilities → Enterprise Fit → Final CTA.
 
 - Hero defaults to Telecom and cycles through Telecom, Financial Services and Retail. Scenario selection pauses playback. Replay restarts the selected case. Reduced motion starts at the completed outcome and provides manual steps.
-- Platform at Work independently defaults to Telecom. Visitors can inspect architecture nodes, switch scenarios, and view Details or illustrative System Logs. These are demonstrations, not live enterprise connections.
+- `/platform` explains execution, connected capabilities and pluggable access. Its illustrative Telecom demo covers standard plan changes and exceptions requiring human review.
+- `/enterprise` covers governance, controls, observability, audit, integration, compliance-oriented design and deployment validation.
 - Capabilities uses horizontal sticky scrolling from 1024px with motion enabled. Smaller screens and reduced motion use a static grid.
-- Integrations is a compact navy section with white conceptual system icons and the heading “Keep your systems. Add intelligence.”
+- Enterprise Fit uses “Keep your systems. Add intelligence.” and shows integration with existing enterprise services.
 - Solutions, Industries, ChatbotsVsAgents and PlatformFlow are not mounted. Their retained source is reference material and requires review before reuse; it is not a set of launch-ready pages.
-- Navigation links Platform and Enterprise to the corresponding homepage sections. Solutions, Industries and Resources remain visibly pending.
+- Navigation links Platform and Enterprise to `/platform` and `/enterprise`. Previous `/to-be` URLs permanently redirect to the corresponding main routes; no `src/app/to-be` route directory remains. Solutions, Industries and Resources remain visibly pending.
 - Set `NEXT_PUBLIC_BOOKING_URL` before building to enable an approved booking destination. Without it, Book a Demo opens an explanatory disclosure. There is no provisional email address or submitted booking form. See `.env.example`.
 - Customer proof is omitted until validated evidence is supplied.
 
 ## Code and styles
 
-- `src/app/page.tsx` owns section order.
-- `src/lib/data/execution-cases.ts` supplies the three execution examples. Steps have typed identifiers; protection, orchestration context and action logs do not depend on numeric positions. `src/lib/data/home.ts` supplies the commercial capability content.
+- `src/app/page.tsx` owns section order. `/platform` and `/enterprise` each have their own route directory and page styles. `src/app/product.css` holds shared page composition styles.
+- `src/components/hero/ProductHero.tsx` is the current Hero. Homepage sections, including `HumanInTheLoop` and `EnterpriseFit`, live in `src/components/home/`. `src/components/platform/PlatformExecution.tsx` owns the Platform demo.
+- `src/lib/data/execution-cases.ts` supplies the three execution examples. Steps have typed identifiers; protection, orchestration context and action logs do not depend on numeric positions. `src/lib/data/capabilities.ts` supplies the current commercial capability groups.
 - `src/app/globals.css` contains tokens, shared typography, controls and navigation. `home.css` and `experience.css` still contain the other sections and their composition rules.
 - `src/components/hero/hero.css` owns Hero and execution-demo styles.
 - `src/components/hero/useExecutionPlayback.ts` owns playback transitions, timing and reduced-motion synchronization. `ExecutionFlow` renders its state and invokes named actions.
@@ -39,6 +41,9 @@ Hero → Business Value → Enterprise Control → Intelligent Handoff → Platf
 - Motion uses CSS/SVG and React. `ScrollEffects` enhances native scrolling with reveals and progress; interactive components clean up their timers and observers. Static content remains available without JavaScript.
 
 ## Verification
+
+Current routes and redirects are covered by `tests/site-navigation.spec.ts`, `tests/platform.spec.ts` and `tests/enterprise.spec.ts`. Earlier homepage tests and visual baselines include historical sections and require review before using the full suite as the current-site acceptance check.
+
 
 ```sh
 npm run lint

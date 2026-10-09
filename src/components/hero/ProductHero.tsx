@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ExecutionFlow } from "@/components/hero/ExecutionFlow";
 import { Icon } from "@/components/ui/Icon";
 
-export function ToBeHero() {
+export function ProductHero() {
   const [runId, setRunId] = useState(0);
   function play() {
     setRunId(value => value + 1);

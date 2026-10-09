@@ -1,5 +1,5 @@
-// Target-state commercial copy. These groups belong to the TO-BE vision only.
-export const toBeCapabilities = [
+// Commercial capability groups for the main website.
+export const capabilityGroups = [
   {
     title: "Understand & Know",
     description: "Turn requests and trusted enterprise knowledge into the context agents need to act.",

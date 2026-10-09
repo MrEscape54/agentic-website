@@ -2,6 +2,8 @@
 
 ## Current public architecture principles
 
+- Deployment topology is an explicit enterprise architecture decision. The platform should be designed for pluggable deployment models, including dedicated managed and customer-hosted environments, with clearly documented trust boundaries, tenant isolation, data flows, and operational responsibilities. Infrastructure-as-code is an implementation mechanism, not a deployment model. This is a target-architecture principle, not a claim of current implementation. Hosting location, infrastructure ownership and single- or multi-tenancy are distinct dimensions; customer hosting does not automatically establish single-tenancy or prevent external data flows. Define isolation, identity, network access, data residency and operational ownership for each deployment without promising equivalent cloud behavior, guaranteed sovereignty or certification.
+
 - Home copy `ENTERPRISE BY DESIGN` is locked: preserve its exact wording, position, visual hierarchy and section layout. Keep `Governed by your enterprise. Controlled by design.` and the link to `/enterprise`. Do not replace it with `Built for enterprise trust.` or add compliance badges to Home.
 - Communicate time-to-value through progressive adoption: start with a focused use case, demonstrate value and expand alongside existing enterprise systems. Do not promise implementation timelines, instant deployment or zero integration effort without verified evidence.
 - Keep detailed compliance messaging on `/enterprise`. SOC 2 readiness and GDPR alignment describe design goals and supporting controls, not completed audits, attestations, certifications or guaranteed legal compliance. Do not invent regulatory approvals or compliance seals.

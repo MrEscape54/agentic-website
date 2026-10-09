@@ -18,7 +18,7 @@ const lifecycle = ["Registered", "Under review", "Approved", "Active", "Suspende
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
 export default function EnterprisePage() {
-  return <div className="to-be-page enterprise-page">
+  return <div className="product-page enterprise-page">
     <Navbar platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
     <main id="main">
       <section className="enterprise-intro page-shell" aria-labelledby="enterprise-page-title">
@@ -73,7 +73,7 @@ export default function EnterprisePage() {
         <dl className="enterprise-compliance"><div><dt>SOC 2 Readiness</dt><dd>Access controls, monitoring, audit evidence and accountable operations designed to support SOC 2 readiness.</dd></div><div><dt>GDPR Alignment</dt><dd>Privacy-aware data handling, data minimization, controlled processing and configurable retention designed to support GDPR obligations.</dd></div></dl>
         <p className="enterprise-caption">These design goals support enterprise readiness and review. They do not represent a completed SOC 2 examination or attestation, or a guarantee of GDPR compliance.</p>
         <p className="enterprise-readiness-label">DEPLOYMENT VALIDATION AREAS</p><div className="enterprise-readiness">{operationalTargets.map(target => <article key={target.title}><h3>{target.title}</h3><p>{target.copy}</p></article>)}</div>
-        <p className="enterprise-caption">Availability commitments, recovery objectives, deployment support and compliance evidence are defined and validated for your enterprise environment.</p>
+        <p className="enterprise-caption">Hosting location and single- or multi-tenant architecture are separate design decisions. Trust boundaries, approved data flows and operating responsibilities are defined per deployment. Availability commitments, recovery objectives, deployment support and compliance evidence are validated for your enterprise environment.</p>
       </div></section>
 
       <section id="book-demo" className="home-section dark-section final-cta section-rule" aria-labelledby="enterprise-cta-title"><div className="page-shell"><div className="cta-layout"><SectionHeading id="enterprise-cta-title" eyebrow="YOUR ENTERPRISE. YOUR RULES.">What would controlled<br /><em>execution look like for you?</em></SectionHeading><div><p className="section-description">Let’s map your business actions, enterprise controls and operating requirements to the platform.</p>{bookingUrl ? <a className="button button-primary" href={bookingUrl}>Book a Demo <Icon name="arrow" size={17} /></a> : <details className="booking-placeholder"><summary className="button button-primary">Book a Demo <Icon name="arrow" size={17} /></summary><p className="booking-status">Demo booking will be available soon.</p></details>}</div></div></div></section>

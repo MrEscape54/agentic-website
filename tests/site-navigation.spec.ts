@@ -12,7 +12,7 @@ test("Platform links consistently reach the platform page", async ({ page }) => 
 });
 
 for (const width of [390, 1440]) {
-  test(`TO-BE layout and anchors at ${width}px`, async ({ page }) => {
+  test(`Home layout and anchors at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
@@ -21,7 +21,7 @@ for (const width of [390, 1440]) {
     const broken = await page.locator('a[href^="#"]').evaluateAll(links => links.map(link => link.getAttribute("href")!).filter(href => !document.getElementById(href.slice(1))));
     expect(broken).toEqual([]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: `test-results/to-be-${width}.png`, fullPage: true });
+    await page.screenshot({ path: `test-results/home-navigation-${width}.png`, fullPage: true });
   });
 }
 

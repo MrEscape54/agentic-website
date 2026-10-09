@@ -19,7 +19,7 @@ export const operationalTargets = [
   { title: "Availability & recovery", copy: "Define deployment-specific availability, backup and recovery objectives. Validate high-availability and disaster-recovery patterns." },
   { title: "Performance & capacity", copy: "Test representative workloads, failure paths and scale requirements. Set quotas and usage budgets before rollout." },
   { title: "Security validation", copy: "Review threat models, tenant isolation, data exposure and privileged tool access against enterprise requirements." },
-  { title: "Repeatable operations", copy: "Establish infrastructure-as-code deployment patterns, operating responsibilities and evidence for enterprise review." },
+  { title: "Deployment flexibility", copy: "Designed for dedicated managed or customer-hosted cloud environments, including private VPC/VNet deployments. Define isolation, identity, network access, data residency and operational ownership for your operating model. Automate provisioning through infrastructure-as-code." },
 ];
 
 export const enterpriseResponsibilities = [

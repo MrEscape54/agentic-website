@@ -4,7 +4,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/navigation/Footer";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { PlatformExecution } from "@/components/to-be/PlatformExecution";
+import { PlatformExecution } from "@/components/platform/PlatformExecution";
 import { Icon } from "@/components/ui/Icon";
 import { platformJourney, platformBuildingBlocks, platformConnections } from "@/lib/data/platform";
 import "../product.css";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function PlatformPage() {
-  return <div className="to-be-page platform-page">
+  return <div className="product-page platform-page">
     <Navbar platformHref="/platform" enterpriseHref="/enterprise" homeHref="/" />
     <main id="main">
       <section className="platform-intro page-shell" aria-labelledby="platform-title">
