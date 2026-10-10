@@ -1,22 +1,22 @@
-.product-page .vision-fit-diagram { margin: 60px 0 48px; padding: 40px 28px 28px; border: 1px solid #ffffff18; border-radius: 14px; background: #101e3055; }
-.product-page .vision-fit-platform { position: relative; display: flex; align-items: center; justify-content: center; gap: 16px; width: fit-content; max-width: 100%; margin-inline: auto; padding: 22px 32px; border: 1px solid #ffffff35; border-radius: 8px; background: #142438; }
-.product-page .vision-fit-platform > svg { color: #bdc9d8; }
-.product-page .vision-fit-platform span { font-size: 9px; letter-spacing: 1.6px; color: #b8c4d2; }
+.product-page .vision-fit-diagram { margin: 60px 0 48px; padding: 40px 28px 28px; border: 1px solid #ffffff18; border-radius: 14px; background: #14171055; }
+.product-page .vision-fit-platform { position: relative; display: flex; align-items: center; justify-content: center; gap: 16px; width: fit-content; max-width: 100%; margin-inline: auto; padding: 22px 32px; border: 1px solid #ffffff35; border-radius: 8px; background: #20251a; }
+.product-page .vision-fit-platform > svg { color: #c4cbbb; }
+.product-page .vision-fit-platform span { font-size: 9px; letter-spacing: 1.6px; color: #c0c6b7; }
 .product-page .vision-fit-platform p { margin: 7px 0 0; font-size: 16px; font-weight: 500; }
 .product-page .vision-fit-platform::after { content: ""; position: absolute; width: 1px; height: 32px; background: #ffffff35; top: 100%; left: 50%; }
 .product-page .vision-fit-services { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 32px 0 0; margin: 32px 0 0; }
 .product-page .vision-fit-services::before { content: ""; position: absolute; top: 0; left: calc((100% - 64px) / 10); right: calc((100% - 64px) / 10); height: 1px; background: #ffffff35; }
-.product-page .vision-fit-services li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 17px; padding: 24px 10px; border: 1px solid #ffffff25; border-radius: 7px; background: #101e30; }
+.product-page .vision-fit-services li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 17px; padding: 24px 10px; border: 1px solid #ffffff25; border-radius: 7px; background: #141710; }
 .product-page .vision-fit-services li::before { content: ""; position: absolute; width: 1px; height: 32px; background: #ffffff35; bottom: 100%; left: 50%; }
-.product-page .vision-fit-services svg { color: #b8c4d2; }
+.product-page .vision-fit-services svg { color: #c0c6b7; }
 .product-page .vision-fit-services h3 { font-size: 13px; font-weight: 500; margin: 0; }
-.product-page .vision-fit-services p { color: #a8b3c3; font-size: 11px; line-height: 1.7; margin: 8px 0 0; }
-.product-page .vision-fit-diagram figcaption { text-align: center; color: #a8b3c3; font-size: 11px; line-height: 1.8; margin-top: 26px; }
+.product-page .vision-fit-services p { color: #b0b5a7; font-size: 11px; line-height: 1.7; margin: 8px 0 0; }
+.product-page .vision-fit-diagram figcaption { text-align: center; color: #b0b5a7; font-size: 11px; line-height: 1.8; margin-top: 26px; }
 .product-page .vision-fit-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
 .product-page .vision-fit-benefits article { border-top: 1px solid #ffffff25; padding-top: 22px; }
-.product-page .vision-fit-benefits article > span { color: #a8b3c3; font-size: 10px; font-variant-numeric: tabular-nums; }
+.product-page .vision-fit-benefits article > span { color: #b0b5a7; font-size: 10px; font-variant-numeric: tabular-nums; }
 .product-page .vision-fit-benefits h3 { font-family: var(--font-headline); font-weight: 500; font-size: 19px; line-height: 1.5; margin: 16px 0 12px; }
-.product-page .vision-fit-benefits p { font-size: 13px; line-height: 1.85; color: #a8b3c3; margin: 0; }
+.product-page .vision-fit-benefits p { font-size: 13px; line-height: 1.85; color: #b0b5a7; margin: 0; }
 @media (max-width: 960px) {
   .product-page .vision-fit .section-topline { flex-direction: column; align-items: flex-start; gap: 24px; }
   .product-page .vision-fit .section-aside { max-width: 550px; }

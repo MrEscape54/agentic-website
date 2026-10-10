@@ -2,10 +2,10 @@
 .product-page .hero-copy { min-width: 0; }
 .product-page .hero-actions { flex-wrap: wrap; }
 .product-page .vision-demo { min-width: 0; scroll-margin-top: 100px; }
-.product-page .vision-demo-note { margin: 18px 0 0; color: #a8b3c3; font-size: 11px; line-height: 1.7; }
-.product-page .control-grid .vision-control-description { color: #a8b3c3; font-size: 13px; line-height: 1.85; font-weight: 400; }
+.product-page .vision-demo-note { margin: 18px 0 0; color: #b0b5a7; font-size: 11px; line-height: 1.7; }
+.product-page .control-grid .vision-control-description { color: #b0b5a7; font-size: 13px; line-height: 1.85; font-weight: 400; }
 
-.product-page #enterprise .enterprise-close { margin-top: 12px; padding-block: 12px 0; font-size: clamp(20px, 2vw, 28px); letter-spacing: -.5px; color: #bac5d3; }
+.product-page #enterprise .enterprise-close { margin-top: 12px; padding-block: 12px 0; font-size: clamp(20px, 2vw, 28px); letter-spacing: -.5px; color: #c1c5b8; }
 .product-page #enterprise .enterprise-close br { display: none; }
 .product-page #enterprise .enterprise-close em::before { content: " "; white-space: pre; }
 .product-page #enterprise .enterprise-close em { color: inherit; }

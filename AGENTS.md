@@ -2,6 +2,16 @@
 
 ## Current public architecture principles
 
+## Current visual identity — Lorenza Olive Signature
+
+The approved public brand is now `lorenza`, lowercase without `.ai`, replacing historical `BRAND LOGO` instructions below. Use the supplied SVG assets in `public/brand`: `lorenza-dark.svg` for dark backgrounds (light wordmark) and `lorenza-light.svg` for light backgrounds (dark wordmark). Preserve their geometry and colors; do not recreate the symbol or typeset the wordmark separately.
+
+Olive Signature supersedes the historical navy/acid-olive palette below: near-black `#090B08`, muted olive `#BEC77B`, warm off-white `#F4F3EB`, neutral secondary text and restrained olive light. Preserve the separate success green. Keep Roobert-ready/Inter typography. Use lightweight SVG curves for cinematic lighting, quiet surfaces and open layouts rather than glowing every panel.
+
+This is a visual redesign only. Preserve all existing copy, section order, routes, links, controls, demos, playback logic and reduced-motion behavior. The full interactive execution demo follows the cinematic introduction and remains targeted by the existing Hero CTA. Home `ENTERPRISE BY DESIGN` remains locked. Do not copy vendor logos, metrics or unsupported content from the visual reference. Do not deploy automatically.
+
+## Public architecture and messaging
+
 - Deployment topology is an explicit enterprise architecture decision. The platform should be designed for pluggable deployment models, including dedicated managed and customer-hosted environments, with clearly documented trust boundaries, tenant isolation, data flows, and operational responsibilities. Infrastructure-as-code is an implementation mechanism, not a deployment model. This is a target-architecture principle, not a claim of current implementation. Hosting location, infrastructure ownership and single- or multi-tenancy are distinct dimensions; customer hosting does not automatically establish single-tenancy or prevent external data flows. Define isolation, identity, network access, data residency and operational ownership for each deployment without promising equivalent cloud behavior, guaranteed sovereignty or certification.
 
 - Home copy `ENTERPRISE BY DESIGN` is locked: preserve its exact wording, position, visual hierarchy and section layout. Keep `Governed by your enterprise. Controlled by design.` and the link to `/enterprise`. Do not replace it with `Built for enterprise trust.` or add compliance badges to Home.

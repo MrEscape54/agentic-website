@@ -20,7 +20,7 @@ for (const [width, height] of [[1440,900], [390,844]]) test(`omnichannel appends
   await expect(section.locator('[data-active="true"]')).toContainText("WhatsApp");
   expect(await section.evaluate(el => el.querySelector(".omni-whatsapp-final")!.getBoundingClientRect().bottom <= el.querySelector(".omni-bridge")!.getBoundingClientRect().top)).toBe(true);
   await section.screenshot({ path: `test-results/omnichannel-appended-${width}.png` });
-  expect(await section.evaluate(el => [el.previousElementSibling?.id, el.nextElementSibling?.id])).toEqual(["enterprise", "handoff"]);
+  expect(await section.evaluate(el => [el.previousElementSibling?.id, el.nextElementSibling?.id])).toEqual(["enterprise", "human-in-the-loop"]);
 });
 
 test("sequential fallback remains readable at all requested viewports", async ({ page }) => {

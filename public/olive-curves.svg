@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" fill="none">
+  <defs>
+    <linearGradient id="fold" x1="280" y1="670" x2="1030" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#0b0d07"/><stop offset=".35" stop-color="#555a2b"/><stop offset=".57" stop-color="#9da25b"/><stop offset=".7" stop-color="#373c1b"/><stop offset="1" stop-color="#0a0d07"/></linearGradient>
+    <linearGradient id="ribbon" x1="710" y1="770" x2="900" y2="130" gradientUnits="userSpaceOnUse"><stop stop-color="#11150b"/><stop offset=".47" stop-color="#6c7135"/><stop offset=".72" stop-color="#c2c77c"/><stop offset="1" stop-color="#15190b"/></linearGradient>
+    <linearGradient id="edge" x1="200" y1="790" x2="1280" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#575e28" stop-opacity="0"/><stop offset=".45" stop-color="#dce5a0"/><stop offset=".6" stop-color="#faf4c0"/><stop offset=".85" stop-color="#b7bd6a" stop-opacity=".5"/><stop offset="1" stop-color="#78803d" stop-opacity="0"/></linearGradient>
+    <radialGradient id="atmosphere"><stop stop-color="#a6b052" stop-opacity=".22"/><stop offset="1" stop-color="#a6b052" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <ellipse cx="850" cy="350" rx="530" ry="350" fill="url(#atmosphere)"/>
+  <path d="M170 850C400 540 673 165 1030 111C1180 88 1320 128 1460 220L1400 760C1120 477 916 432 700 545C513 642 400 804 360 900Z" fill="url(#fold)"/>
+  <path d="M540 900C658 690 684 619 682 432C679 242 802 134 1030 111C846 156 849 343 930 498C1029 684 1232 730 1430 737L1450 920Z" fill="url(#ribbon)"/>
+  <path d="M170 850C400 540 673 165 1030 111C1180 88 1320 128 1460 220M540 900C658 690 684 619 682 432C679 242 802 134 1030 111" stroke="url(#edge)" stroke-width="8" filter="url(#glow)" opacity=".75"/>
+  <path d="M170 850C400 540 673 165 1030 111C1180 88 1320 128 1460 220M540 900C658 690 684 619 682 432C679 242 802 134 1030 111" stroke="url(#edge)" stroke-width="1.5"/>
+  <path d="M760 860C954 605 1150 520 1430 510" stroke="url(#edge)" stroke-width="1.1" opacity=".7"/>
+</svg>

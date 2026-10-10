@@ -6,6 +6,7 @@ import "./home.css";
 import "./experience.css";
 import "@/components/hero/hero.css";
 import "@/components/home/platform-at-work.css";
+import "./olive-signature.css";
 
 export const metadata: Metadata = {
   title: "Enterprise Agentic AI Platform | From conversation to execution",

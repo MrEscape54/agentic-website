@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { useScrollNavbar } from "./useScrollNavbar";
+import { Brand } from "./Brand";
 import "./navbar.css";
 
 const items = ["Platform", "Solutions", "Industries", "Enterprise"];
@@ -12,7 +13,7 @@ export function Navbar({ platformHref = "/platform", homeHref = "/", enterpriseH
   const headerRef = useScrollNavbar(open);
   return <div className="navbar-space"><header ref={headerRef} className="site-header" data-menu-open={open}>
     <div className="nav-shell">
-      <a href={homeHref} className="brand" aria-label="BRAND LOGO home"><span className="brand-mark"><Icon name="layers" size={25} /></span>BRAND LOGO</a>
+      <a href={homeHref} className="brand" aria-label="lorenza home"><Brand /></a>
       <nav aria-label="Main navigation" id="main-navigation" className={open ? "navigation is-open" : "navigation"}>
         {items.map(item => (item === "Solutions" || item === "Industries") ? <span key={item} className="nav-pending" aria-disabled="true" title={`${item} coming soon`}>{item}</span> : <a key={item} className="nav-link" href={item === "Platform" ? platformHref : enterpriseHref} onClick={() => setOpen(false)}>{item}</a>)}
         <span className="nav-pending" aria-disabled="true" title="Resources coming soon">Resources</span>

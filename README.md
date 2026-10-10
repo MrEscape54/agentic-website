@@ -1,6 +1,6 @@
-﻿# Enterprise Agentic AI Website
+# Enterprise Agentic AI Website
 
-Next.js App Router, React, TypeScript and Tailwind CSS. The visible product name remains `BRAND LOGO`. This document records the approved implementation after the original brief in `AGENTS.md`; later user decisions determine the homepage order and omissions.
+Next.js App Router, React, TypeScript and Tailwind CSS. The public brand is `lorenza`. The approved SVG logo variants live in `public/brand`; navbar and footer use the light wordmark for dark backgrounds through the shared `Brand` component. This document records the approved implementation after the original brief in `AGENTS.md`; later user decisions determine the homepage order and omissions.
 
 ## Local development
 
@@ -24,6 +24,10 @@ Hero → Enterprise Control → Omnichannel → Human-in-the-Loop → Capabiliti
 - Navigation links Platform and Enterprise to `/platform` and `/enterprise`. Previous `/to-be` URLs permanently redirect to the corresponding main routes; no `src/app/to-be` route directory remains. Solutions, Industries and Resources remain visibly pending.
 - Set `NEXT_PUBLIC_BOOKING_URL` before building to enable an approved booking destination. Without it, Book a Demo opens an explanatory disclosure. There is no provisional email address or submitted booking form. See `.env.example`.
 - Customer proof is omitted until validated evidence is supplied.
+
+## Olive Signature visual identity
+
+The visual redesign lives on `design/olive-signature`. Near-black, muted olive and warm off-white tokens are defined in `globals.css`; `olive-signature.css` provides the shared visual treatment. `public/olive-curves.svg` is a lightweight decorative vector, not a logo. The original content and interactive logic remain unchanged, and the complete execution demo follows the cinematic Hero introduction.
 
 ## Code and styles
 
@@ -68,4 +72,4 @@ Only update snapshots for an intentional, reviewed visual change. Do not update 
 
 The audit and staged refactoring plan are in `reports/site-audit/README.md`. Playback and tab relationships have been refactored. Capability scroll calculations and lifecycle are now isolated and tested. The next candidate is organizing architecture detail content. Mobile text readability is a separate design change.
 
-Final name/logo, licensed Roobert assets if desired, real booking destination, proof material, and deployment configuration remain product inputs. Verification so far covers local Chrome, not Safari/iOS or a deployed domain.
+Licensed Roobert assets if desired, real booking destination, proof material, and deployment configuration remain product inputs. Verification so far covers local Chrome, not Safari/iOS or a deployed domain.
