@@ -17,7 +17,7 @@ for (const [width, height] of [[1440,900], [390,844]]) test(`omnichannel appends
   expect((await messages.allTextContents()).slice(0, 2)).toEqual(originalMessages);
   await expect(messages.last()).toContainText("Your plan has been changed successfully. Thanks for confirming by email. Your new plan takes effect next billing cycle.");
   await expect(section).not.toContainText("Your plan was successfully updated.");
-  await expect(section.locator('[data-active="true"]')).toContainText("WhatsApp");
+  await expect(section.locator('.omni-route [aria-current="step"]')).toContainText("WhatsApp");
   expect(await section.evaluate(el => el.querySelector(".omni-whatsapp-final")!.getBoundingClientRect().bottom <= el.querySelector(".omni-bridge")!.getBoundingClientRect().top)).toBe(true);
   await section.screenshot({ path: `test-results/omnichannel-appended-${width}.png` });
   expect(await section.evaluate(el => [el.previousElementSibling?.id, el.nextElementSibling?.id])).toEqual(["enterprise", "human-in-the-loop"]);

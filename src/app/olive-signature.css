@@ -21,7 +21,24 @@ body { background: var(--navy); }
 
 /* A cinematic introduction flows directly into the complete interactive demo. */
 .product-page .olive-hero { --hero-header-height: 97px; isolation: isolate; background: var(--navy); }
-.olive-hero-art { position: absolute; pointer-events: none; z-index: -1; inset: -75px -10% auto 12%; height: calc(100dvh + 75px); background: url('/olive-curves.svg') center / cover no-repeat; opacity: .95; mask-image: linear-gradient(to bottom,#000 65%,transparent); }
+.olive-hero-art { position: absolute; pointer-events: none; z-index: -1; inset: -75px -10% auto 12%; height: calc(100dvh + 75px); opacity: .95; }
+.olive-hero-art::before { content: ""; position: absolute; inset: 0; background: url('/olive-curves.svg') center / cover no-repeat; mask-image: linear-gradient(to bottom,#000 65%,transparent); }
+.hero-edge-light { position: relative; display: block; width: 100%; height: 100%; }
+.hero-light-trace { opacity: 0; }
+.hero-light-halo { stroke: #dce5a0; stroke-width: 5; stroke-dasharray: 8 92; opacity: .18; }
+.hero-light-core { stroke: #faf4c0; stroke-width: 1.8; stroke-dasharray: 5 95; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-light-trace { animation: hero-edge-travel 18s linear infinite; animation-play-state: paused; }
+  .olive-hero-art[data-active="true"]:not([data-scrolling="true"]) .hero-light-trace { animation-play-state: running; }
+  .hero-light-trace-1 { animation-duration: 23s; animation-delay: -9s; }
+  .hero-light-trace-2 { animation-duration: 27s; animation-delay: -17s; }
+  @keyframes hero-edge-travel {
+    0% { stroke-dashoffset: 10; opacity: 0; }
+    12% { opacity: .7; }
+    80% { opacity: .7; }
+    100% { stroke-dashoffset: -100; opacity: 0; }
+  }
+}
 .product-page .olive-hero .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; max-width: var(--page-width); min-height: 0; padding-top: 0; padding-bottom: 75px; }
 .olive-hero .hero-copy { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: min(100%, 590px); min-height: calc(100dvh - var(--hero-header-height)); padding-block: clamp(24px, 5dvh, 64px); }
 .olive-hero .hero-copy::before { content: ""; position: absolute; z-index: -1; inset: -60px -50px 0 -100px; background: linear-gradient(90deg,var(--navy) 10%,#090b08ed 45%,transparent); pointer-events: none; }
@@ -31,7 +48,7 @@ body { background: var(--navy); }
 .olive-hero .hero-actions { gap: 12px; }
 .olive-hero .trust-line { color: #c0c6b5; }
 /* Use the full screen for the demo; short viewports grow with the content instead of creating a nested scroller. */
-.product-page .olive-hero .vision-demo { width: min(100%,1080px); align-self: center; position: relative; display: flex; flex-direction: column; justify-content: center; min-height: calc(100dvh - 32px); scroll-margin: 0; padding: 16px; border: 1px solid var(--border-strong); border-radius: 22px; background: #0e120be8; box-shadow: 0 30px 90px #00000050; }
+.product-page .olive-hero .vision-demo { width: min(100%,1080px); align-self: center; position: relative; display: flex; flex-direction: column; justify-content: center; min-height: calc(100dvh - 32px); scroll-margin: 0; padding: 16px; }
 .olive-hero .vision-demo-note { text-align: center; }
 .olive-hero .demo-caption { font-size: 9px; margin-bottom: 20px; }
 .product-page .execution-panel { background: var(--surface); border-color: var(--border-strong); box-shadow: none; border-radius: 12px; }
@@ -52,18 +69,78 @@ body { background: var(--navy); }
 .product-page .system { background: var(--surface); border-color: var(--border-strong); font-size: 11px; min-height: 45px; }
 .product-page .system-active { background: #bec77b12; border-color: var(--olive); }
 
+/* Approved slate demo and compact, softly beveled category icons. */
+.olive-icon-tile { display: inline-grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border: 1px solid #dbe5a447; border-radius: 13px; color: #f1f0d4; background: linear-gradient(135deg,#92995a 0%,#626a38 42%,#333a22 100%); box-shadow: inset 0 1px 2px #f4f0bb55, inset 0 -2px 4px #151a1640, 0 3px 8px #00000020; }
+.olive-icon-tile svg { width: 25px; height: 25px; }
+.olive-hero .execution-demo { color: var(--off-white); }
+.product-page .olive-hero .execution-panel { background: #30363d; border-color: #ffffff24; box-shadow: 0 20px 65px #00000030; }
+.olive-hero .panel-heading, .olive-hero .panel-footer { border-color: #ffffff1a; }
+.olive-hero .panel-heading > span:first-child, .olive-hero .panel-heading svg { color: #eceeed; }
+.olive-hero .demo-badge { border-color: #ffffff30; color: #d2d5d6; }
+.product-page .olive-hero .request { background: #292f35; border-color: #ffffff26; }
+.olive-hero .request-icon { color: #e5e7e6; border-color: #ffffff30; }
+.olive-hero :is(.micro-label,.flow-label,.panel-footer) { color: #c4c9cc; }
+.product-page .olive-hero .case-selector button { color: #e2e5e5; border-color: #ffffff30; }
+.product-page .olive-hero .case-selector button[aria-pressed="true"] { color: var(--off-white); background: #171a1d; border-color: #ffffff40; }
+.product-page .olive-hero .case-selector button:hover { border-color: #ffffff70; }
+.olive-hero .step-list button { color: #d0d4d5; }
+.olive-hero .step-node { background: #30363d; border-color: #b5bcc0; }
+.olive-hero .step-list li:not(:last-child)::after { background: #7c858a; }
+.olive-hero .step-done .step-node { color: var(--off-white); background: #171a1d; border-color: #ffffff30; }
+.olive-hero .step-active button { color: var(--olive-light); }
+.olive-hero .step-active .step-node { color: var(--navy); background: var(--olive); border-color: var(--olive); }
+.product-page .olive-hero .step-detail { background: transparent; border-color: #ffffff24; }
+.product-page .olive-hero .step-detail.detail-complete { background: #2c3632; border-color: #abc49a65; }
+.olive-hero .detail-icon { background: #24292e; border-color: #ffffff30; }
+.olive-hero .detail-icon.is-success { border-color: var(--success-border); }
+.product-page .olive-hero .step-detail .detail-description { color: #d0d4d5; }
+.product-page .olive-hero .detail-payload { background: #24292e; color: #e0e4e3; }
+.olive-hero .skill-tags code { border-color: #ffffff30; }
+.product-page .olive-hero .system { flex-direction: column; gap: 9px; padding: 0; color: #d5d7d1; background: transparent; border: 0; box-shadow: none; }
+.olive-hero .system .olive-icon-tile { transition: box-shadow .25s ease, color .25s ease; }
+.olive-hero .system-active .olive-icon-tile { color: #171d10; background: linear-gradient(135deg,#e1e7b7 0%,#b9c77b 45%,#82934c 100%); border-color: var(--olive-light); box-shadow: inset 0 1px 2px #ffffff66, 0 0 0 4px #bec77b18, 0 0 20px #bec77b30; }
+.olive-hero .system-active .system-name { color: var(--olive-light); font-weight: 600; }
+.olive-hero :is(.system-bus,.enterprise-systems::before,.system-wire) { background: #757a70; }
+.olive-hero .system-active .system-wire { width: 2px; background: var(--olive-light); }
+.olive-hero .systems-caption { color: #bfc2bc; }
+
+/* Keep the approved Enterprise hierarchy, with neutral surfaces and white type. */
+.product-page #enterprise { background: #101110; border-color: #ffffff16; }
+.product-page #enterprise .section-heading em { color: var(--off-white); }
+.product-page #enterprise .control-grid { align-items: stretch; padding-bottom: 0; }
+.product-page #enterprise .control-grid article:nth-child(n) { display: flex; flex-direction: column; margin: 0; min-height: 0; padding: 8px 40px; background: transparent; border: 0; border-radius: 0; }
+.product-page #enterprise .control-grid article:first-child { padding-left: 0; }
+.product-page #enterprise .control-grid article:last-child { padding-right: 0; }
+.product-page #enterprise .control-grid article:nth-child(n+2) { border-left: 1px solid #ffffff24; }
+.product-page #enterprise .control-grid .olive-icon-tile { align-self: flex-start; }
+.product-page #enterprise :is(.section-aside,.control-grid p,.control-grid li,.vision-control-description) { color: #bfc2bc; }
+.product-page #enterprise .control-grid ul { margin-top: auto; border: 0; padding-top: 28px; }
+.product-page #enterprise .control-grid li svg { color: #e7e9e1; }
+@media (max-width: 1100px) and (min-width: 801px) {
+  .product-page #enterprise .control-grid article:nth-child(n) { padding-inline: 24px; }
+  .product-page #enterprise .control-grid article:first-child { padding-left: 0; }
+  .product-page #enterprise .control-grid article:last-child { padding-right: 0; }
+}
+@media (max-width: 800px) {
+  .product-page #enterprise .control-grid { grid-template-columns: 1fr; gap: 0; }
+  .product-page #enterprise .control-grid article:nth-child(n) { padding: 28px 0; border: 0; }
+  .product-page #enterprise .control-grid article:first-child { padding-top: 0; }
+  .product-page #enterprise .control-grid article:nth-child(n+2) { border-top: 1px solid #ffffff24; }
+  .product-page #enterprise .control-grid ul { padding-top: 20px; }
+}
+
 /* Quiet surfaces and open layouts provide rhythm between product scenes. */
 .product-page .control-grid article { background: linear-gradient(145deg,#202619,#11160f); border-color: var(--border-subtle); }
-.product-page :is(.capability-card,.platform-journey li,.platform-building-blocks article,.enterprise-controls-grid article,.enterprise-registry,.enterprise-trace,.enterprise-authority > div,.vision-fit-platform,.vision-fit-services li) { background: var(--surface); border-color: var(--border-strong); }
+.product-page :is(.capability-card,.platform-journey li,.platform-building-blocks article,.enterprise-controls-grid article,.enterprise-registry,.enterprise-trace,.enterprise-authority > div) { background: var(--surface); border-color: var(--border-strong); }
 .product-page :is(.platform-step-panel,.platform-request,.omni-thread) { background: var(--surface-raised); }
 .product-page .capability-section { background: var(--surface-soft); border-color: var(--border-subtle); }
 .product-page #capabilities[data-horizontal="true"] .capability-card[data-active="true"] { background: #222b19; border-color: #bec77b70; border-top-color: var(--olive); }
 .product-page .capability-card li:last-child::after { background: var(--surface); }
 .product-page #capabilities[data-horizontal="true"] .capability-card[data-active="true"] li:last-child::after { background: #222b19; }
 .product-page .vision-fit-diagram { background: transparent; }
-.product-page .omni-scene { border-color: var(--border-strong); box-shadow: 0 20px 65px #00000030; }
+.product-page .omni-thread { background: #252a2e; }
+.product-page .omni-scene { box-shadow: none; }
 .product-page .omni-email .omni-disclaimer { color: var(--slate); }
-.product-page .vision-human-checkpoint { border-color: #bec77b66; background: #bec77b0a; }
 .product-page .platform-intro, .product-page .enterprise-intro { position: relative; isolation: isolate; }
 .product-page :is(.platform-intro,.enterprise-intro)::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at 85% 0%,var(--olive-glow),transparent 62%); pointer-events: none; }
 .product-page .final-cta { background: radial-gradient(ellipse at 75% 100%,#3d482544,transparent 65%),var(--surface-soft); }
@@ -74,6 +151,16 @@ body { background: var(--navy); }
 @media (max-width: 960px) {
   .product-page .olive-hero { --hero-header-height: 81px; }
   .olive-hero-art { left: 0; right: -55%; opacity: .7; }
+  .olive-hero .hero-copy { justify-content: flex-start; padding-top: clamp(36px, 7dvh, 72px); }
+}
+/* Portrait tablets need their own composition, rather than a tall desktop crop. */
+@media (min-width: 541px) and (max-width: 1190px) and (orientation: portrait) {
+  .olive-hero .hero-copy { justify-content: flex-start; min-height: 0; padding-top: clamp(36px, 4dvh, 48px); padding-bottom: 32px; }
+  .olive-hero h1 { font-size: clamp(52px, 6.4vw, 68px); }
+  .olive-hero-art { left: calc(50% - 650px); right: auto; top: 60px; width: max(1100px, 120vw); height: auto; aspect-ratio: 1400 / 850; opacity: .8; }
+  .olive-hero .hero-copy::before { inset: 0 -36px; background: linear-gradient(90deg,#090b08e0 0%,#090b0880 55%,transparent); mask-image: linear-gradient(to bottom,#000 70%,transparent); }
+  .olive-hero .trust-line br { display: block; }
+  .product-page .olive-hero .vision-demo { justify-content: flex-start; min-height: 0; }
 }
 @media (max-width: 540px) {
   .brand-logo { width: clamp(106px, 32vw, 132px); }
@@ -81,11 +168,12 @@ body { background: var(--navy); }
   .nav-cta { min-height: 36px; padding-inline: 13px; font-size: 10px; }
   .product-page .olive-hero { --hero-header-height: 77px; }
   .product-page .olive-hero .hero-grid { padding-bottom: 50px; }
-  .olive-hero-art { left: -10%; right: -95%; top: 0; height: 100dvh; opacity: .6; }
-  .olive-hero .hero-copy::before { inset: -45px -15px -10px -30px; background: linear-gradient(90deg,#090b08f5,#090b08b0 65%,transparent); }
+  .olive-hero-art { left: calc(50% - 560px); right: auto; top: clamp(60px, 12dvh, 110px); width: 880px; height: auto; aspect-ratio: 1400 / 850; opacity: .8; }
+  .olive-hero .hero-copy { min-height: min(calc(100dvh - var(--hero-header-height)), 590px); padding-top: clamp(32px, 6dvh, 52px); }
+  .olive-hero .hero-copy::before { inset: 0 -22px; background: linear-gradient(180deg,#090b08d9 0%,#090b08a6 35%,#090b0866 70%,transparent); }
   .olive-hero .hero-description { font-size: 13px; }
   .olive-hero .hero-actions { gap: 8px; }
-  .product-page .olive-hero .vision-demo { padding: 16px 10px; border-radius: 14px; width: calc(100% + 12px); margin-inline: -6px; }
+  .product-page .olive-hero .vision-demo { justify-content: flex-start; padding: 16px 10px; border-radius: 14px; width: calc(100% + 12px); margin-inline: -6px; }
   .olive-hero .demo-caption { font-size: 6.5px; }
   .product-page .flow-body { padding: 20px 12px; }
   .product-page .step-list button { font-size: 6.5px; }
@@ -96,9 +184,15 @@ body { background: var(--navy); }
   .product-page .skill-tags code { font-size: 8px; }
   .product-page .panel-footer { font-size: 8px; }
   .product-page .system { font-size: 8px; }
+  .olive-hero .system .olive-icon-tile { width: 36px; height: 36px; border-radius: 10px; }
+  .olive-hero .system .olive-icon-tile svg { width: 20px; height: 20px; }
+}
+@media (max-width: 540px) and (min-height: 668px) {
+  .olive-hero .hero-copy { min-height: 0; padding-bottom: 24px; }
+  .product-page .olive-hero .vision-demo { min-height: 0; }
 }
 /* Compact spacing keeps the complete demo in view on laptop-height screens. */
-@media (max-height: 900px) {
+@media (max-height: 900px), (min-width: 541px) and (max-width: 1190px) and (orientation: portrait), (max-width: 540px) and (min-height: 668px) {
   .olive-hero .demo-caption { margin-bottom: 12px; }
   .product-page .olive-hero .panel-heading { height: 42px; }
   .product-page .olive-hero .case-selector { padding-top: 10px; }
@@ -124,7 +218,7 @@ body { background: var(--navy); }
   .olive-hero .hero-actions, .olive-hero .trust-line { margin-top: 16px; }
   .olive-hero .hero-copy { padding-block: 16px; }
 }
-@media (max-height: 740px) {
+@media (max-height: 740px), (min-width: 541px) and (max-width: 1190px) and (orientation: portrait) {
   .product-page .olive-hero .vision-demo { padding-block: 10px; }
   .olive-hero .demo-caption { margin-bottom: 8px; }
   .product-page .olive-hero .case-selector button { padding-block: 6px; }
@@ -136,7 +230,7 @@ body { background: var(--navy); }
   .product-page .olive-hero .vision-demo-note { margin-top: 6px; font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .olive-hero-art { will-change: auto; }
+  .hero-edge-light { display: none; }
 }
 @media print {
   .olive-hero-art, .product-page .final-cta::before { display: none; }

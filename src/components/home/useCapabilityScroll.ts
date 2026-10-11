@@ -1,89 +1,57 @@
-import { useEffect, useRef } from "react";
-import { locateCapabilityJourney, measureCapabilityJourney } from "./capability-scroll";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-/** Connects viewport measurements and native scroll to the capability presentation. */
-export function useCapabilityScroll(compact = false) {
+/** Native scrolling advances the explorer; direct selection also works without motion. */
+export function useCapabilityScroll(count: number) {
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLElement | null)[]>([]);
-  const markerRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [active, setActive] = useState(0);
+  const geometry = useRef({ enabled: false, travel: 0 });
 
   useEffect(() => {
     const section = sectionRef.current!;
     const stage = stageRef.current!;
-    const track = trackRef.current!;
-    const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
-    const markers = markerRefs.current.filter((marker): marker is HTMLSpanElement => marker !== null);
-    const media = window.matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)");
+    const media = matchMedia("(min-width: 1024px) and (min-height: 680px) and (prefers-reduced-motion: no-preference)");
     let frame = 0;
-    let geometry = measureCapabilityJourney(0, 0, 0, 0);
-    let enabled = false;
-    let active = -1;
-
     function update() {
       frame = 0;
-      if (!enabled) return;
-      const { progress, translation, activeIndex: next } = locateCapabilityJourney(
-        section.getBoundingClientRect().top, geometry, cards.length,
-      );
-      track.style.transform = `translate3d(${translation}px, 0, 0)`;
-      section.style.setProperty("--capability-progress", String(progress));
-      if (next !== active) {
-        cards.forEach((card, index) => card.dataset.active = String(index === next));
-        markers.forEach((marker, index) => marker.dataset.active = String(index === next));
-        active = next;
-      }
+      if (!geometry.current.enabled) return;
+      const top = section.getBoundingClientRect().top;
+      if (top > innerHeight || top < -section.offsetHeight) return;
+      setActive(Math.max(0, Math.min(count - 1, Math.round(-top / geometry.current.travel * (count - 1)))));
     }
-    function schedule() {
-      if (enabled && !frame) frame = requestAnimationFrame(update);
-    }
+    function schedule() { if (!frame && geometry.current.enabled) frame = requestAnimationFrame(update); }
     function measure() {
-      cancelAnimationFrame(frame);
-      frame = 0;
-      enabled = media.matches;
-      section.dataset.horizontal = String(enabled);
-      section.style.removeProperty("height");
-      track.style.removeProperty("transform");
-      active = -1;
-      if (enabled) {
-        geometry = measureCapabilityJourney(
-          window.innerHeight, stage.offsetHeight,
-          cards[0]?.offsetLeft ?? 0, cards.at(-1)?.offsetLeft ?? 0,
-          compact,
-        );
-        stage.style.top = `${geometry.stickyTop}px`;
-        section.style.height = `${geometry.sectionHeight}px`;
-        update();
-      } else {
-        stage.style.removeProperty("top");
-        cards.forEach(card => delete card.dataset.active);
-        markers.forEach(marker => delete marker.dataset.active);
-        section.style.removeProperty("--capability-progress");
-      }
+      const enabled = media.matches && stage.offsetHeight <= innerHeight + 1;
+      const travel = (count - 1) * innerHeight * .6;
+      geometry.current = { enabled, travel };
+      section.dataset.scroll = String(enabled);
+      if (enabled) section.style.height = `${stage.offsetHeight + travel}px`;
+      else section.style.removeProperty("height");
+      update();
     }
     const observer = new ResizeObserver(measure);
     observer.observe(stage);
-    cards.forEach(card => observer.observe(card));
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", measure);
+    addEventListener("scroll", schedule, { passive: true });
+    addEventListener("resize", measure);
     media.addEventListener("change", measure);
     measure();
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", measure);
+      removeEventListener("scroll", schedule);
+      removeEventListener("resize", measure);
       media.removeEventListener("change", measure);
-      cards.forEach(card => delete card.dataset.active);
-      markers.forEach(marker => delete marker.dataset.active);
-      section.style.removeProperty("--capability-progress");
-      delete section.dataset.horizontal;
       section.style.removeProperty("height");
-      track.style.removeProperty("transform");
-      stage.style.removeProperty("top");
+      delete section.dataset.scroll;
     };
-  }, [compact]);
+  }, [count]);
 
-  return { sectionRef, stageRef, trackRef, cardRefs, markerRefs };
+  const select = useCallback((index: number) => {
+    setActive(index);
+    if (geometry.current.enabled && sectionRef.current) {
+      const top = sectionRef.current.getBoundingClientRect().top + scrollY;
+      scrollTo({ top: top + geometry.current.travel * index / (count - 1), behavior: "instant" });
+    }
+  }, [count]);
+  return { sectionRef, stageRef, active, select };
 }

@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import "./omnichannel.css";
 
-const channels = ["Web", "WhatsApp", "Voice", "Email", "SMS", "Microsoft Teams"] as const;
-type Channel = typeof channels[number];
+type Channel = "Web" | "WhatsApp" | "Voice" | "Email" | "SMS" | "Microsoft Teams";
 
 function ChannelIcon({ channel }: { channel: Channel }) {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -26,6 +25,8 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
   const [reduced, setReduced] = useState(false);
   const channel = step >= 2 && step <= 4 ? "Email" : "WhatsApp";
   const confirmed = step >= 4;
+  const stage = step === 5 ? 2 : step >= 2 ? 1 : 0;
+  const playback = <button className="omni-playback" onClick={() => { if (reduced) setStep(confirmed ? 0 : 5); else setPaused(value => !value); }} aria-label={reduced ? "Toggle demo confirmation" : paused ? "Play omnichannel demo" : "Pause omnichannel demo"}><Icon name={paused || reduced ? "play" : "pause"} size={14} />{reduced ? "Preview" : paused ? "Play" : "Pause"}</button>;
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -56,12 +57,13 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
         <div className="omni-heading">
           <p className="section-eyebrow">OMNICHANNEL</p>
           <h2 id="omnichannel-title" className="section-title">{vision ? <>Different channels.<br /><em>Connected execution.</em></> : <>The channel changes.<br />The <em>context</em> doesn&apos;t.</>}</h2>
-          <p>{vision ? "Bring enterprise knowledge and actions to the channels your customers and employees already use. Start on one channel. Continue on another, with context preserved." : "Start on one channel. Continue on another."}</p>
-          <div className="omni-route" aria-label="Conversation continues from WhatsApp to Email and back to WhatsApp"><span>WhatsApp</span><Icon name="arrow" size={18} /><span>Email</span><Icon name="arrow" size={18} /><span>WhatsApp</span></div>
+          <p>{vision ? "Start on one channel. Continue on another. Keep the context—and the work—moving." : "Start on one channel. Continue on another."}</p>
+          <ol className="omni-route" aria-label="Conversation continues from WhatsApp to Email and back to WhatsApp">{(["WhatsApp", "Email", "WhatsApp"] as const).map((item, index) => <li key={index} aria-current={index === stage ? "step" : undefined}><span className="omni-route-icon"><ChannelIcon channel={item} /></span><span><small>0{index + 1}</small>{item}</span>{index < 2 && <Icon name="arrow" size={18} />}</li>)}</ol>
+          <p className="omni-context">One request. Context preserved.</p>
         </div>
 
         <div ref={scene} className="omni-scene" data-channel={channel} data-step={step} data-paused={paused || !visible}>
-          <div className="omni-thread"><span className="omni-avatar"><Icon name="people" size={19} /></span><div><strong>Mobile plan change</strong><span>One conversation · context preserved</span></div><span className="omni-demo">DEMO</span></div>
+          <div className="omni-thread"><span className="omni-avatar"><Icon name="people" size={19} /></span><div><strong>Mobile plan change</strong><span>One conversation · context preserved</span></div>{playback}</div>
           <div className="omni-surfaces">
             <article className="omni-whatsapp" aria-label="Conversation started on WhatsApp">
               <h3><ChannelIcon channel="WhatsApp" />WhatsApp<span>Mobile support</span></h3>
@@ -71,7 +73,7 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
               </div>
               <div className="omni-composer" aria-hidden="true"><span>Message</span><Icon name="arrow" size={17} /></div>
             </article>
-            <p className="omni-bridge"><span />{step === 5 ? "Same conversation. Confirmed on WhatsApp." : "Same request. Continued in Email."}<Icon name="arrow" size={16} /></p>
+            <p className="omni-bridge" data-complete={step === 5} aria-live="polite">{step === 5 ? <Icon name="check" size={16} /> : <span />}{step === 5 ? "Plan updated · Confirmation received" : confirmed ? "Confirmed through Email" : channel === "Email" ? "Same request. Confirm the details in Email." : step === 0 ? "Request started on WhatsApp" : "Details sent to email"}</p>
             <article className="omni-email" aria-label="Same conversation continued in Email">
               <h3><ChannelIcon channel="Email" />Email<span>Inbox · 1 new message</span></h3>
               <div className="omni-mail-content"><p className="omni-subject">RE: Mobile plan change</p>
@@ -95,11 +97,9 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
               <div className="omni-composer" aria-hidden="true"><span>Message</span><Icon name="arrow" size={17} /></div>
             </article>
           </div>
-          <div className="omni-playback"><span>WhatsApp → Email → WhatsApp</span><button onClick={() => { if (reduced) setStep(confirmed ? 0 : 5); else setPaused(value => !value); }} aria-label={reduced ? "Toggle demo confirmation" : paused ? "Play omnichannel demo" : "Pause omnichannel demo"}><Icon name={paused || reduced ? "play" : "pause"} size={14} />{reduced ? "Preview confirmation" : paused ? "Play" : "Pause"}</button></div>
           <p className="omni-disclaimer">Simplified flow for illustration purposes.</p>
         </div>
       </div>
-      <ul className="omni-channels" aria-label="Supported channels">{channels.map(item => <li key={item} data-active={item === channel}><ChannelIcon channel={item} /><span>{item}</span>{item === channel && <span className="omni-current">Current</span>}</li>)}</ul>
     </div>
   </section>;
 }

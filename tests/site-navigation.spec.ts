@@ -4,9 +4,9 @@ test("Platform links consistently reach the platform page", async ({ page }) => 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   const links = page.getByRole("link", { name: /^(Platform|Explore the Platform)$/ });
-  await expect(links).toHaveCount(3);
+  await expect(links).toHaveCount(4);
   for (const link of await links.all()) await expect(link).toHaveAttribute("href", "/platform");
-  await page.getByRole("link", { name: "Explore the Platform" }).click();
+  await page.locator("#capabilities").getByRole("link", { name: "Explore the Platform" }).click();
   await expect(page).toHaveURL(/\/platform$/);
   await expect(page.locator("#platform-title")).toBeInViewport();
 });

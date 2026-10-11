@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ExecutionFlow } from "@/components/hero/ExecutionFlow";
+import { HeroArt } from "@/components/hero/HeroArt";
 import { Icon } from "@/components/ui/Icon";
 
 export function ProductHero() {
@@ -13,7 +14,7 @@ export function ProductHero() {
     demo?.closest(".vision-demo")?.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   }
   return <section className="hero olive-hero" aria-labelledby="hero-title">
-    <div className="olive-hero-art" aria-hidden="true" />
+    <HeroArt />
     <div className="hero-grid page-shell">
       <div className="hero-copy">
         <p className="eyebrow"><span /> ENTERPRISE AGENTIC AI PLATFORM</p>

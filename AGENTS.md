@@ -10,6 +10,10 @@ Olive Signature supersedes the historical navy/acid-olive palette below: near-bl
 
 This is a visual redesign only. Preserve all existing copy, section order, routes, links, controls, demos, playback logic and reduced-motion behavior. The full interactive execution demo follows the cinematic introduction and remains targeted by the existing Hero CTA. Home `ENTERPRISE BY DESIGN` remains locked. Do not copy vendor logos, metrics or unsupported content from the visual reference. Do not deploy automatically.
 
+The approved post-Hero treatment uses a slate `#30363D` execution panel with off-white text, neutral charcoal Enterprise surfaces and off-white trust headlines. Compact beveled olive icon tiles identify connected systems and Protect / Control / Observe; avoid green washes across large panels. Keep the demo directly after the Hero, without adding the mockup's introductory heading or paragraph, and without an internal scroll container.
+
+Home Protect / Control / Observe uses three open, aligned pillars on a shared neutral background, with subtle vertical separators instead of boxed or staggered cards. Stack the pillars with horizontal separators on mobile. Preserve the existing Enterprise heading, copy and link.
+
 ## Public architecture and messaging
 
 - Deployment topology is an explicit enterprise architecture decision. The platform should be designed for pluggable deployment models, including dedicated managed and customer-hosted environments, with clearly documented trust boundaries, tenant isolation, data flows, and operational responsibilities. Infrastructure-as-code is an implementation mechanism, not a deployment model. This is a target-architecture principle, not a claim of current implementation. Hosting location, infrastructure ownership and single- or multi-tenancy are distinct dimensions; customer hosting does not automatically establish single-tenancy or prevent external data flows. Define isolation, identity, network access, data residency and operational ownership for each deployment without promising equivalent cloud behavior, guaranteed sovereignty or certification.

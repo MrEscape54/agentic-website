@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/navigation/Footer";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { Icon, type IconName } from "@/components/ui/Icon";
+import { IconTile } from "@/components/ui/IconTile";
 import { ProductHero } from "@/components/hero/ProductHero";
 import { HumanInTheLoop } from "@/components/home/HumanInTheLoop";
 import { Capabilities } from "@/components/home/Capabilities";
@@ -41,7 +42,7 @@ export default function Home() {
           <div className="control-grid">
             {controls.map(control => 
               <article key={control.title}>
-                <Icon name={control.icon} size={25} />
+                <IconTile name={control.icon} />
                 <h3>{control.title}</h3>
                 <p>{control.headline}</p>
                 <p className="vision-control-description">{control.description}</p>
