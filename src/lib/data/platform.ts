@@ -9,8 +9,8 @@ export const platformJourney = [
 
 export const platformBuildingBlocks = [
   { title: "Agents", copy: "Specialist agents with defined roles, working toward a common business goal.", detail: "The Orchestration Engine coordinates agents, delegation, workflows and execution context through stable contracts and adapters, independent of gateway vendors. Approved identities, permissions and policy bound delegation.", icon: "people" as const },
-  { title: "Knowledge", copy: "Trusted context that helps agents understand the situation and choose the next step.", detail: "Customer records, contracts and available plans ground the flow. Sensitive-data protection reduces unnecessary exposure in model context.", icon: "book" as const },
-  { title: "Skills", copy: "Reusable business capabilities that can be coordinated across workflows.", detail: "Identify customer → Check eligibility → Prepare plan change. Skills connect task intent to the tools needed for controlled execution.", icon: "layers" as const },
+  { title: "Knowledge", copy: "Trusted context that helps agents understand the situation and choose the next step.", detail: "Approved enterprise knowledge and relevant business records ground decisions. Sensitive-data protection reduces unnecessary exposure in model context.", icon: "book" as const },
+  { title: "Skills", copy: "Reusable business capabilities that can be coordinated across workflows.", detail: "Skills connect business intent to repeatable capabilities and the tools needed for controlled execution, allowing agents to coordinate work across workflows.", icon: "layers" as const },
   { title: "Tools & Actions", copy: "Connections to enterprise systems through controlled execution layers.", detail: "The Action Engine validates business actions, resolves trusted parameters, executes through approved tools and handles outcomes. The MCP Gateway governs tool access; it does not replace business execution. Enterprise systems remain authoritative.", icon: "code" as const },
 ];
 

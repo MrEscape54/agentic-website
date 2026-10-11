@@ -1,0 +1,71 @@
+#execution { padding-block: 64px; }
+#execution .section-topline { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+#execution .section-title { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.14; letter-spacing: -.045em; }
+#execution .section-title em { color: var(--off-white); }
+#execution .section-aside { font-size: 14px; line-height: 1.8; color: #b9bdc1; margin: 22px 0 0; max-width: 470px; }
+#execution .platform-execution { padding: 22px; background: #252a2e; border: 1px solid #ffffff30; border-radius: 12px; margin-top: 36px; }
+.platform-workflow-header { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+#execution .platform-scenarios { gap: 0; }
+#execution .platform-scenarios button { background: transparent; border-radius: 6px; padding: 12px 20px; font-size: 12px; line-height: 1.6; }
+#execution .platform-scenarios button[aria-pressed="true"] { border-color: var(--olive); color: var(--off-white); background: #bec77b0a; }
+#execution button:focus-visible { outline: 2px solid var(--olive); outline-offset: 4px; }
+#execution .platform-example-label { margin: 0; color: #b9bdc1; font-size: 8px; }
+#execution .platform-request { margin-top: 18px; border: 1px solid #ffffff25; border-radius: 7px; padding: 16px 18px; background: #1c2226; }
+#execution .platform-request strong { font-weight: 500; font-size: 13px; }
+#execution .platform-request p { margin: 5px 0 0; font-size: 12px; line-height: 1.7; color: #b9bdc1; }
+#execution .platform-execution-grid { grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); border: 0; border-radius: 0; margin-top: 22px; overflow: visible; }
+#execution .platform-step-list { padding: 0 20px 0 0; }
+#execution .platform-step-list li { position: relative; min-height: 66px; padding: 14px 10px; color: #b9bdc1; gap: 14px; font-size: 11px; }
+#execution .platform-step-list li > span { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #ffffff40; border-radius: 50%; flex-shrink: 0; z-index: 1; background: #252a2e; }
+#execution .platform-step-list li:not(:last-child)::after { content: ""; position: absolute; top: calc(50% + 16px); bottom: -18px; left: 25px; width: 1px; background: #ffffff35; }
+#execution .platform-step-list li[data-done="true"] { color: var(--off-white); }
+#execution .platform-step-list li[data-done="true"] > span { color: #d2d4d6; background: #ffffff15; }
+#execution .platform-step-list li[aria-current="step"] { color: var(--off-white); border-color: transparent; background: #ffffff09; }
+#execution .platform-step-list li[aria-current="step"] > span { color: var(--navy); border-color: var(--olive); background: var(--olive); }
+#execution .platform-step-panel { background: transparent; padding: 0 0 0 28px; }
+#execution .platform-step-panel h3 { font-size: clamp(24px, 2.5vw, 34px); margin-bottom: 12px; }
+#execution .platform-step-panel p { color: #b9bdc1; font-size: 13px; line-height: 1.8; }
+#execution .platform-step-panel .section-eyebrow { font-size: 9px; color: var(--olive); letter-spacing: .16em; margin: 4px 0 12px; }
+#execution .platform-system { background: #1c2226; border: 1px solid #ffffff20; border-radius: 6px; padding: 14px; gap: 20px; justify-content: space-between; flex-wrap: wrap; margin-top: 22px; }
+#execution .platform-system > span { display: flex; align-items: center; gap: 10px; font-size: 11px; line-height: 1.7; }
+.platform-review-status { color: #d2d4d6; }
+#execution .platform-proposal { padding: 0 16px; border: 1px solid #ffffff25; border-radius: 6px; margin: 16px 0 0; }
+.platform-proposal > div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: 20px; padding-block: 14px; font-size: 12px; line-height: 1.8; }
+.platform-proposal > div + div { border-top: 1px solid #ffffff20; }
+.platform-proposal dt { display: flex; align-items: center; gap: 10px; }
+.platform-proposal dd { margin: 0; color: #d2d4d6; }
+.platform-proposal svg { flex-shrink: 0; }
+#execution .platform-decisions { display: flex; margin-top: 18px; gap: 10px; }
+#execution .platform-decisions .button { flex: 1; border-radius: 6px; min-height: 42px; padding: 10px 14px; font-size: 11px; }
+#execution .platform-decision-note { font-size: 10px; margin: 10px 0 0; }
+#execution .platform-playback { border-top: 1px solid #ffffff25; padding-top: 16px; margin-top: 20px; }
+#execution .platform-playback .button { border-radius: 6px; min-height: 42px; font-size: 11px; padding-inline: 18px; }
+#execution .platform-playback button:disabled { background: #ffffff08; color: #b9bdc1; border-color: #ffffff20; opacity: .6; }
+#execution .platform-trace { padding: 6px 14px; margin-top: 14px; border: 1px solid #ffffff25; border-radius: 6px; background: #1c2226; }
+#execution .platform-trace summary { font-size: 11px; }
+.platform-execution-note { display: flex; align-items: center; gap: 12px; font-size: 11px; color: #b9bdc1; line-height: 1.8; margin: 20px 0 0; }
+.platform-execution-note svg { flex-shrink: 0; }
+@media (max-width: 800px) {
+  #execution .section-topline { grid-template-columns: 1fr; gap: 18px; }
+  #execution .section-aside { margin: 0; }
+}
+@media (max-width: 760px) {
+  #execution .platform-execution-grid { grid-template-columns: 1fr; }
+  #execution .platform-step-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 0 18px; border-right: 0; }
+  #execution .platform-step-list li { min-height: 0; padding: 8px 4px; font-size: 10px; gap: 8px; }
+  #execution .platform-step-list li::after { display: none; }
+  #execution .platform-step-panel { padding: 24px 0 0; }
+  .platform-workflow-header { flex-direction: column; align-items: stretch; gap: 12px; }
+  #execution .platform-scenarios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #execution .platform-scenarios button { padding: 10px; font-size: 11px; }
+}
+@media (max-width: 640px) {
+  #execution { padding-block: 48px; }
+  #execution .platform-execution { padding: 16px; margin-top: 28px; }
+  #execution .platform-step-list li > span { width: 25px; height: 25px; }
+  #execution .platform-step-panel p { font-size: 12px; }
+  #execution .platform-decisions { flex-wrap: wrap; }
+  #execution .platform-decisions .button { flex: 1 1 100px; }
+  .platform-proposal > div { grid-template-columns: 1fr; gap: 6px; }
+  #execution .platform-request { padding: 14px; }
+}

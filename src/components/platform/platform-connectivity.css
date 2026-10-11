@@ -1,0 +1,145 @@
+#ecosystem, .platform-observability { padding-block: 64px; }
+#ecosystem .section-topline, .platform-observability .section-topline { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+#ecosystem .section-title, .platform-observability .section-title { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.14; letter-spacing: -.045em; }
+#ecosystem .section-title em, .platform-observability .section-title em { color: var(--off-white); }
+#ecosystem .section-aside, .platform-observability .section-aside { font-size: 14px; line-height: 1.8; color: #b9bdc1; max-width: 470px; margin: 22px 0 0; }
+.ecosystem-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 40px; align-items: start; margin-top: 36px; }
+#ecosystem .platform-connections { display: block; margin: 0; }
+#ecosystem .platform-connections article { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 22px; padding-block: 24px; border: 0; }
+#ecosystem .platform-connections article:first-child { padding-top: 0; }
+#ecosystem .platform-connections article + article { border-top: 1px solid #ffffff30; }
+#ecosystem .platform-connections h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.4; }
+#ecosystem .platform-connections p { color: #b9bdc1; font-size: 12px; line-height: 1.9; }
+#ecosystem .platform-connections details { border: 0; margin-top: 12px; padding: 0; }
+#ecosystem .platform-connections summary { width: fit-content; color: var(--olive); font-size: 12px; }
+.ecosystem-diagram { background: #252a2e; border: 1px solid #ffffff30; border-radius: 10px; margin: 0; padding: 24px 20px; }
+.ecosystem-diagram figcaption, .platform-telemetry figcaption { color: #d2d4d6; font-size: 9px; letter-spacing: .14em; line-height: 1.8; }
+.ecosystem-policy { display: flex; align-items: center; justify-content: center; gap: 12px; width: fit-content; margin: 20px auto 0; border: 1px solid #ffffff50; border-radius: 6px; padding: 12px 18px; }
+.ecosystem-diagram strong { font-size: 12px; font-weight: 500; line-height: 1.6; }
+.ecosystem-diagram p { color: #b9bdc1; font-size: 10px; line-height: 1.8; margin: 4px 0 0; }
+.ecosystem-policy-link { text-align: center; padding-block: 12px; }
+.ecosystem-policy-link > span { display: block; font-size: 18px; color: #d2d4d6; line-height: 1; margin-bottom: 7px; }
+.ecosystem-access-map { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); gap: 22px; align-items: center; }
+.ecosystem-orchestration { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; border: 1px solid #ffffff40; border-radius: 6px; padding: 18px 10px; }
+.ecosystem-orchestration > p { margin: 0; }
+.ecosystem-umbrella { text-align: center; border: 1px dashed #ffffff40; border-bottom: 0; padding: 10px 6px; margin-bottom: 10px; }
+.ecosystem-umbrella strong { display: block; color: var(--olive); font-size: 8px; letter-spacing: .12em; }
+.ecosystem-umbrella span { display: block; color: #b9bdc1; font-size: 9px; line-height: 1.7; margin-top: 4px; }
+.ecosystem-route { display: grid; grid-template-columns: 26px minmax(0, 1fr) 14px minmax(0, .95fr); gap: 8px; align-items: center; margin-top: 12px; }
+.ecosystem-route-gate { display: flex; gap: 3px; align-items: center; color: var(--olive); font-size: 11px; }
+.ecosystem-route-node { display: flex; justify-content: center; align-items: center; gap: 8px; border: 1px solid #ffffff40; border-radius: 5px; padding: 12px 8px; min-height: 55px; }
+.ecosystem-route-node strong { font-size: 10px; }
+.ecosystem-route-node svg { flex-shrink: 0; }
+.ecosystem-route-arrow { color: #b9bdc1; }
+.ecosystem-action { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid #ffffff25; padding-top: 20px; margin-top: 22px; align-items: center; }
+.ecosystem-action > div { display: flex; align-items: center; gap: 12px; border: 1px solid #ffffff40; border-radius: 6px; padding: 12px; }
+.ecosystem-action svg { flex-shrink: 0; }
+.ecosystem-action > p { border-left: 1px solid #ffffff30; padding-left: 20px; margin: 0; }
+.ecosystem-implementations { border: 1px solid #ffffff30; border-radius: 6px; padding: 14px; text-align: center; margin-top: 22px; }
+.ecosystem-implementations p { color: var(--off-white); font-size: 11px; margin: 0; }
+.ecosystem-implementations span { display: block; font-size: 10px; color: #b9bdc1; line-height: 1.8; margin-top: 4px; }
+.ecosystem-footer { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: 36px; border-top: 1px solid #ffffff30; padding-top: 24px; margin-top: 28px; }
+.ecosystem-footer > p { display: flex; align-items: center; gap: 18px; margin: 0; }
+.ecosystem-footer strong { font: 500 20px/1.5 var(--font-headline); }
+.ecosystem-footer svg { flex-shrink: 0; color: #d2d4d6; }
+.ecosystem-footer > div { border-left: 1px solid #ffffff30; padding-left: 28px; }
+.ecosystem-footer > div > p { font-size: 12px; line-height: 1.9; color: #b9bdc1; margin: 0; }
+.ecosystem-footer > div > span { display: block; color: #b9bdc1; font-size: 9px; line-height: 1.8; margin-top: 10px; }
+.platform-telemetry { background: #252a2e; border: 1px solid #ffffff30; border-radius: 10px; padding: 24px; margin: 36px 0 30px; }
+.platform-telemetry-map { display: grid; grid-template-columns: minmax(0, 1.15fr) 24px minmax(0, 1fr) minmax(0, .48fr) minmax(0, .85fr); gap: 18px; align-items: center; margin-top: 24px; }
+.platform-telemetry-signals > p { color: #d2d4d6; font-size: 9px; letter-spacing: .12em; line-height: 1.8; margin: 0 0 14px; }
+.platform-telemetry-signals ul, .platform-telemetry-destinations { list-style: none; margin: 0; padding: 0; }
+.platform-telemetry-signals li { display: flex; align-items: center; gap: 12px; color: #d2d4d6; font-size: 11px; line-height: 1.8; padding-block: 9px; }
+.platform-telemetry-signals svg { flex-shrink: 0; }
+.platform-telemetry-connector { display: flex; align-items: center; justify-content: center; color: #b9bdc1; }
+.platform-telemetry-hub { text-align: center; }
+.platform-telemetry-hub > div { border: 1px solid #bec77b99; border-radius: 8px; padding: 24px 12px; }
+.platform-observability .platform-telemetry-hub h3 { font: 500 22px/1.4 var(--font-headline); margin: 14px 0 8px; }
+.platform-telemetry-hub p { color: #d2d4d6; font-size: 10px; line-height: 1.8; margin: 0; }
+.platform-telemetry-hub > span { display: block; color: #b9bdc1; font-size: 10px; line-height: 1.8; margin-top: 14px; }
+.platform-telemetry-adapters { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: #d2d4d6; font-size: 9px; line-height: 1.8; }
+.platform-telemetry-adapters > svg { box-sizing: content-box; padding: 12px; border: 1px solid #ffffff50; border-radius: 6px; }
+.platform-telemetry-destinations { display: grid; gap: 18px; }
+.platform-telemetry-destinations li { display: flex; align-items: center; gap: 12px; padding: 15px 12px; border: 1px solid #ffffff40; border-radius: 6px; font-size: 11px; line-height: 1.7; }
+.platform-telemetry-destinations svg { flex-shrink: 0; color: #d2d4d6; }
+.platform-telemetry-caption { border-top: 1px solid #ffffff30; padding-top: 16px; margin: 22px 0 0; color: #b9bdc1; font-size: 11px; line-height: 1.8; }
+.platform-observability-principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.platform-observability-principles article + article { border-left: 1px solid #ffffff30; padding-left: 32px; }
+.platform-observability-principles h3 { font: 500 21px/1.4 var(--font-headline); margin: 18px 0 12px; }
+.platform-observability-principles p { color: #b9bdc1; font-size: 12px; line-height: 1.9; margin: 0; }
+.platform-observability-footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid #ffffff30; padding-top: 22px; margin-top: 28px; }
+.platform-observability-footer p { color: #b9bdc1; font-size: 11px; line-height: 1.8; margin: 0; }
+.platform-page #enterprise .platform-observability-footer .text-link { margin: 0; font-size: 12px; }
+/* Connect the hub through its adapters to each telemetry destination. */
+.platform-telemetry-adapters, .platform-telemetry-destinations,
+.platform-telemetry-destinations li { position: relative; }
+.platform-telemetry-adapters::before, .platform-telemetry-adapters::after,
+.platform-telemetry-destinations::before, .platform-telemetry-destinations li::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background: #b9bdc166;
+}
+@media (min-width: 1101px) {
+  .platform-telemetry-hub { position: relative; }
+  .platform-telemetry-hub > span { position: absolute; top: 100%; width: 100%; }
+  .platform-telemetry-adapters > span { position: absolute; top: calc(100% + 12px); width: 100%; }
+  .platform-telemetry-adapters::before,
+  .platform-telemetry-adapters::after { top: 50%; height: 1px; }
+  .platform-telemetry-adapters::before { left: -18px; width: calc(50% - 7px); }
+  .platform-telemetry-adapters::after { left: calc(50% + 25px); width: calc(50% - 25px); }
+  .platform-telemetry-destinations li { min-height: 62px; }
+  .platform-telemetry-destinations::before { left: -18px; top: 31px; bottom: 31px; width: 1px; }
+  .platform-telemetry-destinations li::before { left: -18px; top: 50%; width: 18px; height: 1px; }
+}
+@media (max-width: 1100px) {
+  .ecosystem-layout { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 28px; }
+  .ecosystem-access-map { grid-template-columns: 1fr; gap: 16px; }
+  .ecosystem-orchestration { flex-direction: row; text-align: left; padding: 12px; }
+  .ecosystem-orchestration p { max-width: 180px; }
+  .ecosystem-route { grid-template-columns: 26px minmax(0, 1fr) 14px minmax(0, 1fr); }
+  .platform-telemetry-map { grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr); gap: 20px; }
+  .platform-telemetry-adapters { grid-column: 1 / -1; flex-direction: column; justify-content: center; padding-block: 18px; }
+  .platform-telemetry-adapters::before { top: 0; left: 50%; width: 1px; height: 18px; }
+  .platform-telemetry-adapters::after { bottom: -20px; left: 50%; width: 1px; height: 38px; }
+  .platform-telemetry-destinations { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .platform-telemetry-destinations::before { top: -2px; left: calc((100% - 40px) / 6); right: calc((100% - 40px) / 6); height: 1px; }
+  .platform-telemetry-destinations li::before { top: -2px; left: 50%; width: 1px; height: 2px; }
+}
+@media (max-width: 800px) {
+  #ecosystem .section-topline, .platform-observability .section-topline { grid-template-columns: 1fr; gap: 18px; }
+  #ecosystem .section-aside, .platform-observability .section-aside { margin: 0; }
+  .ecosystem-layout { grid-template-columns: 1fr; }
+  .ecosystem-footer { grid-template-columns: 1fr; gap: 18px; }
+  .ecosystem-footer > div { border-left: 0; padding-left: 0; }
+  .platform-observability-principles { gap: 22px; }
+  .platform-observability-principles article + article { padding-left: 22px; }
+}
+@media (max-width: 640px) {
+  #ecosystem, .platform-observability { padding-block: 48px; }
+  .ecosystem-layout { margin-top: 28px; }
+  #ecosystem .platform-connections article { gap: 16px; }
+  #ecosystem .platform-connections h3 { font-size: 21px; }
+  .ecosystem-diagram { padding: 22px 16px; }
+  .ecosystem-orchestration { flex-wrap: wrap; justify-content: center; text-align: center; }
+  .ecosystem-orchestration p { max-width: none; width: 100%; }
+  .ecosystem-route { grid-template-columns: 18px minmax(0, 1fr) 12px minmax(0, 1fr); gap: 6px; }
+  .ecosystem-route-node { flex-direction: column; padding: 10px 6px; min-height: 72px; text-align: center; }
+  .ecosystem-route-gate { flex-direction: column; }
+  .ecosystem-action { grid-template-columns: 1fr; gap: 14px; }
+  .ecosystem-action > p { border-left: 0; padding-left: 0; }
+  .ecosystem-footer strong { font-size: 19px; }
+  .platform-telemetry { padding: 22px 18px; margin-top: 28px; }
+  .platform-telemetry-map { grid-template-columns: 1fr; gap: 18px; }
+  .platform-telemetry-connector { transform: rotate(90deg); }
+  .platform-telemetry-hub { width: 100%; }
+  .platform-telemetry-adapters { grid-column: 1; }
+  .platform-telemetry-destinations { grid-column: 1; grid-template-columns: 1fr; gap: 12px; margin-left: 18px; }
+  .platform-telemetry-adapters::after { left: 0; bottom: -18px; width: 50%; height: 18px; background: none; border-top: 1px solid #b9bdc166; border-left: 1px solid #b9bdc166; }
+  .platform-telemetry-destinations::before { top: -18px; bottom: 26px; left: -18px; right: auto; width: 1px; height: auto; }
+  .platform-telemetry-destinations li { min-height: 52px; }
+  .platform-telemetry-destinations li::before { top: 50%; left: -18px; width: 18px; height: 1px; }
+  .platform-observability-principles { grid-template-columns: 1fr; gap: 24px; }
+  .platform-observability-principles article + article { border-left: 0; border-top: 1px solid #ffffff30; padding: 24px 0 0; }
+  .platform-observability-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
