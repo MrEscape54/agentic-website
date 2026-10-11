@@ -131,7 +131,7 @@ body { background: var(--navy); }
 
 /* Quiet surfaces and open layouts provide rhythm between product scenes. */
 .product-page .control-grid article { background: linear-gradient(145deg,#202619,#11160f); border-color: var(--border-subtle); }
-.product-page :is(.capability-card,.platform-journey li,.platform-building-blocks article,.enterprise-controls-grid article,.enterprise-registry,.enterprise-trace,.enterprise-authority > div) { background: var(--surface); border-color: var(--border-strong); }
+.product-page :is(.capability-card,.platform-journey li,.platform-building-blocks article,.enterprise-controls-grid article,.enterprise-trace) { background: var(--surface); border-color: var(--border-strong); }
 .product-page :is(.platform-step-panel,.platform-request,.omni-thread) { background: var(--surface-raised); }
 .product-page .capability-section { background: var(--surface-soft); border-color: var(--border-subtle); }
 .product-page #capabilities[data-horizontal="true"] .capability-card[data-active="true"] { background: #222b19; border-color: #bec77b70; border-top-color: var(--olive); }
@@ -142,7 +142,7 @@ body { background: var(--navy); }
 .product-page .omni-scene { box-shadow: none; }
 .product-page .omni-email .omni-disclaimer { color: var(--slate); }
 .product-page .platform-intro, .product-page .enterprise-intro { position: relative; isolation: isolate; }
-.product-page :is(.platform-intro,.enterprise-intro)::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at 85% 0%,var(--olive-glow),transparent 62%); pointer-events: none; }
+.product-page .platform-intro::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at 85% 0%,var(--olive-glow),transparent 62%); pointer-events: none; }
 .product-page .final-cta { background: radial-gradient(ellipse at 75% 100%,#3d482544,transparent 65%),var(--surface-soft); }
 .product-page .final-cta::before { inset: 0; border: 0; border-radius: 0; background: url('/olive-curves.svg') right 45% / 1000px auto no-repeat; opacity: .19; mask-image: linear-gradient(90deg,transparent,#000); }
 .site-footer { background: #070905; }

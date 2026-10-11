@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { useCapabilityScroll } from "./useCapabilityScroll";
+import { useCapabilityPlayback } from "./useCapabilityPlayback";
 import { capabilities as currentCapabilities } from "@/lib/data/home";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { IconTile } from "@/components/ui/IconTile";
@@ -16,10 +16,10 @@ const diagrams: { icon: IconName; nodes: { label: string; icon: IconName }[] }[]
 ];
 
 export function Capabilities({ groups = currentCapabilities, description = "Explore the engines and studios that connect understanding, knowledge and controlled execution." }: { groups?: typeof currentCapabilities; compact?: boolean; description?: string }) {
-  const { sectionRef, stageRef, active, select } = useCapabilityScroll(groups.length);
+  const { sectionRef, active, select, paused, reduced, setFocused, toggle } = useCapabilityPlayback(groups.length);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
-  return <section ref={sectionRef} id="capabilities" className="capability-section capability-explorer" aria-labelledby="capabilities-title">
-    <div ref={stageRef} className="capability-explorer-stage">
+  return <section ref={sectionRef} id="capabilities" className="capability-section capability-explorer" aria-labelledby="capabilities-title" onFocusCapture={event => setFocused(Boolean((event.target as HTMLElement).closest('[role="tablist"], [role="tabpanel"]')))} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false); }}>
+    <div className="capability-explorer-stage">
       <div className="page-shell">
         <div className="capability-explorer-heading"><div><p className="section-eyebrow">PLATFORM CAPABILITIES</p><h2 id="capabilities-title" className="section-title">The technology behind<br />every execution.</h2></div><p>{description}</p></div>
         <div className="capability-explorer-layout">
@@ -28,7 +28,6 @@ export function Capabilities({ groups = currentCapabilities, description = "Expl
               const next = event.key === "ArrowDown" ? (index + 1) % groups.length : event.key === "ArrowUp" ? (index + groups.length - 1) % groups.length : event.key === "Home" ? 0 : event.key === "End" ? groups.length - 1 : null;
               if (next !== null) { event.preventDefault(); select(next); tabs.current[next]?.focus({ preventScroll: true }); }
             }}><span>0{index + 1}</span><strong>{group.title}</strong><Icon name="arrow" size={18} /></button>)}</div>
-            <p className="capability-index-hint"><span className="capability-scroll-hint">Scroll to explore · </span>Select a capability</p>
           </div>
           <div className="capability-details">{groups.map((group, index) => {
             const diagram = diagrams[index % diagrams.length];
@@ -40,7 +39,7 @@ export function Capabilities({ groups = currentCapabilities, description = "Expl
             </article>;
           })}</div>
         </div>
-        <div className="capability-explorer-footer"><div aria-hidden="true"><span>0{active + 1} / 0{groups.length}</span>{groups.map((group, index) => <i key={group.title} data-active={index === active} />)}</div><Link href="/platform">Explore the Platform <Icon name="arrow" size={18} /></Link></div>
+        <div className="capability-explorer-footer"><div aria-hidden="true"><span>0{active + 1} / 0{groups.length}</span>{groups.map((group, index) => <i key={group.title} data-active={index === active} />)}</div>{!reduced && <button className="capability-playback" onClick={toggle} aria-label={paused ? "Play capabilities" : "Pause capabilities"}><Icon name={paused ? "play" : "pause"} size={14} />{paused ? "Play" : "Pause"}</button>}<Link href="/platform">Explore the Platform <Icon name="arrow" size={18} /></Link></div>
       </div>
     </div>
   </section>;

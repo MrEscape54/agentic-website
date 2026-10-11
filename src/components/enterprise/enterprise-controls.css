@@ -1,0 +1,72 @@
+#controls { padding-block: 64px; }
+#controls .section-topline { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+#controls .section-title { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.14; letter-spacing: -.045em; }
+#controls .section-title em { color: var(--off-white); }
+#controls .section-aside { margin: 22px 0 0; max-width: 470px; color: #b9bdc1; font-size: 14px; line-height: 1.8; }
+.enterprise-control-rows { margin-top: 40px; }
+.enterprise-control-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .48fr) minmax(0, 1.15fr); gap: 14px 28px; align-items: center; border-top: 1px solid #ffffff30; padding-block: 26px 18px; scroll-margin-top: 110px; }
+.control-story { display: grid; grid-template-columns: 18px 48px minmax(0, 1fr); gap: 16px; align-items: start; }
+.control-number { font: 11px monospace; color: #aeb3b7; padding-top: 4px; }
+#controls .control-story h3 { font-size: 20px; line-height: 1.4; letter-spacing: -.025em; }
+#controls .control-story p { font-size: 12px; line-height: 1.8; color: #b9bdc1; margin: 10px 0 0; }
+.control-points { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 1px solid #ffffff30; }
+.control-points li { padding-block: 10px; font-size: 11px; line-height: 1.7; color: #d2d4d6; }
+.control-points li + li { border-top: 1px solid #ffffff20; }
+.control-illustration { min-width: 0; margin: 0; padding: 20px 16px; border: 1px solid #ffffff20; border-radius: 8px; background: #252a2e; }
+.control-mini-flow { display: flex; align-items: center; gap: 7px; }
+.control-node { display: flex; flex: 1; justify-content: center; align-items: center; gap: 7px; min-width: 0; padding: 12px 8px; border: 1px solid #ffffff55; border-radius: 5px; font-size: 11px; line-height: 1.5; }
+.control-node svg { flex-shrink: 0; }
+.control-connector { font-size: 16px; color: #b9bdc1; }
+.control-node-highlight { border-color: var(--olive); color: var(--olive); }
+.control-illustration figcaption { margin-top: 14px; color: #b9bdc1; font-size: 10px; line-height: 1.8; text-align: center; }
+.control-illustration .control-identity-caption { display: flex; align-items: center; justify-content: center; gap: 8px; border-top: 1px solid #ffffff35; padding-top: 10px; margin-inline: 20px; }
+.control-policy-source { display: flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #ffffff55; border-radius: 5px; padding: 8px; width: fit-content; margin: 0 auto; font-size: 9px; letter-spacing: .12em; }
+.control-policy-targets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; position: relative; padding-top: 26px; }
+.control-policy-targets::before { content: ""; position: absolute; left: 16.67%; right: 16.67%; top: 14px; height: 1px; background: var(--olive); }
+.control-policy-source::after { content: ""; position: absolute; height: 14px; width: 1px; background: var(--olive); bottom: -15px; left: 50%; }
+.control-policy-source { position: relative; }
+.control-policy-targets > div { position: relative; padding-top: 10px; }
+.control-policy-gate { position: absolute; top: -20px; left: calc(50% - 10px); width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--olive); color: var(--olive); background: #252a2e; }
+.control-mini-label { color: #d2d4d6; font-size: 9px; letter-spacing: .16em; }
+.control-tokenization { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #101315; border-radius: 5px; padding: 14px 12px; margin-top: 14px; font: 10px/1.7 monospace; }
+.control-sensitive-value { color: #aeb3b7; }
+.control-tokenization code { padding: 6px; color: var(--olive); border: 1px solid #bec77b88; border-radius: 4px; }
+.control-review .control-node { font-size: 10px; gap: 5px; padding-inline: 6px; }
+.control-review figcaption { border: 1px dashed #ffffff40; border-radius: 5px; padding: 8px; margin: 24px auto 0; width: fit-content; position: relative; }
+.control-review figcaption::before { content: "↓"; position: absolute; bottom: 100%; left: 50%; color: #b9bdc1; }
+.control-review figcaption span { margin-inline: 7px; }
+.control-detail { grid-column: 1 / -1; }
+.control-detail summary { width: fit-content; cursor: pointer; font-size: 11px; color: #b9bdc1; padding-block: 5px; }
+#controls .control-detail p { font-size: 12px; line-height: 1.9; color: #b9bdc1; max-width: 950px; margin: 12px 0 6px; }
+.enterprise-controls-footer { border-top: 1px solid #ffffff30; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 24px; }
+.enterprise-controls-footer p { display: flex; align-items: center; gap: 12px; color: #b9bdc1; font-size: 12px; margin: 0; }
+.enterprise-controls-footer svg { flex-shrink: 0; }
+.enterprise-controls-footer .text-link { font-size: 12px; }
+@media (max-width: 1100px) {
+  .enterprise-control-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 28px; }
+  .control-points { grid-column: 1; padding-left: 82px; border: 0; }
+  .control-points li { padding-block: 6px; }
+  .control-illustration { grid-column: 2; grid-row: 1 / 3; }
+}
+@media (max-width: 800px) {
+  #controls .section-topline { grid-template-columns: 1fr; gap: 18px; }
+  #controls .section-aside { margin: 0; max-width: 580px; }
+  .control-story { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; }
+  .control-number { display: none; }
+  .control-points { padding-left: 62px; }
+  .enterprise-controls-footer { align-items: flex-start; flex-direction: column; gap: 16px; }
+}
+@media (max-width: 640px) {
+  #controls { padding-block: 48px; }
+  .enterprise-control-rows { margin-top: 28px; }
+  .enterprise-control-row { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-block: 24px 18px; }
+  .control-illustration { grid-column: 1; grid-row: auto; padding: 18px 12px; }
+  .control-points { padding-left: 62px; }
+  .control-detail { grid-column: 1; }
+  #controls .control-story h3 { font-size: 19px; }
+  .control-review .control-mini-flow { flex-direction: column; gap: 6px; }
+  .control-review .control-node { width: 100%; font-size: 11px; }
+  .control-review .control-connector { transform: rotate(90deg); line-height: 1; }
+  .control-node { font-size: 10px; gap: 5px; padding-inline: 6px; }
+  .control-tokenization { justify-content: center; }
+}

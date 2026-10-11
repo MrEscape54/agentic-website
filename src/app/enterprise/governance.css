@@ -1,0 +1,59 @@
+#governance { padding-block: 64px; }
+#governance .section-topline { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+#governance .section-title { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.14; letter-spacing: -.045em; }
+#governance .section-title em { color: var(--off-white); }
+#governance .section-aside { max-width: 470px; margin: 22px 0 0; font-size: 14px; line-height: 1.8; color: #b9bdc1; }
+#governance .enterprise-registry { grid-template-columns: 1fr 1.05fr; gap: 56px; margin-top: 40px; padding: 0; border: 0; border-radius: 0; background: transparent; align-items: start; }
+#governance .enterprise-registry-story { min-width: 0; }
+#governance .enterprise-registry-story > .olive-icon-tile { margin-bottom: 16px; }
+#governance .enterprise-registry-story > .section-eyebrow { margin: 0 0 18px; color: #d5d8da; font-size: 9px; line-height: 1.6; }
+#governance .enterprise-registry-story h3 { font-size: 24px; line-height: 1.4; font-weight: 500; }
+#governance .enterprise-registry-story > p:not(.section-eyebrow) { color: #b9bdc1; font-size: 13px; line-height: 1.8; margin: 16px 0 0; }
+#governance .enterprise-registry-assets { display: flex; flex-wrap: wrap; gap: 14px 24px; list-style: none; padding: 0; margin: 28px 0 0; }
+#governance .enterprise-registry-assets li { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+#governance .enterprise-registry-assets svg { flex-shrink: 0; }
+#governance .enterprise-registry dl { background: #252a2e; border: 1px solid #ffffff30; border-radius: 10px; padding: 8px 22px; margin: 0; }
+#governance .enterprise-registry dl > div { display: block; position: relative; padding: 20px 0 20px 50px; border-bottom: 1px solid #ffffff25; }
+#governance .enterprise-registry dl > div:last-child { border-bottom: 0; }
+#governance .enterprise-registry dt { font-size: 16px; font-weight: 500; line-height: 1.5; }
+#governance .enterprise-registry dt svg { position: absolute; left: 0; top: 25px; }
+#governance .enterprise-registry dd { font-size: 12px; line-height: 1.8; color: #b9bdc1; margin: 5px 0 0; }
+#governance .enterprise-lifecycle-figure { margin: 36px 0 0; }
+#governance .enterprise-lifecycle-figure figcaption { color: #b9bdc1; font-size: 9px; letter-spacing: .18em; line-height: 1.8; }
+#governance .enterprise-lifecycle { position: relative; gap: 24px; margin: 20px 0 0; }
+#governance .enterprise-lifecycle::before { content: ""; position: absolute; left: calc((100% - 96px) / 10); right: calc((100% - 96px) / 10); top: 17px; height: 1px; background: #ffffff45; }
+#governance .enterprise-lifecycle li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; border: 0; padding: 0; font-size: 12px; line-height: 1.6; }
+#governance .enterprise-lifecycle li > span { position: relative; display: grid; place-items: center; width: 35px; height: 35px; flex-shrink: 0; margin: 0; border: 1px solid #ffffff60; border-radius: 50%; background: var(--navy); font: 10px monospace; color: var(--off-white); }
+#governance .enterprise-lifecycle .enterprise-lifecycle-active { color: var(--olive); }
+#governance .enterprise-lifecycle li.enterprise-lifecycle-active > span { background: var(--olive); border-color: var(--olive); color: var(--navy); }
+#governance .enterprise-registry-note { display: flex; gap: 16px; align-items: flex-start; margin-top: 26px; }
+#governance .enterprise-registry-note > svg { flex-shrink: 0; margin-top: 3px; }
+#governance .enterprise-registry-note p { border-left: 1px solid #ffffff30; padding-left: 16px; margin: 0; font-size: 12px; line-height: 1.8; }
+#governance .enterprise-registry-note strong { display: block; font-weight: 500; }
+#governance .enterprise-registry-note span { display: block; color: #b9bdc1; margin-top: 3px; }
+#governance .enterprise-responsibilities { margin-top: 26px; border-bottom: 0; padding-block: 10px 0; }
+#governance .enterprise-responsibilities summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; list-style: none; }
+#governance .enterprise-responsibilities summary::-webkit-details-marker { display: none; }
+#governance .enterprise-responsibilities summary::after { content: "+"; font-size: 22px; line-height: 1; }
+#governance .enterprise-responsibilities[open] summary::after { content: "−"; }
+@media (max-width: 1000px) {
+  #governance .enterprise-registry { gap: 32px; }
+  #governance .enterprise-registry-story h3 { font-size: 22px; }
+}
+@media (max-width: 800px) {
+  #governance .section-topline { grid-template-columns: 1fr; gap: 18px; }
+  #governance .section-aside { margin: 0; max-width: 580px; }
+  #governance .enterprise-registry { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
+  #governance .enterprise-registry-story > p:not(.section-eyebrow) { max-width: 600px; }
+}
+@media (max-width: 640px) {
+  #governance { padding-block: 48px; }
+  #governance .enterprise-registry-assets { gap: 14px 20px; }
+  #governance .enterprise-registry dl { padding-inline: 18px; }
+  #governance .enterprise-registry dl > div { padding-block: 18px; }
+  #governance .enterprise-lifecycle { grid-template-columns: 1fr; gap: 18px; }
+  #governance .enterprise-lifecycle::before { top: 17px; bottom: 17px; left: 17px; right: auto; width: 1px; height: auto; }
+  #governance .enterprise-lifecycle li { flex-direction: row; text-align: left; gap: 16px; }
+  #governance .enterprise-registry-note { gap: 12px; }
+  #governance .enterprise-registry-note p { padding-left: 12px; }
+}

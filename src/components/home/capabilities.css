@@ -11,8 +11,6 @@
 .capability-index button[aria-selected="true"] { color: var(--off-white); }
 .capability-index button[aria-selected="true"] > :is(span,svg) { color: var(--olive); }
 .capability-index button[aria-selected="true"]::before { content: ""; position: absolute; left: -6px; top: 22px; bottom: 22px; width: 2px; background: var(--olive); }
-.capability-index-hint { margin: 20px 0 0; font-size: 11px; color: #aeb3b7; }
-.capability-scroll-hint { display: none; }
 .capability-details { display: grid; min-width: 0; }
 .capability-detail { grid-area: 1 / 1; min-width: 0; visibility: hidden; padding: 26px; border: 1px solid #ffffff30; border-radius: 12px; background: #252a2e; }
 .capability-detail[aria-hidden="false"] { visibility: visible; }
@@ -34,9 +32,8 @@
 .capability-explorer-footer i { width: 36px; height: 2px; background: #ffffff30; }
 .capability-explorer-footer i[data-active="true"] { background: var(--olive); }
 .capability-explorer-footer a { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; }
-.capability-explorer[data-scroll="true"] .capability-explorer-stage { position: sticky; top: 0; min-height: 100svh; display: flex; align-items: center; }
 .capability-explorer-stage > .page-shell { width: 100%; }
-.capability-explorer[data-scroll="true"] .capability-scroll-hint { display: inline; }
+.capability-playback { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #ffffff30; border-radius: 6px; background: transparent; color: var(--off-white); padding: 9px 12px; font-size: 11px; }
 @media (min-width: 1024px) { .capability-explorer-stage { padding-block: 104px 24px; } }
 @media (max-width: 1100px) {
   .capability-explorer-heading { gap: 28px; }
@@ -49,7 +46,6 @@
   .capability-explorer-layout { grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
   .capability-index button { padding-block: 16px; }
   .capability-index button[aria-selected="true"]::before { top: 14px; bottom: 14px; }
-  .capability-index-hint { margin-top: 14px; }
 }
 @media (max-width: 540px) {
   .capability-explorer-stage { padding-block: 40px; }
