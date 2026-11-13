@@ -11,6 +11,8 @@ npm run dev
 
 Open http://127.0.0.1:3000. On Windows PowerShell with script execution disabled, use `npm.cmd` instead of `npm`.
 
+The site is available in English at `/`, Latin American Spanish at `/es`, and Brazilian Portuguese at `/pt`, including Platform and Enterprise. The language selector is in the navigation (inside the mobile menu). See [internationalization](docs/internationalization.md) for translation editing, SEO configuration and validation.
+
 ## Current homepage
 
 Hero → Enterprise Control → Omnichannel → Human-in-the-Loop → Capabilities → Enterprise Fit → Final CTA.
@@ -31,7 +33,7 @@ The visual redesign lives on `design/olive-signature`. Near-black, muted olive a
 
 ## Code and styles
 
-- `src/app/page.tsx` owns section order. `/platform` and `/enterprise` each have their own route directory and page styles. `src/app/product.css` holds shared page composition styles.
+- `src/app/[locale]/page.tsx` owns section order. `/platform` and `/enterprise` have shared localized route components under `[locale]` and retain their page styles in the original directories. `src/app/product.css` holds shared page composition styles.
 - `src/components/hero/ProductHero.tsx` is the current Hero. Homepage sections, including `HumanInTheLoop` and `EnterpriseFit`, live in `src/components/home/`. `src/components/platform/PlatformExecution.tsx` owns the Platform demo.
 - `src/lib/data/execution-cases.ts` supplies the three execution examples. Steps have typed identifiers; protection, orchestration context and action logs do not depend on numeric positions. `src/lib/data/capabilities.ts` supplies the current commercial capability groups.
 - `src/app/globals.css` contains tokens, shared typography, controls and navigation. `home.css` and `experience.css` still contain the other sections and their composition rules.
@@ -40,7 +42,7 @@ The visual redesign lives on `design/olive-signature`. Near-black, muted olive a
 - Architecture tabs use instance-specific IDs and a stable shared panel, labelled by the selected tab. Keyboard focus uses local refs.
 - `src/components/home/platform-at-work.css` owns scenario selection, architecture exploration, detail panels and logs.
 - `Capabilities.tsx` renders the capability content. `useCapabilityScroll.ts` owns DOM measurements, scroll scheduling and cleanup; `capability-scroll.ts` calculates travel, pinning, progress and active-card position without browser dependencies.
-- Styles are imported explicitly in `src/app/layout.tsx`. Keep their order: shared styles first, section styles last. The first extraction retains existing selectors and responsive precedence; further consolidation and local scoping should preserve the visual baseline.
+- Styles are imported explicitly in `src/app/[locale]/layout.tsx`. Keep their order: shared styles first, section styles last. The first extraction retains existing selectors and responsive precedence; further consolidation and local scoping should preserve the visual baseline.
 - Inter and Plus Jakarta Sans are served locally through Fontsource. The headline token is Roobert-ready; no unlicensed Roobert files are bundled. Font packages retain their licenses.
 - Motion uses CSS/SVG and React. `ScrollEffects` enhances native scrolling with reveals and progress; interactive components clean up their timers and observers. Static content remains available without JavaScript.
 

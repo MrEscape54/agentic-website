@@ -1,4 +1,10 @@
 /* Preserve the original header's occupied space, including its 1px border. */
+.language-switcher { display: inline-flex; align-items: center; gap: 2px; flex-shrink: 0; padding-left: 12px; border-left: 1px solid #ffffff26; }
+.language-switcher a { display: inline-flex; min-height: 32px; min-width: 29px; align-items: center; justify-content: center; color: var(--off-white); opacity: .62; font-size: 11px; border-radius: 4px; }
+.language-switcher a[aria-current="true"] { opacity: 1; color: var(--olive); background: #bec77b12; }
+.language-switcher a:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; }
+@media (min-width: 961px) and (max-width: 1200px) { .nav-shell { gap: 20px; } .navigation { gap: 12px; } .navigation .nav-link, .navigation .nav-pending { font-size: 12px; } .nav-cta { font-size: 12px; } }
+@media (max-width: 960px) { .language-switcher { width: 100%; border-left: 0; border-top: 1px solid #ffffff26; padding: 12px 0 0; } .language-switcher a { min-height: 44px; min-width: 44px; } }
 .navbar-space { height: 97px; }
 .navbar-space .site-header { position: fixed; inset: 0 0 auto; z-index: 90; background: var(--navy); opacity: 1; transform: translateY(0); transition: opacity 220ms ease, transform 220ms ease; }
 .navbar-space .site-header[data-scrolled="true"] { background: var(--navy); }

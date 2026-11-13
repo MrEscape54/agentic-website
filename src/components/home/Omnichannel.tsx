@@ -1,4 +1,5 @@
 "use client";
+import { useText } from "@/i18n/useText";
 
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
@@ -17,6 +18,7 @@ function ChannelIcon({ channel }: { channel: Channel }) {
 }
 
 export function Omnichannel({ vision = false }: { vision?: boolean }) {
+  const t = useText();
   const scene = useRef<HTMLDivElement>(null);
   const continuedChat = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
@@ -26,7 +28,7 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
   const channel = step >= 2 && step <= 4 ? "Email" : "WhatsApp";
   const confirmed = step >= 4;
   const stage = step === 5 ? 2 : step >= 2 ? 1 : 0;
-  const playback = <button className="omni-playback" onClick={() => { if (reduced) setStep(confirmed ? 0 : 5); else setPaused(value => !value); }} aria-label={reduced ? "Toggle demo confirmation" : paused ? "Play omnichannel demo" : "Pause omnichannel demo"}><Icon name={paused || reduced ? "play" : "pause"} size={14} />{reduced ? "Preview" : paused ? "Play" : "Pause"}</button>;
+  const playback = <button className="omni-playback" onClick={() => { if (reduced) setStep(confirmed ? 0 : 5); else setPaused(value => !value); }} aria-label={t(reduced ? "Toggle demo confirmation" : paused ? "Play omnichannel demo" : "Pause omnichannel demo")}><Icon name={paused || reduced ? "play" : "pause"} size={14} />{t(reduced ? "Preview" : paused ? "Play" : "Pause")}</button>;
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -55,49 +57,49 @@ export function Omnichannel({ vision = false }: { vision?: boolean }) {
     <div className="page-shell">
       <div className="omni-layout">
         <div className="omni-heading">
-          <p className="section-eyebrow">OMNICHANNEL</p>
-          <h2 id="omnichannel-title" className="section-title">{vision ? <>Different channels.<br /><em>Connected execution.</em></> : <>The channel changes.<br />The <em>context</em> doesn&apos;t.</>}</h2>
-          <p>{vision ? "Start on one channel. Continue on another. Keep the context—and the work—moving." : "Start on one channel. Continue on another."}</p>
-          <ol className="omni-route" aria-label="Conversation continues from WhatsApp to Email and back to WhatsApp">{(["WhatsApp", "Email", "WhatsApp"] as const).map((item, index) => <li key={index} aria-current={index === stage ? "step" : undefined}><span className="omni-route-icon"><ChannelIcon channel={item} /></span><span><small>0{index + 1}</small>{item}</span>{index < 2 && <Icon name="arrow" size={18} />}</li>)}</ol>
-          <p className="omni-context">One request. Context preserved.</p>
+          <p className="section-eyebrow">{t("OMNICHANNEL")}</p>
+          <h2 id="omnichannel-title" className="section-title">{vision ? <>{t("Different channels.")}<br /><em>{t("Connected execution.")}</em></> : <>{t("The channel changes.")}<br />{t("The ")}<em>{t("context")}</em>{t(" doesn't.")}</>}</h2>
+          <p>{t(vision ? "Start on one channel. Continue on another. Keep the context—and the work—moving." : "Start on one channel. Continue on another.")}</p>
+          <ol className="omni-route" aria-label={t("Conversation continues from WhatsApp to Email and back to WhatsApp")}>{(["WhatsApp", "Email", "WhatsApp"] as const).map((item, index) => <li key={index} aria-current={index === stage ? "step" : undefined}><span className="omni-route-icon"><ChannelIcon channel={item} /></span><span><small>0{index + 1}</small>{t(item)}</span>{index < 2 && <Icon name="arrow" size={18} />}</li>)}</ol>
+          <p className="omni-context">{t("One request. Context preserved.")}</p>
         </div>
 
         <div ref={scene} className="omni-scene" data-channel={channel} data-step={step} data-paused={paused || !visible}>
-          <div className="omni-thread"><span className="omni-avatar"><Icon name="people" size={19} /></span><div><strong>Mobile plan change</strong><span>One conversation · context preserved</span></div>{playback}</div>
+          <div className="omni-thread"><span className="omni-avatar"><Icon name="people" size={19} /></span><div><strong>{t("Mobile plan change")}</strong><span>{t("One conversation · context preserved")}</span></div>{playback}</div>
           <div className="omni-surfaces">
-            <article className="omni-whatsapp" aria-label="Conversation started on WhatsApp">
-              <h3><ChannelIcon channel="WhatsApp" />WhatsApp<span>Mobile support</span></h3>
+            <article className="omni-whatsapp" aria-label={t("Conversation started on WhatsApp")}>
+              <h3><ChannelIcon channel="WhatsApp" />{t("WhatsApp")}<span>{t("Mobile support")}</span></h3>
               <div className="omni-chat">
-                <p className="omni-message omni-customer">I&apos;d like to change my mobile plan.<span>You · 10:24</span></p>
-                <p className="omni-message omni-agent"><strong>Plan assistant</strong>Your plan change is ready. I&apos;ve sent the details to your email. Please confirm the change there.<span>10:24</span></p>
+                <p className="omni-message omni-customer">{t("I'd like to change my mobile plan.")}<span>{t("You · 10:24")}</span></p>
+                <p className="omni-message omni-agent"><strong>{t("Plan assistant")}</strong>{t("Your plan change is ready. I've sent the details to your email. Please confirm the change there.")}<span>10:24</span></p>
               </div>
-              <div className="omni-composer" aria-hidden="true"><span>Message</span><Icon name="arrow" size={17} /></div>
+              <div className="omni-composer" aria-hidden="true"><span>{t("Message")}</span><Icon name="arrow" size={17} /></div>
             </article>
-            <p className="omni-bridge" data-complete={step === 5} aria-live="polite">{step === 5 ? <Icon name="check" size={16} /> : <span />}{step === 5 ? "Plan updated · Confirmation received" : confirmed ? "Confirmed through Email" : channel === "Email" ? "Same request. Confirm the details in Email." : step === 0 ? "Request started on WhatsApp" : "Details sent to email"}</p>
-            <article className="omni-email" aria-label="Same conversation continued in Email">
-              <h3><ChannelIcon channel="Email" />Email<span>Inbox · 1 new message</span></h3>
-              <div className="omni-mail-content"><p className="omni-subject">RE: Mobile plan change</p>
-                <div className="omni-mail-sender"><span className="omni-sender-avatar">M</span><div><strong>Mobile support</strong><span>To: you · 10:25</span></div></div>
-                <h4>Your new plan is ready.</h4>
-                <p className="omni-mail-intro">Following our WhatsApp conversation, please confirm your plan change below.</p>
-                <dl><div><dt>New plan</dt><dd>Mobile Plus · 20 GB</dd></div><div><dt>Monthly price</dt><dd>$30.00 / month</dd></div><div><dt>Effective</dt><dd>Next billing cycle</dd></div></dl>
+            <p className="omni-bridge" data-complete={step === 5} aria-live="polite">{step === 5 ? <Icon name="check" size={16} /> : <span />}{t(step === 5 ? "Plan updated · Confirmation received" : confirmed ? "Confirmed through Email" : channel === "Email" ? "Same request. Confirm the details in Email." : step === 0 ? "Request started on WhatsApp" : "Details sent to email")}</p>
+            <article className="omni-email" aria-label={t("Same conversation continued in Email")}>
+              <h3><ChannelIcon channel="Email" />{t("Email")}<span>{t("Inbox · 1 new message")}</span></h3>
+              <div className="omni-mail-content"><p className="omni-subject">{t("RE: Mobile plan change")}</p>
+                <div className="omni-mail-sender"><span className="omni-sender-avatar">{"M"}</span><div><strong>{t("Mobile support")}</strong><span>{t("To: you · 10:25")}</span></div></div>
+                <h4>{t("Your new plan is ready.")}</h4>
+                <p className="omni-mail-intro">{t("Following our WhatsApp conversation, please confirm your plan change below.")}</p>
+                <dl><div><dt>{t("New plan")}</dt><dd>{t("Mobile Plus · 20 GB")}</dd></div><div><dt>{t("Monthly price")}</dt><dd>{t("$30.00 / month")}</dd></div><div><dt>{t("Effective")}</dt><dd>{t("Next billing cycle")}</dd></div></dl>
                 <div className="omni-confirm-wrap">
-                  <button className="omni-confirm" disabled={confirmed} onFocus={() => setPaused(true)} onClick={() => { setPaused(true); setStep(5); }}>{confirmed ? "Confirmed through Email" : "Confirm change"}<Icon name="check" size={16} /></button>
+                  <button className="omni-confirm" disabled={confirmed} onFocus={() => setPaused(true)} onClick={() => { setPaused(true); setStep(5); }}>{t(confirmed ? "Confirmed through Email" : "Confirm change")}<Icon name="check" size={16} /></button>
                   <span className="omni-cursor" aria-hidden="true"><svg width="27" height="32" viewBox="0 0 27 32"><path d="M3 2v23l6-6 5 10 5-3-5-9h9Z" fill="#081426" stroke="white" strokeWidth="2" /></svg><i /></span>
                 </div>
               </div>
             </article>
-            <article className="omni-whatsapp-final" aria-label="Plan change confirmed on WhatsApp">
-              <h3><ChannelIcon channel="WhatsApp" />WhatsApp<span>Mobile support</span></h3>
-              <div ref={continuedChat} className="omni-chat" tabIndex={0} aria-label="WhatsApp conversation history">
-                <p className="omni-message omni-customer">I&apos;d like to change my mobile plan.<span>You · 10:24</span></p>
-                <p className="omni-message omni-agent"><strong>Plan assistant</strong>Your plan change is ready. I&apos;ve sent the details to your email. Please confirm the change there.<span>10:24</span></p>
-                <p className="omni-message omni-agent omni-success-message"><strong>Plan assistant</strong>Your plan has been changed successfully. Thanks for confirming by email. Your new plan takes effect next billing cycle.<span>10:26</span></p>
+            <article className="omni-whatsapp-final" aria-label={t("Plan change confirmed on WhatsApp")}>
+              <h3><ChannelIcon channel="WhatsApp" />{t("WhatsApp")}<span>{t("Mobile support")}</span></h3>
+              <div ref={continuedChat} className="omni-chat" tabIndex={0} aria-label={t("WhatsApp conversation history")}>
+                <p className="omni-message omni-customer">{t("I'd like to change my mobile plan.")}<span>{t("You · 10:24")}</span></p>
+                <p className="omni-message omni-agent"><strong>{t("Plan assistant")}</strong>{t("Your plan change is ready. I've sent the details to your email. Please confirm the change there.")}<span>10:24</span></p>
+                <p className="omni-message omni-agent omni-success-message"><strong>{t("Plan assistant")}</strong>{t("Your plan has been changed successfully. Thanks for confirming by email. Your new plan takes effect next billing cycle.")}<span>10:26</span></p>
               </div>
-              <div className="omni-composer" aria-hidden="true"><span>Message</span><Icon name="arrow" size={17} /></div>
+              <div className="omni-composer" aria-hidden="true"><span>{t("Message")}</span><Icon name="arrow" size={17} /></div>
             </article>
           </div>
-          <p className="omni-disclaimer">Simplified flow for illustration purposes.</p>
+          <p className="omni-disclaimer">{t("Simplified flow for illustration purposes.")}</p>
         </div>
       </div>
     </div>
